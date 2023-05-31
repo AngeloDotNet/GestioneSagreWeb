@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementi di soluzione", "El
 		.gitignore = .gitignore
 		docker-compose.override.yml = docker-compose.override.yml
 		docker-compose.yml = docker-compose.yml
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Gateway", "src\GestioneSagre.Gateway\GestioneSagre.Gateway.csproj", "{5B7B7CEF-C1A6-4793-8211-00B9D3697D2C}"
