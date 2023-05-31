@@ -27,3 +27,14 @@ services:
     ports:
       #- 5672:5672
       - 15672:15672
+
+  sqlserver:
+    restart: "always"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=CHANGE-ME
+      - MSSQL_PID=Express
+    volumes:
+      - /docker/storage/storage-sqlserver:/var/opt/mssql/data
+    #ports:
+    #  - 1433:1433
