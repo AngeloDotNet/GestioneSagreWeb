@@ -19,6 +19,15 @@ services:
     networks:
       - lan-network
 
+  rabbitmq:
+    container_name: infra-rabbitmq
+    restart: always
+    build:
+      context: .
+      dockerfile: docker/rabbitmq/Dockerfile
+    networks:
+      - lan-network
+
 networks:
   lan-network:
     external:

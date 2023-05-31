@@ -14,3 +14,16 @@ services:
       - /docker/storage/storage-redis/data:/data
     #ports:
     #  - "6379:6379"
+
+  rabbitmq:
+    restart: "always"
+    environment:
+      - RABBITMQ_DEFAULT_USER=CHANGE-ME
+      - RABBITMQ_DEFAULT_PASS=CHANGE-ME
+      - RABBITMQ_NODENAME=rabbit@localhost
+    volumes:
+      - /docker/storage/storage-rabbitmq/files:/var/lib/rabbitmq
+      - /docker/storage/storage-rabbitmq/logs:/var/log/rabbitmq/log
+    ports:
+      #- 5672:5672
+      - 15672:15672
