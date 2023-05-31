@@ -9,6 +9,7 @@ COPY ./src/GestioneSagre.Gateway.BusinessLayer/*.csproj .
 #WORKDIR /src/BES.OutboxPattern.Shared
 #COPY ./src/BES.OutboxPattern.Shared/*.csproj .
 WORKDIR /src/GestioneSagre.Gateway
+COPY ./src/GestioneSagre.Gateway/*.json .
 COPY ./src/GestioneSagre.Gateway/*.csproj .
 
 COPY *.csproj .
@@ -16,7 +17,7 @@ RUN dotnet restore
 
 FROM deps as build
 COPY . .
-RUN dotnet publish -c Release -o ../compiled
+RUN dotnet publish "GestioneSagre.Gateway.csproj" -c Release -o ../compiled
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 as deploy
 ENV ASPNETCORE_URLS=http://*:5001
