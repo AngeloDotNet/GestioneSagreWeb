@@ -1,0 +1,9 @@
+{
+  "solution": {
+    "path": "..\\GestioneSagreWeb.sln",
+    "projects": [
+      "src\\GestioneSagre.Gateway\\GestioneSagre.Gateway.csproj",
+	  "src\\GestioneSagre.Gateway.BusinessLayer\\GestioneSagre.Gateway.BusinessLayer.csproj"
+    ]
+  }
+}

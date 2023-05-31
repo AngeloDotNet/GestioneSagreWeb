@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>disable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>GestioneSagre.Gateway</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="Logs\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\GestioneSagre.Gateway.BusinessLayer\GestioneSagre.Gateway.BusinessLayer.csproj" />
+    </ItemGroup>
+
+</Project>

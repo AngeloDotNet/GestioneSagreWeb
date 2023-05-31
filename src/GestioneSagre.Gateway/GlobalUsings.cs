@@ -1,0 +1,10 @@
+﻿global using System.Net.Mime;
+global using System.Text;
+global using Microsoft.AspNetCore.Authentication.JwtBearer;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.IdentityModel.Tokens;
+global using NET6CustomLibrary.Extensions;
+global using NET6CustomLibrary.Serilog.Services;
+global using NET6CustomLibrary.Swagger;
+global using Ocelot.DependencyInjection;
+global using Ocelot.Middleware;

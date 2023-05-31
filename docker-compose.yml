@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  api-gateway:
+    image: angelo87dock/gestionesagre-gateway
+    container_name: api-gateway
+    build:
+      context: .
+      dockerfile: src/GestioneSagre.Gateway/Dockerfile
+    #restart: "always"
+    #ports:
+    #  - 8050:5001
+    networks:
+      - lan-network
+
+networks:
+  lan-network:
+    external:
+      name: docker-net
