@@ -3,5 +3,14 @@ version: '3.7'
 services:
   api-gateway:
     restart: "always"
+    volumes:
+      - /docker/storage/storage-gateway/appsettings.json:/appsettings.json
     ports:
-      - 8050:5001
+      - 5100:5001
+
+  redis:
+    restart: "always"
+    volumes:
+      - /docker/storage/storage-redis/data:/data
+    #ports:
+    #  - "6379:6379"

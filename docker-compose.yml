@@ -2,14 +2,20 @@ version: '3.7'
 
 services:
   api-gateway:
-    image: angelo87dock/gestionesagre-gateway
+    image: angelo87dock/gsweb-gateway
     container_name: api-gateway
     build:
       context: .
       dockerfile: src/GestioneSagre.Gateway/Dockerfile
-    #restart: "always"
-    #ports:
-    #  - 8050:5001
+    networks:
+      - lan-network
+
+  redis:
+    image: angelo87dock/gsweb-redis
+    container_name: infra-redis
+    build:
+      context: .
+      dockerfile: docker/redis/Dockerfile
     networks:
       - lan-network
 
