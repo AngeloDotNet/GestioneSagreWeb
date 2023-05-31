@@ -37,10 +37,19 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-redis:latest
 
       -
-        name: Build and push Rabbit-MQ
+        name: Build and push RabbitMQ
         uses: docker/build-push-action@v4
         with:
           context: .
           file: ./docker/rabbitmq/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-rabbitmq:latest
+
+      -
+        name: Build and push SQLServer
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./docker/sqlserver/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-sqlserver:latest
