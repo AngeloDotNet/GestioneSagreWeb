@@ -34,6 +34,7 @@ services:
       - ACCEPT_EULA=Y
       - MSSQL_SA_PASSWORD=CHANGE-ME
       - MSSQL_PID=Express
+      - TZ=Europe/Rome
     volumes:
       - /docker/storage/storage-sqlserver:/var/opt/mssql/data
     #ports:
