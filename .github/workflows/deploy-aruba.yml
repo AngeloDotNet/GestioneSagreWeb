@@ -1,0 +1,18 @@
+name: Access server
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+  
+jobs:
+  deploy_server:
+    name: Access server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create a file
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: echo hello world
