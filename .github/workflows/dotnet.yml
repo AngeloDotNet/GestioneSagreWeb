@@ -5,9 +5,9 @@ name: .NET Build and Test
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
+  pull_request:   
+    branches: [ main, develop ]
   workflow_dispatch:
 
 env:
@@ -21,7 +21,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
       with:
-        fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
+        fetch-depth: 0
     
     - name: Setup .NET SDK ${{ env.NET_VERSION }}
       uses: actions/setup-dotnet@v3
@@ -36,4 +36,4 @@ jobs:
       run: dotnet build --no-restore
       
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build
