@@ -29,8 +29,7 @@ Please adhere to this project's `code of conduct`.
 
 ## Badges
 
-[![CodeQL](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/codeql.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/codeql.yml)
-
-[![Lint Code Base](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/linter.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/linter.yml)
-
 [![.NET Build and Test](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/dotnet.yml)
+[![Lint Code Base](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/linter.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/linter.yml)
+[![CodeQL](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/codeql.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/codeql.yml)
+[![Push images to DockerHub](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/docker-publish.yml)
