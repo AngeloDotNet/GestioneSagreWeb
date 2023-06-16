@@ -37,6 +37,24 @@ services:
     networks:
       - lan-network
 
+  seq-log:
+    image: angelo87dock/gsweb-seq
+    container_name: infra-seq
+    build:
+      context: .
+      dockerfile: docker/seq/Dockerfile
+    networks:
+      - lan-network
+
+  #api-dataprotection:
+  #  image: angelo87dock/gsweb-dataprotection
+  #  container_name: api-dataprotection
+  #  build:
+  #    context: .
+  #    dockerfile: src/GestioneSagre.DataProtection/Dockerfile
+  #  networks:
+  #    - lan-network
+
 networks:
   lan-network:
     external:
