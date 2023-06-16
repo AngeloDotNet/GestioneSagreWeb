@@ -19,6 +19,47 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Gateway.Busin
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{B09077C6-3027-45F7-A524-692F3D9D4C4B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{63903775-F36B-418B-B622-38A4F751B937}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rabbitmq", "rabbitmq", "{D440D71D-0F61-4557-B149-4430BBD87965}"
+	ProjectSection(SolutionItems) = preProject
+		docker\rabbitmq\Dockerfile = docker\rabbitmq\Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sqlserver", "sqlserver", "{36224717-E06E-4F5F-9B71-5F28EAE3979B}"
+	ProjectSection(SolutionItems) = preProject
+		docker\sqlserver\Dockerfile = docker\sqlserver\Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "redis", "redis", "{27C83AAF-6D88-4042-B962-45298FA2CCB9}"
+	ProjectSection(SolutionItems) = preProject
+		docker\redis\Dockerfile = docker\redis\Dockerfile
+		docker\redis\redis.conf = docker\redis\redis.conf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "seq", "seq", "{CB920B87-AEAA-4F15-83D7-96BB629D385C}"
+	ProjectSection(SolutionItems) = preProject
+		docker\seq\Dockerfile = docker\seq\Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{9B6385D8-F249-4F85-B634-967B59F808BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.EFCore", "src\GestioneSagre.Tools\GestioneSagre.EFCore\GestioneSagre.EFCore.csproj", "{9B35F8E7-1542-4BA5-8AE6-B2A61727E4F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.DataProtection", "src\GestioneSagre.DataProtection\GestioneSagre.DataProtection.csproj", "{53D13E8F-6058-4B4E-92A5-03CB28992FFF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.DataProtection.BusinessLayer", "src\GestioneSagre.DataProtection.BusinessLayer\GestioneSagre.DataProtection.BusinessLayer.csproj", "{9554E662-64F8-4ECE-870E-230388D93A31}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.DataProtection.DataAccessLayer", "src\GestioneSagre.DataProtection.DataAccessLayer\GestioneSagre.DataProtection.DataAccessLayer.csproj", "{1D733D05-7DE3-4BE6-A85B-F783EE48841C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProtection", "DataProtection", "{F2B71777-9339-4F40-AEE3-81033D13A85C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.GenericServices", "src\GestioneSagre.Tools\GestioneSagre.GenericServices\GestioneSagre.GenericServices.csproj", "{0E8E2E35-B0ED-4835-B7BC-04EA7D952361}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.DataProtection.IntegrationTest", "src\GestioneSagre.DataProtection.IntegrationTest\GestioneSagre.DataProtection.IntegrationTest.csproj", "{BA81B210-CE29-4F62-98EE-218CE689AEAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestioneSagre.DataProtection.Shared", "src\GestioneSagre.DataProtection.Shared\GestioneSagre.DataProtection.Shared.csproj", "{D93C1F68-3BE1-432B-8BF1-B7170A28342E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +74,34 @@ Global
 		{58CDC826-FD14-4FA7-B70D-04BF7BCB1A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58CDC826-FD14-4FA7-B70D-04BF7BCB1A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58CDC826-FD14-4FA7-B70D-04BF7BCB1A49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B35F8E7-1542-4BA5-8AE6-B2A61727E4F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B35F8E7-1542-4BA5-8AE6-B2A61727E4F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B35F8E7-1542-4BA5-8AE6-B2A61727E4F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B35F8E7-1542-4BA5-8AE6-B2A61727E4F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53D13E8F-6058-4B4E-92A5-03CB28992FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53D13E8F-6058-4B4E-92A5-03CB28992FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53D13E8F-6058-4B4E-92A5-03CB28992FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53D13E8F-6058-4B4E-92A5-03CB28992FFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9554E662-64F8-4ECE-870E-230388D93A31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9554E662-64F8-4ECE-870E-230388D93A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9554E662-64F8-4ECE-870E-230388D93A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9554E662-64F8-4ECE-870E-230388D93A31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D733D05-7DE3-4BE6-A85B-F783EE48841C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D733D05-7DE3-4BE6-A85B-F783EE48841C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D733D05-7DE3-4BE6-A85B-F783EE48841C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D733D05-7DE3-4BE6-A85B-F783EE48841C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E8E2E35-B0ED-4835-B7BC-04EA7D952361}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E8E2E35-B0ED-4835-B7BC-04EA7D952361}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E8E2E35-B0ED-4835-B7BC-04EA7D952361}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E8E2E35-B0ED-4835-B7BC-04EA7D952361}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA81B210-CE29-4F62-98EE-218CE689AEAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA81B210-CE29-4F62-98EE-218CE689AEAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA81B210-CE29-4F62-98EE-218CE689AEAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA81B210-CE29-4F62-98EE-218CE689AEAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D93C1F68-3BE1-432B-8BF1-B7170A28342E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D93C1F68-3BE1-432B-8BF1-B7170A28342E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D93C1F68-3BE1-432B-8BF1-B7170A28342E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D93C1F68-3BE1-432B-8BF1-B7170A28342E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,6 +109,18 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5B7B7CEF-C1A6-4793-8211-00B9D3697D2C} = {B09077C6-3027-45F7-A524-692F3D9D4C4B}
 		{58CDC826-FD14-4FA7-B70D-04BF7BCB1A49} = {B09077C6-3027-45F7-A524-692F3D9D4C4B}
+		{63903775-F36B-418B-B622-38A4F751B937} = {69079640-1D84-4152-812D-316A2B2456E9}
+		{D440D71D-0F61-4557-B149-4430BBD87965} = {63903775-F36B-418B-B622-38A4F751B937}
+		{36224717-E06E-4F5F-9B71-5F28EAE3979B} = {63903775-F36B-418B-B622-38A4F751B937}
+		{27C83AAF-6D88-4042-B962-45298FA2CCB9} = {63903775-F36B-418B-B622-38A4F751B937}
+		{CB920B87-AEAA-4F15-83D7-96BB629D385C} = {63903775-F36B-418B-B622-38A4F751B937}
+		{9B35F8E7-1542-4BA5-8AE6-B2A61727E4F2} = {9B6385D8-F249-4F85-B634-967B59F808BB}
+		{53D13E8F-6058-4B4E-92A5-03CB28992FFF} = {F2B71777-9339-4F40-AEE3-81033D13A85C}
+		{9554E662-64F8-4ECE-870E-230388D93A31} = {F2B71777-9339-4F40-AEE3-81033D13A85C}
+		{1D733D05-7DE3-4BE6-A85B-F783EE48841C} = {F2B71777-9339-4F40-AEE3-81033D13A85C}
+		{0E8E2E35-B0ED-4835-B7BC-04EA7D952361} = {9B6385D8-F249-4F85-B634-967B59F808BB}
+		{BA81B210-CE29-4F62-98EE-218CE689AEAA} = {F2B71777-9339-4F40-AEE3-81033D13A85C}
+		{D93C1F68-3BE1-432B-8BF1-B7170A28342E} = {F2B71777-9339-4F40-AEE3-81033D13A85C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3175CA6A-397B-47C0-90D2-4B126182BDB8}
