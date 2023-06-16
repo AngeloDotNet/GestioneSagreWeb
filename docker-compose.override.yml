@@ -36,6 +36,23 @@ services:
       - MSSQL_PID=Express
       - TZ=Europe/Rome
     volumes:
-      - /docker/storage/storage-sqlserver:/var/opt/mssql/data
+      - /docker/storage/storage-sqlserver/data:/var/opt/mssql/data
     #ports:
     #  - 1433:1433
+
+  seq-log:
+    restart: "always"
+    environment:
+      - ACCEPT_EULA=Y
+    volumes:
+      - /docker/storage/storage-seq/data:/data
+    ports:
+      - 5090:80
+      - 5341:5341
+
+  #api-dataprotection:
+  #  restart: "always"
+  #  volumes:
+  #    - /docker/storage/storage-data-protection/appsettings.json:/appsettings.json
+  #  #ports:
+  #  #  - 5100:5001
