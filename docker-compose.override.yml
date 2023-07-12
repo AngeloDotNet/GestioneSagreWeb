@@ -12,21 +12,21 @@ services:
     restart: "always"
     volumes:
       - /docker/storage/storage-redis/data:/data
-    #ports:
-    #  - "6379:6379"
+#    ports:
+#      - "6379:6379"
 
-  rabbitmq:
-    restart: "always"
-    environment:
-      - RABBITMQ_DEFAULT_USER=CHANGE-ME
-      - RABBITMQ_DEFAULT_PASS=CHANGE-ME
-      - RABBITMQ_NODENAME=rabbit@localhost
-    volumes:
-      - /docker/storage/storage-rabbitmq/files:/var/lib/rabbitmq
-      - /docker/storage/storage-rabbitmq/logs:/var/log/rabbitmq/log
-    ports:
-      #- 5672:5672
-      - 15672:15672
+#  rabbitmq:
+#    restart: "always"
+#    environment:
+#      - RABBITMQ_DEFAULT_USER=CHANGE-ME
+#      - RABBITMQ_DEFAULT_PASS=CHANGE-ME
+#      - RABBITMQ_NODENAME=rabbit@localhost
+#    volumes:
+#      - /docker/storage/storage-rabbitmq/files:/var/lib/rabbitmq
+#      - /docker/storage/storage-rabbitmq/logs:/var/log/rabbitmq/log
+#    ports:
+#      - 5672:5672
+#      - 15672:15672
 
   sqlserver:
     restart: "always"
@@ -37,8 +37,8 @@ services:
       - TZ=Europe/Rome
     volumes:
       - /docker/storage/storage-sqlserver/data:/var/opt/mssql/data
-    #ports:
-    #  - 1433:1433
+#    ports:
+#      - 1433:1433
 
   seq-log:
     restart: "always"
@@ -50,9 +50,9 @@ services:
       - 5090:80
       - 5341:5341
 
-  #api-dataprotection:
-  #  restart: "always"
-  #  volumes:
-  #    - /docker/storage/storage-data-protection/appsettings.json:/appsettings.json
-  #  #ports:
-  #  #  - 5100:5001
+#  api-dataprotection:
+#    restart: "always"
+#    volumes:
+#      - /docker/storage/storage-data-protection/appsettings.json:/appsettings.json
+#    ports:
+#      - 5100:5001
