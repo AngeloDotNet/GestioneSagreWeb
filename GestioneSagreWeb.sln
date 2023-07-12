@@ -44,7 +44,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "seq", "seq", "{CB920B87-AEA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{9B6385D8-F249-4F85-B634-967B59F808BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.EFCore", "src\GestioneSagre.Tools\GestioneSagre.EFCore\GestioneSagre.EFCore.csproj", "{9B35F8E7-1542-4BA5-8AE6-B2A61727E4F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.EFCore", "src\GestioneSagre.EFCore\GestioneSagre.EFCore.csproj", "{9B35F8E7-1542-4BA5-8AE6-B2A61727E4F2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.DataProtection", "src\GestioneSagre.DataProtection\GestioneSagre.DataProtection.csproj", "{53D13E8F-6058-4B4E-92A5-03CB28992FFF}"
 EndProject
@@ -54,11 +54,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.DataProtectio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProtection", "DataProtection", "{F2B71777-9339-4F40-AEE3-81033D13A85C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.GenericServices", "src\GestioneSagre.Tools\GestioneSagre.GenericServices\GestioneSagre.GenericServices.csproj", "{0E8E2E35-B0ED-4835-B7BC-04EA7D952361}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.GenericServices", "src\GestioneSagre.GenericServices\GestioneSagre.GenericServices.csproj", "{0E8E2E35-B0ED-4835-B7BC-04EA7D952361}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.DataProtection.IntegrationTest", "src\GestioneSagre.DataProtection.IntegrationTest\GestioneSagre.DataProtection.IntegrationTest.csproj", "{BA81B210-CE29-4F62-98EE-218CE689AEAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestioneSagre.DataProtection.Shared", "src\GestioneSagre.DataProtection.Shared\GestioneSagre.DataProtection.Shared.csproj", "{D93C1F68-3BE1-432B-8BF1-B7170A28342E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.DataProtection.Shared", "src\GestioneSagre.DataProtection.Shared\GestioneSagre.DataProtection.Shared.csproj", "{D93C1F68-3BE1-432B-8BF1-B7170A28342E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.App", "src\GestioneSagre.Web.App\GestioneSagre.Web.App.csproj", "{D0D9275B-C189-4366-912F-665926C0270D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -102,6 +104,10 @@ Global
 		{D93C1F68-3BE1-432B-8BF1-B7170A28342E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D93C1F68-3BE1-432B-8BF1-B7170A28342E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D93C1F68-3BE1-432B-8BF1-B7170A28342E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D9275B-C189-4366-912F-665926C0270D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D9275B-C189-4366-912F-665926C0270D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D9275B-C189-4366-912F-665926C0270D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D9275B-C189-4366-912F-665926C0270D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

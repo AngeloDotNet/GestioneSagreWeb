@@ -19,18 +19,19 @@ services:
     networks:
       - lan-network
 
-  rabbitmq:
-    image: angelo87dock/gsweb-rabbitmq
-    container_name: infra-rabbitmq
-    build:
-      context: .
-      dockerfile: docker/rabbitmq/Dockerfile
-    networks:
-      - lan-network
+#  rabbitmq:
+#    image: angelo87dock/gsweb-rabbitmq
+#    container_name: infra-rabbitmq
+#    build:
+#      context: .
+#      dockerfile: docker/rabbitmq/Dockerfile
+#    networks:
+#      - lan-network
 
   sqlserver:
     image: angelo87dock/gsweb-sqlserver
     container_name: infra-sqlserver
+    user: root
     build:
       context: .
       dockerfile: docker/sqlserver/Dockerfile
@@ -46,14 +47,14 @@ services:
     networks:
       - lan-network
 
-  #api-dataprotection:
-  #  image: angelo87dock/gsweb-dataprotection
-  #  container_name: api-dataprotection
-  #  build:
-  #    context: .
-  #    dockerfile: src/GestioneSagre.DataProtection/Dockerfile
-  #  networks:
-  #    - lan-network
+#  api-dataprotection:
+#    image: angelo87dock/gsweb-dataprotection
+#    container_name: api-dataprotection
+#    build:
+#      context: .
+#      dockerfile: src/GestioneSagre.DataProtection/Dockerfile
+#    networks:
+#      - lan-network
 
 networks:
   lan-network:
