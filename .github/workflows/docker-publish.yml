@@ -55,6 +55,14 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-sqlserver:latest
 
+      - name: Build and push SEQ
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./docker/seq/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-seq:latest
+
       - name: Regenerate environments on Aruba
         uses: appleboy/ssh-action@master
         with:
