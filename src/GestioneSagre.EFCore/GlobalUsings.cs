@@ -1,0 +1,10 @@
+﻿global using System.Linq.Expressions;
+global using GestioneSagre.EFCore.GenericRepository.Interfaces;
+global using GestioneSagre.EFCore.Models.Enums;
+global using GestioneSagre.EFCore.Models.InputModels;
+global using GestioneSagre.EFCore.Models.ViewModels;
+global using GestioneSagre.EFCore.UnitOfWork.Interfaces;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Query;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
