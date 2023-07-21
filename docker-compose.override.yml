@@ -50,6 +50,11 @@ services:
       - 5090:80
       - 5341:5341
 
+  webapp:
+    restart: "always"
+    ports:
+      - 5101:5001
+
 #  api-dataprotection:
 #    restart: "always"
 #    volumes:
