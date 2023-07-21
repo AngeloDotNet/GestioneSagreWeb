@@ -47,6 +47,15 @@ services:
     networks:
       - lan-network
 
+  webapp:
+    image: angelo87dock/gsweb-webapp
+    container_name: webapp
+    build:
+      context: .
+      dockerfile: src/GestioneSagre.Web.App/Dockerfile
+    networks:
+      - lan-network
+
 #  api-dataprotection:
 #    image: angelo87dock/gsweb-dataprotection
 #    container_name: api-dataprotection
