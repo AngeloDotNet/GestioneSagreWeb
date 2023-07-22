@@ -1,13 +1,12 @@
-﻿namespace GestioneSagre.Gateway.Controllers;
+﻿using GestioneSagre.Gateway.Controllers.Common;
 
-[ApiController]
-[Route("api/[controller]")]
-[Produces(MediaTypeNames.Application.Json)]
-public class HomeController : ControllerBase
+namespace GestioneSagre.Gateway.Controllers;
+
+public class HomeController : BaseController
 {
-    private readonly ILoggerService logger;
+    private readonly ILogger<HomeController> logger;
 
-    public HomeController(ILoggerService logger)
+    public HomeController(ILogger<HomeController> logger)
     {
         this.logger = logger;
     }
@@ -17,7 +16,7 @@ public class HomeController : ControllerBase
     {
         var todayDateTime = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("W. Europe Standard Time"));
 
-        logger.SaveLogInformation($"Hello World at {todayDateTime:HH:mm:ss} hours of day {todayDateTime:dd/MM/yyyy} !");
+        logger.LogInformation($"Hello World at {todayDateTime:HH:mm:ss} hours of day {todayDateTime:dd/MM/yyyy} !");
         return Ok($"Hello World at {todayDateTime:HH:mm:ss} hours of day {todayDateTime:dd/MM/yyyy} !");
     }
 }

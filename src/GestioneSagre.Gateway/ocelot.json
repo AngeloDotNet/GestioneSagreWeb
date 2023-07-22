@@ -13,6 +13,18 @@
             "UpstreamHttpMethod": [ "Get" ]
         },
         {
+            "downstreampathtemplate": "/api/utility/checkapi",
+            "downstreamscheme": "http",
+            "downstreamhostandports": [
+                {
+                    "host": "yarp-utility",
+                    "port": 5001
+                }
+            ],
+            "upstreampathtemplate": "/checkapi",
+            "upstreamhttpmethod": [ "get" ]
+        },
+        {
             "downstreampathtemplate": "/api/utility/gettipocliente",
             "downstreamscheme": "http",
             "downstreamhostandports": [
@@ -22,11 +34,7 @@
                 }
             ],
             "upstreampathtemplate": "/gettipocliente",
-            "upstreamhttpmethod": [ "get" ],
-            "AuthenticationOptions": {
-                "AuthenticationProviderKey": "authGestioneSagre",
-                "AllowedScopes": []
-            }
+            "upstreamhttpmethod": [ "get" ]
         },
         {
             "downstreampathtemplate": "/api/utility/gettiposcontrino",
@@ -38,11 +46,7 @@
                 }
             ],
             "upstreampathtemplate": "/gettiposcontrino",
-            "upstreamhttpmethod": [ "get" ],
-            "AuthenticationOptions": {
-                "AuthenticationProviderKey": "authGestioneSagre",
-                "AllowedScopes": []
-            }
+            "upstreamhttpmethod": [ "get" ]
         },
         {
             "downstreampathtemplate": "/api/utility/gettipopagamento",
@@ -54,11 +58,7 @@
                 }
             ],
             "upstreampathtemplate": "/gettipopagamento",
-            "upstreamhttpmethod": [ "get" ],
-            "AuthenticationOptions": {
-                "AuthenticationProviderKey": "authGestioneSagre",
-                "AllowedScopes": []
-            }
+            "upstreamhttpmethod": [ "get" ]
         },
         {
             "downstreampathtemplate": "/api/utility/getscontrinopagato",
@@ -70,11 +70,7 @@
                 }
             ],
             "upstreampathtemplate": "/getscontrinopagato",
-            "upstreamhttpmethod": [ "get" ],
-            "AuthenticationOptions": {
-                "AuthenticationProviderKey": "authGestioneSagre",
-                "AllowedScopes": []
-            }
+            "upstreamhttpmethod": [ "get" ]
         },
         {
             "downstreampathtemplate": "/api/utility/getscontrinostato",
@@ -86,47 +82,31 @@
                 }
             ],
             "upstreampathtemplate": "/getscontrinostato",
-            "upstreamhttpmethod": [ "get" ],
-            "AuthenticationOptions": {
-                "AuthenticationProviderKey": "authGestioneSagre",
-                "AllowedScopes": []
-            }
+            "upstreamhttpmethod": [ "get" ]
         },
         {
-            "DownstreamPathTemplate": "/api/autenticazione/login",
+            "DownstreamPathTemplate": "/api/dataprotection/data-protect",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "yarp-auth",
+                    "Host": "api-dataprotection",
                     "Port": 5001
                 }
             ],
-            "UpstreamPathTemplate": "/login",
+            "UpstreamPathTemplate": "/data-protect",
             "UpstreamHttpMethod": [ "Post" ]
         },
         {
-            "DownstreamPathTemplate": "/api/autenticazione/refresh",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
+            "downstreampathtemplate": "/api/dataprotection/data-unprotect",
+            "downstreamscheme": "http",
+            "downstreamhostandports": [
                 {
-                    "Host": "yarp-auth",
-                    "Port": 5001
+                    "host": "api-dataprotection",
+                    "port": 5001
                 }
             ],
-            "UpstreamPathTemplate": "/refresh",
-            "UpstreamHttpMethod": [ "Post" ]
-        },
-        {
-            "DownstreamPathTemplate": "/api/email/sendemail",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "yarp-email",
-                    "Port": 5001
-                }
-            ],
-            "UpstreamPathTemplate": "/sendemail",
-            "UpstreamHttpMethod": [ "Post" ]
+            "upstreampathtemplate": "/data-unprotect",
+            "upstreamhttpmethod": [ "Post" ]
         }
     ],
     "GlobalConfiguration": {}

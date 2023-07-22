@@ -2,8 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <Nullable>disable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
         <UserSecretsId>GestioneSagre.Gateway</UserSecretsId>
     </PropertyGroup>
 

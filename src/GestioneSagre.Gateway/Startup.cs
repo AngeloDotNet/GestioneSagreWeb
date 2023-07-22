@@ -1,10 +1,10 @@
-﻿using GestioneSagre.Gateway.BusinessLayer.Middleware;
-using GestioneSagre.Gateway.BusinessLayer.Options;
-
-namespace GestioneSagre.Gateway;
+﻿namespace GestioneSagre.Gateway;
 
 public class Startup
 {
+    private readonly string serviceName = "GestioneSagre.Gateway";
+    private readonly string swaggerName = "Gestione Sagre Gateway";
+
     public Startup(IConfiguration configuration)
     {
         Configuration = configuration;
@@ -15,46 +15,11 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
-        services.AddCors(options =>
-        {
-            options.AddPolicy("GestioneSagre", policy =>
-            {
-                policy.AllowAnyOrigin()
-                .AllowAnyHeader()
-                .AllowAnyMethod();
-            });
-        });
+        services.AddRegisterConfigureServices(Configuration, serviceName, swaggerName);
 
-        services.AddSerilogSeqServices();
-        services.AddSwaggerGenConfig("Gestione Sagre Gateway", "v1");
+        services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
+        services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 
-        var jwtConfig = Configuration.GetSection("JwtSettings");
-
-        services.AddAuthentication(options =>
-        {
-            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-        })
-        .AddJwtBearer(jwtConfig["AuthenticationScheme"], options =>
-        {
-            options.SaveToken = true;
-            options.RequireHttpsMetadata = false;
-            options.TokenValidationParameters = new TokenValidationParameters()
-            {
-                ValidateIssuer = true,
-                ValidIssuer = jwtConfig["Issuer"],
-                ValidateAudience = true,
-                ValidAudience = jwtConfig["Audience"],
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig["SecurityKey"])),
-                RequireExpirationTime = true,
-                ClockSkew = TimeSpan.Zero
-            };
-        });
-
-        services.Configure<SwaggerSettings>(Configuration.GetSection("SwaggerSettings"));
         services.AddOcelot(Configuration);
     }
 
@@ -62,18 +27,13 @@ public class Startup
     {
         IWebHostEnvironment env = app.Environment;
 
-        app.UseCors("GestioneSagre");
-        app.UseMiddleware<SwaggerAuthMiddleware>();
+        app.UseCors($"{serviceName}");
+        app.UseSwaggerUINoRoutePrefix($"{swaggerName} v1");
 
-        app.UseSwagger();
-        app.UseSwaggerUI(options =>
-        {
-            options.SwaggerEndpoint("/swagger/v1/swagger.json", "Gestione Sagre Gateway v1");
-        });
-
-        app.AddSerilogConfigureServices();
         app.UseRouting();
+        app.AddSerilogConfigureServices();
 
+        app.UseHealthChecksUI();
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllers();
