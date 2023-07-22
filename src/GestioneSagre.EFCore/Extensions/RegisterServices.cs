@@ -1,4 +1,10 @@
-﻿namespace GestioneSagre.EFCore.Extensions;
+﻿using GestioneSagre.EFCore.Models.InputModels;
+using GestioneSagre.EFCore.Models.ViewModels;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace GestioneSagre.EFCore.Extensions;
 
 public static class RegisterServices
 {

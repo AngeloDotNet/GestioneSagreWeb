@@ -1,4 +1,8 @@
-﻿namespace GestioneSagre.EFCore.UnitOfWork;
+﻿using GestioneSagre.EFCore.GenericRepository.Interfaces;
+using GestioneSagre.EFCore.UnitOfWork.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
+namespace GestioneSagre.EFCore.UnitOfWork;
 
 public class UnitOfWork<TEntity> : IUnitOfWork<TEntity> where TEntity : class, new()
 {
