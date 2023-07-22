@@ -1,10 +1,7 @@
 ﻿global using System.Net.Mime;
-global using System.Text;
-global using Microsoft.AspNetCore.Authentication.JwtBearer;
+global using GestioneSagre.Gateway.BusinessLayer.Extensions;
+global using GestioneSagre.GenericServices.Extensions;
 global using Microsoft.AspNetCore.Mvc;
-global using Microsoft.IdentityModel.Tokens;
-global using NET6CustomLibrary.Extensions;
-global using NET6CustomLibrary.Serilog.Services;
-global using NET6CustomLibrary.Swagger;
+global using Microsoft.AspNetCore.Server.Kestrel.Core;
 global using Ocelot.DependencyInjection;
 global using Ocelot.Middleware;

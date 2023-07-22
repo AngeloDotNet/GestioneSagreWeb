@@ -2,12 +2,13 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS base
 WORKDIR /src
 
 FROM base as deps
+
 WORKDIR /src/GestioneSagre.Gateway.BusinessLayer
 COPY ./src/GestioneSagre.Gateway.BusinessLayer/*.csproj .
-#WORKDIR /src/BES.OutboxPattern.DataAccessLayer
-#COPY ./src/BES.OutboxPattern.DataAccessLayer/*.csproj .
-#WORKDIR /src/BES.OutboxPattern.Shared
-#COPY ./src/BES.OutboxPattern.Shared/*.csproj .
+
+WORKDIR ./src/GestioneSagre.GenericServices
+COPY ./src/GestioneSagre.GenericServices/*.csproj .
+
 WORKDIR /src/GestioneSagre.Gateway
 COPY ./src/GestioneSagre.Gateway/*.json .
 COPY ./src/GestioneSagre.Gateway/*.csproj .
