@@ -1,4 +1,10 @@
-﻿namespace GestioneSagre.EFCore.GenericRepository;
+﻿using System.Linq.Expressions;
+using GestioneSagre.EFCore.GenericRepository.Interfaces;
+using GestioneSagre.EFCore.Models.Enums;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
+
+namespace GestioneSagre.EFCore.GenericRepository;
 
 public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, new()
 {
