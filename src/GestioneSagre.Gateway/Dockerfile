@@ -6,7 +6,7 @@ FROM base as deps
 WORKDIR /src/GestioneSagre.Gateway.BusinessLayer
 COPY ./src/GestioneSagre.Gateway.BusinessLayer/*.csproj .
 
-WORKDIR ./src/GestioneSagre.GenericServices
+WORKDIR /src/GestioneSagre.GenericServices
 COPY ./src/GestioneSagre.GenericServices/*.csproj .
 
 WORKDIR /src/GestioneSagre.Gateway
