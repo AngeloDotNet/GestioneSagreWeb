@@ -1,4 +1,8 @@
-﻿namespace GestioneSagre.GenericServices.Extensions;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Serilog;
+
+namespace GestioneSagre.GenericServices.Extensions;
 
 public static class SerilogExtensions
 {

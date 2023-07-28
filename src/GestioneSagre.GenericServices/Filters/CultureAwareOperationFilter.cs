@@ -1,4 +1,11 @@
-﻿namespace GestioneSagre.GenericServices.Filters;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Options;
+using Microsoft.Net.Http.Headers;
+using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
+
+namespace GestioneSagre.GenericServices.Filters;
 
 public class CultureAwareOperationFilter : IOperationFilter
 {

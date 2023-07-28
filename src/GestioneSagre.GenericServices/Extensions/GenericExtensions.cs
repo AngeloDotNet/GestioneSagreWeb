@@ -1,4 +1,6 @@
-﻿namespace GestioneSagre.GenericServices.Extensions;
+﻿using Microsoft.Extensions.DependencyInjection;
+
+namespace GestioneSagre.GenericServices.Extensions;
 
 public static class GenericExtensions
 {

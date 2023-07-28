@@ -1,4 +1,9 @@
-﻿namespace GestioneSagre.GenericServices.Extensions;
+﻿using GestioneSagre.GenericServices.Filters;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
+
+namespace GestioneSagre.GenericServices.Extensions;
 
 public static class SwaggerExtensions
 {
