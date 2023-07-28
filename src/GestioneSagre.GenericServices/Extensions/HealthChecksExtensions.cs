@@ -1,4 +1,11 @@
-﻿using static GestioneSagre.GenericServices.Models.HealthChecksToDatabaseExtensions;
+﻿using GestioneSagre.GenericServices.CustomHealthCheck;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using static GestioneSagre.GenericServices.Models.HealthChecksToDatabaseExtensions;
 using static GestioneSagre.GenericServices.Models.HealthChecksToWebExtensions;
 
 namespace GestioneSagre.GenericServices.Extensions;

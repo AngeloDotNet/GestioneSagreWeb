@@ -1,4 +1,6 @@
-﻿namespace GestioneSagre.GenericServices.CustomHealthCheck;
+﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
+
+namespace GestioneSagre.GenericServices.CustomHealthCheck;
 
 public class MemoryHealthCheck : IHealthCheck
 {
