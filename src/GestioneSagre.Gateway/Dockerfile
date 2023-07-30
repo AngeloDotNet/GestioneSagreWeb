@@ -15,7 +15,8 @@ COPY ./src/GestioneSagre.Gateway/*.json .
 COPY ./src/GestioneSagre.Gateway/*.csproj .
 
 COPY *.csproj .
-RUN dotnet restore
+#RUN dotnet restore
+RUN dotnet restore /src/GestioneSagre.Gateway/*.csproj
 
 FROM deps as build
 COPY . .
