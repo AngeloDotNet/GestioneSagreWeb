@@ -1,4 +1,7 @@
-﻿namespace GestioneSagre.Gateway.Controllers.Common;
+﻿using System.Net.Mime;
+using Microsoft.AspNetCore.Mvc;
+
+namespace GestioneSagre.Gateway.Controllers.Common;
 
 [ApiController]
 [Route("api/[controller]")]

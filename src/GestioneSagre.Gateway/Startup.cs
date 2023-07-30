@@ -1,4 +1,10 @@
-﻿namespace GestioneSagre.Gateway;
+﻿using GestioneSagre.Gateway.BusinessLayer.Extensions;
+using GestioneSagre.GenericServices.Extensions;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
+
+namespace GestioneSagre.Gateway;
 
 public class Startup
 {

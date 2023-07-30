@@ -1,4 +1,7 @@
-﻿using static GestioneSagre.GenericServices.Extensions.HealthChecksExtensions;
+﻿using GestioneSagre.GenericServices.Extensions;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using static GestioneSagre.GenericServices.Extensions.HealthChecksExtensions;
 using static GestioneSagre.GenericServices.Models.HealthChecksToDatabaseExtensions;
 using static GestioneSagre.GenericServices.Models.HealthChecksToWebExtensions;
 
