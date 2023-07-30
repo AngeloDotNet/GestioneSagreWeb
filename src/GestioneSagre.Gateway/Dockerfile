@@ -3,20 +3,18 @@ WORKDIR /src
 
 FROM base as deps
 
-WORKDIR /src/GestioneSagre.Gateway
-#WORKDIR /src/GestioneSagre.Gateway.BusinessLayer
+WORKDIR /src/GestioneSagre.Gateway.BusinessLayer
 COPY ./src/GestioneSagre.Gateway.BusinessLayer/*.csproj .
 
-#WORKDIR /src/GestioneSagre.GenericServices
+WORKDIR /src/GestioneSagre.GenericServices
 COPY ./src/GestioneSagre.GenericServices/*.csproj .
 
-#WORKDIR /src/GestioneSagre.Gateway
+WORKDIR /src/GestioneSagre.Gateway
 COPY ./src/GestioneSagre.Gateway/*.json .
 COPY ./src/GestioneSagre.Gateway/*.csproj .
 
-COPY *.csproj .
-#RUN dotnet restore
-RUN dotnet restore "GestioneSagre.Gateway.csproj"
+#COPY *.csproj .
+RUN dotnet restore
 
 FROM deps as build
 COPY . .
