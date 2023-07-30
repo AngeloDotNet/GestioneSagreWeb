@@ -63,13 +63,13 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-seq:latest
 
-      - name: Build and push WEBAPP
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          file: ./src/GestioneSagre.Web.App/Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-webapp:latest
+#      - name: Build and push WEBAPP
+#        uses: docker/build-push-action@v4
+#        with:
+#          context: .
+#          file: ./src/GestioneSagre.Web.App/Dockerfile
+#          push: true
+#          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-webapp:latest
 
       - name: Regenerate environments on Aruba
         uses: appleboy/ssh-action@master
