@@ -23,13 +23,13 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-#      - name: Build and push Gateway
-#        uses: docker/build-push-action@v4
-#        with:
-#          context: .
-#          file: ./src/GestioneSagre.Gateway/Dockerfile
-#          push: true
-#          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-gateway:latest
+      - name: Build and push Gateway
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./src/GestioneSagre.Gateway/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-gateway:latest
 
       - name: Build and push Redis
         uses: docker/build-push-action@v4
