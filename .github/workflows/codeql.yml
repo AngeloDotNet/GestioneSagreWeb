@@ -2,14 +2,14 @@ name: CodeQL
 
 on:
   push:
-    branches-ignore: [ main ]
-    paths: [ 'src/**' ]
-  pull_request:
-    branches: [ main, develop]
-    paths: [ 'src/**' ]
+  #  branches-ignore: [ main ]
+  #  paths: [ 'src/**' ]
+  #pull_request:
+  #  branches: [ main, develop]
+  #  paths: [ 'src/**' ]
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 1,15 * *'
+  #schedule:
+  #  - cron: '0 0 1,15 * *'
     
 env:
   NET_VERSION: '6.x'
