@@ -1,9 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>disable</Nullable>
+        <TargetFrameworks>net6.0</TargetFrameworks>
+        <Authors>Angelo Pirola</Authors>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/AngeloDotNet/GestioneSagreWeb</PackageProjectUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/AngeloDotNet/GestioneSagreWeb.git</RepositoryUrl>
+        <RepositoryBranch>main</RepositoryBranch>
     </PropertyGroup>
 
     <ItemGroup>
@@ -20,6 +24,10 @@
         <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="6.0.20" />
         <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="6.0.20" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+        <PackageReference Include="Nerdbank.GitVersioning" Version="3.4.240">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
         <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />

@@ -1,4 +1,6 @@
-﻿using GestioneSagre.GenericServices.CustomHealthCheck;
+﻿using System;
+using System.Collections.Generic;
+using GestioneSagre.GenericServices.CustomHealthCheck;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
