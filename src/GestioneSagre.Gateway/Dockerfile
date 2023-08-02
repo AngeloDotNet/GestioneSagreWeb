@@ -13,8 +13,8 @@ WORKDIR /src/GestioneSagre.Gateway
 COPY ./src/GestioneSagre.Gateway/*.json .
 COPY ./src/GestioneSagre.Gateway/*.csproj .
 
-COPY *.csproj .
-RUN dotnet restore
+#COPY *.csproj .
+RUN dotnet restore "GestioneSagre.Gateway.csproj"
 
 FROM deps as build
 COPY . .
