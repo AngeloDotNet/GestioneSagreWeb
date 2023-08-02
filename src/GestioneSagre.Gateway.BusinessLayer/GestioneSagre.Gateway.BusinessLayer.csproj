@@ -7,11 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="GestioneSagre.GenericServices" Version="1.0.2" />
         <PackageReference Include="Ocelot" Version="18.0.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\GestioneSagre.GenericServices\GestioneSagre.GenericServices.csproj" />
     </ItemGroup>
 
 </Project>
