@@ -8,6 +8,8 @@
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/AngeloDotNet/GestioneSagreWeb.git</RepositoryUrl>
         <RepositoryBranch>main</RepositoryBranch>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
@@ -25,8 +27,8 @@
         <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="6.0.20" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
         <PackageReference Include="Nerdbank.GitVersioning" Version="3.4.240">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />

@@ -3,12 +3,12 @@ name: Build and Pack GenericServices
 on:
   push:
     branches: [ main ]
-    paths: [ 'src/GestioneSagre.GenericServices/**' ]
+    paths: [ 'src/Tools/GestioneSagre.GenericServices/**' ]
   workflow_dispatch:
 
 env:
   NET_VERSION: '6.x'
-  PROJECT_NAME: src/GestioneSagre.GenericServices
+  PROJECT_NAME: src/Tools/GestioneSagre.GenericServices
   PROJECT_FILE: GestioneSagre.GenericServices.csproj
   RELEASE_NAME: GestioneSagre.GenericServices
 
