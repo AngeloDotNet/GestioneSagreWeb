@@ -3,8 +3,11 @@
     <PropertyGroup>
         <TargetFrameworks>net6.0</TargetFrameworks>
         <Authors>Angelo Pirola</Authors>
+        <Product>Gestione sagre entity framework core library extension</Product>
+        <Description>Open source dotnet entity framework core extension library for project gestione sagre</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/AngeloDotNet/GestioneSagreWeb</PackageProjectUrl>
+        <PackageIcon>LibraryTools.png</PackageIcon>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/AngeloDotNet/GestioneSagreWeb.git</RepositoryUrl>
         <RepositoryBranch>main</RepositoryBranch>
@@ -28,6 +31,13 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\..\LibraryTools.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
     </ItemGroup>
 
 </Project>
