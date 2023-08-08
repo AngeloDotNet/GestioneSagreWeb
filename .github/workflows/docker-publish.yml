@@ -1,8 +1,8 @@
 name: Push images to DockerHub
 
 on:
-  #push:
-  #  branches: [ "main" ]
+  push:
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
@@ -55,13 +55,13 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-seq:latest
 
-      - name: Build and push Gateway
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          file: ./src/GestioneSagre.Gateway/Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-gateway:latest
+      #- name: Build and push Gateway
+      #  uses: docker/build-push-action@v4
+      #  with:
+      #    context: .
+      #    file: ./src/GestioneSagre.Gateway/Dockerfile
+      #    push: true
+      #    tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-gateway:latest
 
       #- name: Build and push WEBAPP
       #  uses: docker/build-push-action@v4
