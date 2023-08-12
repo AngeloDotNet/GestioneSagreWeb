@@ -15,7 +15,8 @@ RUN dotnet restore
 
 FROM deps as build
 COPY . .
-RUN dotnet publish "GestioneSagre.Gateway.csproj" -c Release -o ../compiled
+#RUN dotnet publish "GestioneSagre.Gateway.csproj" -c Release -o ../compiled
+RUN dotnet publish -c Release -o ../compiled
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 as deploy
 ENV ASPNETCORE_URLS=http://*:5001
