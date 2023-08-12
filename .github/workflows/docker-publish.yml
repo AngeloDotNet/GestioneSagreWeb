@@ -59,7 +59,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
          context: .
-         file: ./src/GestioneSagre.Gateway/Dockerfile
+         file: ./src/Gateway/GestioneSagre.Gateway/Dockerfile
          push: true
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-gateway:latest
 
