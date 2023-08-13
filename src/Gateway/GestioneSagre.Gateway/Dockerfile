@@ -1,32 +1,27 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS base
-#WORKDIR /src
-WORKDIR /app
+WORKDIR /src
 
-#FROM base as deps
-#WORKDIR /src/GestioneSagre.Gateway.BusinessLayer
-#COPY ./src/Gateway/GestioneSagre.Gateway.BusinessLayer/*.csproj .
+FROM base as deps
 
-#WORKDIR /src/GestioneSagre.Gateway
-#COPY ./src/Gateway/GestioneSagre.Gateway/*.json .
-#COPY ./src/Gateway/GestioneSagre.Gateway/*.csproj .
+WORKDIR /src/GestioneSagre.Gateway.BusinessLayer
+COPY ./src/Gateway/GestioneSagre.Gateway.BusinessLayer/*.csproj .
+
+WORKDIR /src/GestioneSagre.Gateway
+COPY ./src/Gateway/GestioneSagre.Gateway/*.json .
+COPY ./src/Gateway/GestioneSagre.Gateway/*.csproj .
 
 #COPY *.csproj .
-#RUN dotnet restore
+RUN dotnet restore "GestioneSagre.Gateway.csproj"
 
-WORKDIR /src
-COPY ["./src/Gateway/GestioneSagre.Gateway.csproj", "GestioneSagre.Gateway/"]
-COPY ["./src/Gateway/GestioneSagre.Gateway.BusinessLayer.csproj", "GestioneSagre.Gateway.BusinessLayer/"]
-RUN dotnet restore "GestioneSagre.Gateway.BusinessLayer/GestioneSagre.Gateway.BusinessLayer.csproj"
+FROM deps as build
+COPY . .
+RUN dotnet publish "GestioneSagre.Gateway.csproj" -c Release -o ../compiled
 
-#FROM deps as build
-#COPY . .
-#RUN dotnet publish "GestioneSagre.Gateway.csproj" -c Release -o ../compiled
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 as deploy
+ENV ASPNETCORE_URLS=http://*:5001
+ENV ASPNETCORE_ENVIRONMENT="production"
 
-#FROM mcr.microsoft.com/dotnet/aspnet:6.0 as deploy
-#ENV ASPNETCORE_URLS=http://*:5001
-#ENV ASPNETCORE_ENVIRONMENT="production"
+COPY --from=build /src/compiled .
 
-#COPY --from=build /src/compiled .
-
-#EXPOSE 5001
-#ENTRYPOINT ["dotnet", "GestioneSagre.Gateway.dll"]
+EXPOSE 5001
+ENTRYPOINT ["dotnet", "GestioneSagre.Gateway.dll"]
