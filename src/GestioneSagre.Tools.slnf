@@ -1,9 +1,0 @@
-{
-  "solution": {
-    "path": "..\\GestioneSagreWeb.sln",
-    "projects": [
-      "src\\Tools\\GestioneSagre.EFCore\\GestioneSagre.EFCore.csproj",
-      "src\\Tools\\GestioneSagre.GenericServices\\GestioneSagre.GenericServices.csproj"
-    ]
-  }
-}
