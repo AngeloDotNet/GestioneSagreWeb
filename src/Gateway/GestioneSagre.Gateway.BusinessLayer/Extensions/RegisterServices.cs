@@ -30,25 +30,25 @@ public static class RegisterServices
                 //new HealthChecksWebExtensions(envDev["Swagger-DataProtection"], "WebApi Data Protection", tagsSwagger, pollingSwagger)
             };
 
-            //listDatabase = new List<HealthChecksDatabaseExtensions>()
-            //{
-            //    new HealthChecksDatabaseExtensions(envDev["SQLServer-DataProtection"], "SQL Server Data Protection", tagsDatabase, pollingDatabase),
+            listDatabase = new List<HealthChecksDatabaseExtensions>()
+            {
+                new HealthChecksDatabaseExtensions(envDev["SQLServer-DataProtection"], "SQL Server Data Protection", tagsDatabase, pollingDatabase),
             //    new HealthChecksDatabaseExtensions(envDev["SQLServer-Utility"], "SQL Server Utility", tagsDatabase, pollingDatabase)
-            //};
+            };
         }
         else
         {
             listSwagger = new List<HealthChecksWebExtensions>()
             {
-                new HealthChecksWebExtensions($"http://{envProd["Swagger-Hostname"]}:5100/swagger/index.html", "WebApi Gateway", tagsSwagger, pollingSwagger),
+                new HealthChecksWebExtensions($"http://{envProd["Swagger-Hostname"]}:5001/swagger/index.html", "WebApi Gateway", tagsSwagger, pollingSwagger),
                 //new HealthChecksWebExtensions(envProd["Swagger-DataProtection"], "WebApi Data Protection", tagsSwagger, pollingSwagger)
             };
 
-            //listDatabase = new List<HealthChecksDatabaseExtensions>()
-            //{
-            //    new HealthChecksDatabaseExtensions(envProd["SQLServer-DataProtection"], "SQL Server Data Protection", tagsDatabase, pollingDatabase),
-            //    new HealthChecksDatabaseExtensions(envProd["SQLServer-Utility"], "SQL Server Utility", tagsDatabase, pollingDatabase)
-            //};
+            listDatabase = new List<HealthChecksDatabaseExtensions>()
+            {
+                new HealthChecksDatabaseExtensions(envProd["SQLServer-DataProtection"], "SQL Server Data Protection", tagsDatabase, pollingDatabase),
+                //new HealthChecksDatabaseExtensions(envProd["SQLServer-Utility"], "SQL Server Utility", tagsDatabase, pollingDatabase)
+            };
         }
 
         services.AddPolicyCors(serviceName);
