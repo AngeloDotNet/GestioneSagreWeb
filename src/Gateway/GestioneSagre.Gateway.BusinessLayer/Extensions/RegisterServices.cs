@@ -14,19 +14,19 @@ public static class RegisterServices
         var envProd = configuration.GetSection("EnvironmentProd");
 
         var tagsSwagger = new[] { "webapi", "swagger" };
-        //var tagsDatabase = new[] { "database", "sqlserver" };
+        var tagsDatabase = new[] { "database", "sqlserver" };
 
         var listSwagger = new List<HealthChecksWebExtensions>();
         var listDatabase = new List<HealthChecksDatabaseExtensions>();
 
         var pollingSwagger = 15;
-        //var pollingDatabase = 30;
+        var pollingDatabase = 30;
 
         if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
         {
             listSwagger = new List<HealthChecksWebExtensions>()
             {
-                new HealthChecksWebExtensions(envDev["Swagger-Gateway"], "WebApi Gateway", tagsSwagger, pollingSwagger),
+                new HealthChecksWebExtensions($"http://{envDev["Swagger-Hostname"]}:5179/swagger/index.html", "WebApi Gateway", tagsSwagger, pollingSwagger),
                 //new HealthChecksWebExtensions(envDev["Swagger-DataProtection"], "WebApi Data Protection", tagsSwagger, pollingSwagger)
             };
 
@@ -40,7 +40,7 @@ public static class RegisterServices
         {
             listSwagger = new List<HealthChecksWebExtensions>()
             {
-                new HealthChecksWebExtensions(envProd["Swagger-Gateway"], "WebApi Gateway", tagsSwagger, pollingSwagger),
+                new HealthChecksWebExtensions($"http://{envProd["Swagger-Hostname"]}:5100/swagger/index.html", "WebApi Gateway", tagsSwagger, pollingSwagger),
                 //new HealthChecksWebExtensions(envProd["Swagger-DataProtection"], "WebApi Data Protection", tagsSwagger, pollingSwagger)
             };
 
