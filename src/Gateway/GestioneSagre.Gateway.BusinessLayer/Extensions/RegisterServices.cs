@@ -26,7 +26,7 @@ public static class RegisterServices
         {
             listSwagger = new List<HealthChecksWebExtensions>()
             {
-                new HealthChecksWebExtensions($"http://{envDev["Swagger-Hostname"]}:5179/swagger/index.html", "WebApi Gateway", tagsSwagger, pollingSwagger),
+                new HealthChecksWebExtensions("http://localhost:5179/swagger/index.html", "WebApi Gateway", tagsSwagger, pollingSwagger),
                 //new HealthChecksWebExtensions(envDev["Swagger-DataProtection"], "WebApi Data Protection", tagsSwagger, pollingSwagger)
             };
 
@@ -40,7 +40,7 @@ public static class RegisterServices
         {
             listSwagger = new List<HealthChecksWebExtensions>()
             {
-                new HealthChecksWebExtensions($"http://{envProd["Swagger-Hostname"]}:5001/swagger/index.html", "WebApi Gateway", tagsSwagger, pollingSwagger),
+                new HealthChecksWebExtensions("http://api-gateway:5001/swagger/index.html", "WebApi Gateway", tagsSwagger, pollingSwagger),
                 //new HealthChecksWebExtensions(envProd["Swagger-DataProtection"], "WebApi Data Protection", tagsSwagger, pollingSwagger)
             };
 
