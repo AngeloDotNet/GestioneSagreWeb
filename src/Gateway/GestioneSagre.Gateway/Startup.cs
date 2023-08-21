@@ -39,10 +39,14 @@ public class Startup
         app.UseRouting();
         app.AddSerilogConfigureServices();
 
-        app.UseHealthChecksUI();
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllers();
+            endpoints.MapHealthChecks();
+            //endpoints.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions()
+            //{
+            //    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+            //});
         });
 
         app.UseOcelot().Wait();
