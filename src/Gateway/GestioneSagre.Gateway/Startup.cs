@@ -43,10 +43,6 @@ public class Startup
         {
             endpoints.MapControllers();
             endpoints.MapHealthChecks();
-            //endpoints.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions()
-            //{
-            //    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
-            //});
         });
 
         app.UseOcelot().Wait();
