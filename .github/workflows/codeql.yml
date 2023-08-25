@@ -1,9 +1,9 @@
 name: CodeQL
 
 on:
-  #push:
-    # branches-ignore: [ main ]
-    # paths: [ 'src/**' ]
+  push:
+    branches-ignore: [ main ]
+    paths: [ 'src/**' ]
   #pull_request:
   #  branches: [ main, develop]
   #  paths: [ 'src/**' ]

@@ -1,9 +1,9 @@
 name: Lint Code Base
 
 on:
-  #push:
-    # branches-ignore: [ main ]
-    # paths: [ 'src/**' ]
+  push:
+    branches-ignore: [ main ]
+    paths: [ 'src/**' ]
   #pull_request:   
   #  branches: [ main, develop ]
   #  paths: [ 'src/**' ]    
@@ -15,17 +15,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
+    - name: Checkout Code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
 
-      - name: Lint Code Base
-        uses: github/super-linter@v4
-        env:
-          LINTER_RULES_PATH: '.'
-          EDITORCONFIG_FILE_NAME: '.editorconfig'
-          VALIDATE_ALL_CODEBASE: false
-          VALIDATE_CSHARP: true
-          DEFAULT_BRANCH: master
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Lint Code Base
+      uses: github/super-linter@v4
+      env:
+        LINTER_RULES_PATH: '.'
+        EDITORCONFIG_FILE_NAME: '.editorconfig'
+        VALIDATE_ALL_CODEBASE: false
+        VALIDATE_CSHARP: true
+        DEFAULT_BRANCH: master
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
