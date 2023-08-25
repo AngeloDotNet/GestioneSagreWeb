@@ -55,9 +55,14 @@ services:
     ports:
       - 5101:5001
 
-#  api-dataprotection:
-#    restart: "always"
-#    volumes:
-#      - /docker/storage/storage-data-protection/appsettings.json:/appsettings.json
-#    ports:
-#      - 5100:5001
+  aggregator:
+    restart: "always"
+    ports:
+      - 5102:5001
+
+  api-dataprotection:
+    restart: "always"
+    volumes:
+      - /docker/storage/storage-data-protection/appsettings.json:/appsettings.json
+    ports:
+      - 5103:5001

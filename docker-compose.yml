@@ -56,14 +56,23 @@ services:
     networks:
       - lan-network
 
-#  api-dataprotection:
-#    image: angelo87dock/gsweb-dataprotection
-#    container_name: api-dataprotection
-#    build:
-#      context: .
-#      dockerfile: src/GestioneSagre.DataProtection/Dockerfile
-#    networks:
-#      - lan-network
+  aggregator:
+    image: angelo87dock/gsweb-aggregator
+    container_name: aggregator
+    build:
+      context: .
+      dockerfile: src/GestioneSagre.Aggregator/Dockerfile
+    networks:
+      - lan-network
+
+  api-dataprotection:
+    image: angelo87dock/gsweb-dataprotection
+    container_name: api-dataprotection
+    build:
+      context: .
+      dockerfile: src/GestioneSagre.DataProtection/Dockerfile
+    networks:
+      - lan-network
 
 networks:
   lan-network:
