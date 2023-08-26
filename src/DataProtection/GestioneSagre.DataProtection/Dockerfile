@@ -4,16 +4,16 @@ WORKDIR /src
 FROM base as deps
 
 WORKDIR /src/GestioneSagre.DataProtection.BusinessLayer
-COPY ./src/GestioneSagre.DataProtection.BusinessLayer/*.csproj .
+COPY ./src/DataProtection/GestioneSagre.DataProtection.BusinessLayer/*.csproj .
 
 WORKDIR /src/GestioneSagre.DataProtection.DataAccessLayer
-COPY ./src/GestioneSagre.DataProtection.DataAccessLayer/*.csproj .
+COPY ./src/DataProtection/GestioneSagre.DataProtection.DataAccessLayer/*.csproj .
 
 WORKDIR /src/GestioneSagre.DataProtection.Shared
-COPY ./src/GestioneSagre.DataProtection.Shared/*.csproj .
+COPY ./src/DataProtection/GestioneSagre.DataProtection.Shared/*.csproj .
 
 WORKDIR /src/GestioneSagre.DataProtection
-COPY ./src/GestioneSagre.DataProtection/*.csproj .
+COPY ./src/DataProtection/GestioneSagre.DataProtection/*.csproj .
 
 #COPY *.csproj .
 RUN dotnet restore "GestioneSagre.DataProtection.csproj"
