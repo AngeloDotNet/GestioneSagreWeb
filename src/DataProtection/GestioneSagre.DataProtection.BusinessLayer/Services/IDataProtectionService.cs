@@ -1,4 +1,7 @@
-﻿namespace GestioneSagre.DataProtection.BusinessLayer.Commands;
+﻿using GestioneSagre.DataProtection.Shared.Models.InputModels;
+using GestioneSagre.DataProtection.Shared.Models.ViewModels;
+
+namespace GestioneSagre.DataProtection.BusinessLayer.Commands;
 
 public interface IDataProtectionService
 {
