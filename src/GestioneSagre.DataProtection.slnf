@@ -1,0 +1,12 @@
+{
+  "solution": {
+    "path": "..\\GestioneSagreWeb.sln",
+    "projects": [
+      "src\\DataProtection\\GestioneSagre.DataProtection.BusinessLayer\\GestioneSagre.DataProtection.BusinessLayer.csproj",
+      "src\\DataProtection\\GestioneSagre.DataProtection.DataAccessLayer\\GestioneSagre.DataProtection.DataAccessLayer.csproj",
+      "src\\DataProtection\\GestioneSagre.DataProtection.IntegrationTest\\GestioneSagre.DataProtection.IntegrationTest.csproj",
+      "src\\DataProtection\\GestioneSagre.DataProtection.Shared\\GestioneSagre.DataProtection.Shared.csproj",
+      "src\\DataProtection\\GestioneSagre.DataProtection\\GestioneSagre.DataProtection.csproj"
+    ]
+  }
+}
