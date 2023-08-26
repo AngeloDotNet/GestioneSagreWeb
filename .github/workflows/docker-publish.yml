@@ -71,13 +71,13 @@ jobs:
       #    push: true
       #    tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-aggregator:latest
 
-      # - name: Build and push Data Protection
-      #   uses: docker/build-push-action@v4
-      #   with:
-      #    context: .
-      #    file: ./src/DataProtection/GestioneSagre.DataProtection/Dockerfile
-      #    push: true
-      #    tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-dataprotection:latest
+      - name: Build and push Data Protection
+        uses: docker/build-push-action@v4
+        with:
+         context: .
+         file: ./src/DataProtection/GestioneSagre.DataProtection/Dockerfile
+         push: true
+         tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-dataprotection:latest
 
       #- name: Build and push WEBAPP
       #  uses: docker/build-push-action@v4
