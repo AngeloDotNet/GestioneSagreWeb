@@ -3,6 +3,7 @@ name: Push Data Protection to DockerHub
 on:
   push:
     branches: [ "main" ]
+    paths: [ '/src/DataProtection/**' ]
   workflow_dispatch:
 
 jobs:
