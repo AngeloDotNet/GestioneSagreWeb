@@ -3,8 +3,11 @@ version: '3.7'
 services:
   api-gateway:
     restart: "always"
+    environment:
+      - ASPNETCORE_ENVIRONMENT="production"
+      - ASPNETCORE_URLS=http://*:5001
     volumes:
-      - /docker/storage/storage-gateway/appsettings.json:/appsettings.json
+      - /docker/storage/storage-gateway/appsettings.json:/app/appsettings.json
     ports:
       - 5100:5001
 
@@ -52,8 +55,11 @@ services:
 
   webapp:
     restart: "always"
+    environment:
+      - ASPNETCORE_ENVIRONMENT="production"
+      - ASPNETCORE_URLS=http://*:5001
     ports:
-      - 5101:5001
+      - 5103:5001
 
   aggregator:
     restart: "always"
@@ -62,7 +68,10 @@ services:
 
   api-dataprotection:
     restart: "always"
+    environment:
+      - ASPNETCORE_ENVIRONMENT="production"
+      - ASPNETCORE_URLS=http://*:5001
     volumes:
-      - /docker/storage/storage-data-protection/appsettings.json:/appsettings.json
+      - /docker/storage/storage-data-protection/appsettings.json:/app/appsettings.json
     ports:
-      - 5103:5001
+      - 5101:5001
