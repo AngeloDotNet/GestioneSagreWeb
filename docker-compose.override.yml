@@ -15,8 +15,8 @@ services:
     restart: "always"
     volumes:
       - /docker/storage/storage-redis/data:/data
-#    ports:
-#      - "6379:6379"
+    ports:
+      - "6379:6379"
 
   rabbitmq:
     restart: "always"
@@ -40,8 +40,8 @@ services:
       - TZ=Europe/Rome
     volumes:
       - /docker/storage/storage-sqlserver/data:/var/opt/mssql/data
-#    ports:
-#      - 1433:1433
+    ports:
+      - 1433:1433
 
   seq-log:
     restart: "always"
@@ -63,6 +63,11 @@ services:
 
   aggregator:
     restart: "always"
+    environment:
+      - ASPNETCORE_ENVIRONMENT="production"
+      - ASPNETCORE_URLS=http://*:5001
+    volumes:
+      - /docker/storage/storage-aggregator/appsettings.json:/app/appsettings.json
     ports:
       - 5102:5001
 
