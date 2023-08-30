@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  NET_VERSION: '6.x'
+  NET_VERSION: "6.0.x"
 
 jobs:
   build:
@@ -17,14 +17,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
+      # with:
+        # fetch-depth: 0
     
     - name: Setup .NET SDK ${{ env.NET_VERSION }}
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ env.NET_VERSION }}
-        dotnet-quality: 'ga'
+        # dotnet-quality: 'ga'
         
     - name: Restore dependencies
       run: dotnet restore

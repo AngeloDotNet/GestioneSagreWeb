@@ -2,17 +2,24 @@ name: CodeQL
 
 on:
   push:
-    branches-ignore: [ main ]
+    # branches-ignore: [ main ]
+    branches: [ main ]
     paths: [ 'src/**' ]
+    paths-ignore:
+      - "README.md"
+      - ".github/workflows/**.yml"
+      - "docs/**"
+      - "**/*.md"
+      - "**/*.yml"
   #pull_request:
   #  branches: [ main, develop]
   #  paths: [ 'src/**' ]
   workflow_dispatch:
-  #schedule:
-    # - cron: '0 0 1,15 * *'
+  schedule:
+    - cron: '0 0 1,15 * *'
     
 env:
-  NET_VERSION: '6.x'
+  NET_VERSION: "6.0.x"
     
 jobs:
   analyze:
@@ -26,19 +33,19 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'csharp' ]
+        language: ["csharp"]
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
+      # with:
+        # fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
         
-    - name: Setup .NET SDK ${{ env.NET_VERSION }}
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: ${{ env.NET_VERSION }}
-        dotnet-quality: 'ga'
+    # - name: Setup .NET SDK ${{ env.NET_VERSION }}
+      # uses: actions/setup-dotnet@v3
+      # with:
+        # dotnet-version: ${{ env.NET_VERSION }}
+        # dotnet-quality: 'ga'
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
