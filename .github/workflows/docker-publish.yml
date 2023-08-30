@@ -1,4 +1,4 @@
-name: Push images to DockerHub
+name: Push infrastructure and Gateway to DockerHub
 
 on:
   push:
@@ -63,30 +63,6 @@ jobs:
          file: ./src/Gateway/GestioneSagre.Gateway/Dockerfile
          push: true
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-gateway:latest
-
-      # - name: Build and push Aggregator
-      #   uses: docker/build-push-action@v4
-      #   with:
-      #    context: .
-      #    file: ./src/Aggregator/GestioneSagre.Aggregator/Dockerfile
-      #    push: true
-      #    tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-aggregator:latest
-
-      # - name: Build and push Data Protection
-      #   uses: docker/build-push-action@v4
-      #   with:
-      #    context: .
-      #    file: ./src/DataProtection/GestioneSagre.DataProtection/Dockerfile
-      #    push: true
-      #    tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-dataprotection:latest
-
-      #- name: Build and push WEBAPP
-      #  uses: docker/build-push-action@v4
-      #  with:
-      #    context: .
-      #    file: ./src/GestioneSagre.Web.App/Dockerfile
-      #    push: true
-      #    tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-webapp:latest
 
       - name: Regenerate environments on Aruba
         uses: appleboy/ssh-action@master
