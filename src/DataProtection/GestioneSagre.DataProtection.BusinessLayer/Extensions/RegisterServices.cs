@@ -15,8 +15,13 @@ public static class RegisterServices
     {
         var customServices = configuration.GetSection("PointAPI");
         var connectionSystem = configuration.GetSection("ConnectionStrings");
+        var serverService = configuration.GetSection("Servers");
 
         var connectionString = string.Empty;
+        var connStringSeq = serverService["Seq-Host"];
+        var SeqApiKey = serverService["Seq-ApiKey"];
+        var tagsAPI = new[] { "web api", "swagger" };
+        var tagsSQLServer = new[] { "database", "sqlserver" };
 
         if (connectionSystem["TypeStartup"] == "Default")
         {
@@ -31,10 +36,8 @@ public static class RegisterServices
         services.AddSerilogSeqServices();
 
         services.AddSwaggerGenConfig($"{swaggerName}", "v1");
-        services.AddHealthChecks()
-            .AddProcessAllocatedMemoryHealthCheck(100, name: "Allocated Memory")
-            .AddUrlGroup(new Uri(customServices["Url"]), customServices["Name"], HealthStatus.Degraded, new[] { "web api", "swagger" })
-            .AddSqlServer(connectionString, null, "DataBase Service", HealthStatus.Degraded, new[] { "database", "sqlserver" });
+        services.AddHealthChecks().AddSqlServer(connectionString, null, "DataBase Service", HealthStatus.Degraded, tagsSQLServer);
+        services.AddCustomHealthChecks(customServices["Url"], customServices["Name"], tagsAPI, connStringSeq, SeqApiKey);
 
         services.AddDbContextSQLServer<ApplicationDbContext>(connectionString);
         services.AddTransient<IDataProtectionService, DataProtectionService>();
