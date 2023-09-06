@@ -10,8 +10,7 @@ If you found this Implementation helpful or used it in your Projects, do give it
 
 [![.NET Build and Test](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/dotnet.yml)
 [![Lint Code Base](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/linter.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/linter.yml)
-[![Push infrastructure and Gateway to DockerHub](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/docker-publish.yml)
-[![Push Data Protection to DockerHub](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/push-dataprotection.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/push-dataprotection.yml)
+[![Push to DockerHub](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/docker-publish.yml)
 
 ## License
 
