@@ -11,48 +11,6 @@ services:
     ports:
       - 5100:5001
 
-  redis:
-    restart: "always"
-    volumes:
-      - /docker/storage/storage-redis/data:/data
-    ports:
-      - "6379:6379"
-
-  rabbitmq:
-    restart: "always"
-    environment:
-      - RABBITMQ_DEFAULT_USER=CHANGE-ME
-      - RABBITMQ_DEFAULT_PASS=CHANGE-ME
-      - RABBITMQ_NODENAME=rabbit@localhost
-    volumes:
-      - /docker/storage/storage-rabbitmq/files:/var/lib/rabbitmq
-      - /docker/storage/storage-rabbitmq/logs:/var/log/rabbitmq/log
-    ports:
-      - 5672:5672
-      - 15672:15672
-
-  sqlserver:
-    restart: "always"
-    environment:
-      - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=CHANGE-ME
-      - MSSQL_PID=Express
-      - TZ=Europe/Rome
-    volumes:
-      - /docker/storage/storage-sqlserver/data:/var/opt/mssql/data
-    ports:
-      - 1433:1433
-
-  seq-log:
-    restart: "always"
-    environment:
-      - ACCEPT_EULA=Y
-    volumes:
-      - /docker/storage/storage-seq/data:/data
-    ports:
-      - 5090:80
-      - 5341:5341
-
   webapp:
     restart: "always"
     environment:
