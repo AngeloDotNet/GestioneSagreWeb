@@ -2,6 +2,11 @@
 
 Open source project that was born with the idea of wanting to create free software that allows the management of festivals, events or shows where it is necessary to check orders for the kitchen and/or bar
 
+## Related projects
+
+- [Gestione Sagre Web Infrastructure](https://github.com/AngeloDotNet/GestioneSagreWeb.Infrastructure)
+- [Gestione Sagre Web Tools](https://github.com/AngeloDotNet/GestioneSagreWeb.Tools)
+
 ## Support
 
 If you found this Implementation helpful or used it in your Projects, do give it a ⭐ (or follow me) on Github. Thanks!
