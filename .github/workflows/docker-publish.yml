@@ -7,6 +7,7 @@ on:
     paths:
         - '/src/Gateway/GestioneSagre.Gateway/**'
         - '/src/DataProtection/GestioneSagre.DataProtection/**'
+        - '/src/Aggregator/GestioneSagre.Aggregator/**'
   workflow_dispatch:
 
 jobs:
@@ -27,38 +28,6 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      # - name: Build and push Redis
-      #   uses: docker/build-push-action@v4
-      #   with:
-      #     context: .
-      #     file: ./docker/redis/Dockerfile
-      #     push: true
-      #     tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-redis:latest
-
-      # - name: Build and push RabbitMQ
-      #   uses: docker/build-push-action@v4
-      #   with:
-      #     context: .
-      #     file: ./docker/rabbitmq/Dockerfile
-      #     push: true
-      #     tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-rabbitmq:latest
-
-      # - name: Build and push SQLServer
-      #   uses: docker/build-push-action@v4
-      #   with:
-      #     context: .
-      #     file: ./docker/sqlserver/Dockerfile
-      #     push: true
-      #     tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-sqlserver:latest
-
-      # - name: Build and push SEQ
-      #   uses: docker/build-push-action@v4
-      #   with:
-      #     context: .
-      #     file: ./docker/seq/Dockerfile
-      #     push: true
-      #     tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-seq:latest
-
       - name: Build and push Gateway
         uses: docker/build-push-action@v4
         with:
@@ -74,6 +43,14 @@ jobs:
          file: ./src/DataProtection/GestioneSagre.DataProtection/Dockerfile
          push: true
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-dataprotection:latest
+         
+      - name: Build and push Aggregator
+        uses: docker/build-push-action@v4
+        with:
+         context: .
+         file: ./src/Aggregator/GestioneSagre.Aggregator/Dockerfile
+         push: true
+         tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-aggregator:latest
 
       - name: Regenerate environments on Aruba
         uses: appleboy/ssh-action@master
