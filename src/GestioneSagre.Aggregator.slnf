@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "..\\GestioneSagreWeb.sln",
+    "projects": [
+      "src\\Aggregator\\GestioneSagre.Aggregator\\GestioneSagre.Aggregator.csproj"
+    ]
+  }
+}
