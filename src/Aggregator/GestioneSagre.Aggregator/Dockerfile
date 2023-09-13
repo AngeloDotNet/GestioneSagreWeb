@@ -5,7 +5,7 @@ EXPOSE 5001
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["src/Aggregator/GestioneSagre.Aggregator/GestioneSagre.Aggregator.csproj", "src/Aggregator/GestioneSagre.Aggregator/"]
-COPY ["src/Aggregator/GestioneSagre.Aggregator/dotnet.css", "src/Aggregator/GestioneSagre.Aggregator/"]
+#COPY ["src/Aggregator/GestioneSagre.Aggregator/dotnet.css", "src/Aggregator/GestioneSagre.Aggregator/"]
 COPY ["src/Aggregator/GestioneSagre.Aggregator.Shared/GestioneSagre.Aggregator.Shared.csproj", "src/Aggregator/GestioneSagre.Aggregator.Shared/"]
 RUN dotnet restore "src/Aggregator/GestioneSagre.Aggregator/GestioneSagre.Aggregator.csproj"
 COPY . .
