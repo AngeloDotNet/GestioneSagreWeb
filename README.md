@@ -2,6 +2,14 @@
 
 Open source project that was born with the idea of wanting to create free software that allows the management of festivals, events or shows where it is necessary to check orders for the kitchen and/or bar
 
+## Apply migrations
+
+Add-Migration MIGRATION -Project GestioneSagre.PROJECT.DataAccessLayer
+Update-Database -Project GestioneSagre.PROJECT.DataAccessLayer
+
+Example MIGRATION: InitialMigration
+Example PROJECT: Utility
+
 ## Related projects
 
 - [Gestione Sagre Web Infrastructure](https://github.com/AngeloDotNet/GestioneSagreWeb.Infrastructure)
