@@ -1,3 +1,5 @@
+using GestioneSagre.GenericServices.Extensions;
+
 namespace GestioneSagre.DataProtection;
 
 public class Program

@@ -1,4 +1,10 @@
-﻿namespace GestioneSagre.DataProtection.Controllers;
+﻿using GestioneSagre.DataProtection.BusinessLayer.Commands;
+using GestioneSagre.DataProtection.Controllers.Common;
+using GestioneSagre.DataProtection.Shared.Models.InputModels;
+using GestioneSagre.DataProtection.Shared.Models.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace GestioneSagre.DataProtection.Controllers;
 
 public class DataProtectionController : BaseController
 {
