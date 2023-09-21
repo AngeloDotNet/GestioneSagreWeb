@@ -49,7 +49,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Utility.DataA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Utility.Shared", "src\Utility\GestioneSagre.Utility.Shared\GestioneSagre.Utility.Shared.csproj", "{A0A6C6E0-B60D-4F69-9647-8D4AA3DF46E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestioneSagre.Utility.IntegrationTest", "src\Utility\GestioneSagre.Utility.IntegrationTest\GestioneSagre.Utility.IntegrationTest.csproj", "{D990EBE0-447C-4C94-B491-2AC5332C4AB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Utility.IntegrationTest", "src\Utility\GestioneSagre.Utility.IntegrationTest\GestioneSagre.Utility.IntegrationTest.csproj", "{D990EBE0-447C-4C94-B491-2AC5332C4AB4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Utility.BusinessLayer.Test", "src\Utility\GestioneSagre.Utility.BusinessLayer.Test\GestioneSagre.Utility.BusinessLayer.Test.csproj", "{4731A526-DC16-4E1F-AC0A-67C642B2FB28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Utility.DataAccessLayer.Test", "src\Utility\GestioneSagre.Utility.DataAccessLayer.Test\GestioneSagre.Utility.DataAccessLayer.Test.csproj", "{D4D729ED-94E9-48FD-ACDF-C65C7B91839A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prodotti", "Prodotti", "{E8D0A49A-F8A6-40D3-AD7E-251A3F2F32BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Prodotti", "src\Prodotti\GestioneSagre.Prodotti\GestioneSagre.Prodotti.csproj", "{7D99BC64-D5E1-4C1E-8FB5-8BCB5ABC45F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Prodotti.BusinessLayer", "src\Prodotti\GestioneSagre.Prodotti.BusinessLayer\GestioneSagre.Prodotti.BusinessLayer.csproj", "{739F9468-469A-451C-8F5F-FC47CC407ADE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Prodotti.BusinessLayer.Test", "src\Prodotti\GestioneSagre.Prodotti.BusinessLayer.Test\GestioneSagre.Prodotti.BusinessLayer.Test.csproj", "{C316DF1A-DFAD-499C-9279-33F1BAFE3B8A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Prodotti.DataAccessLayer", "src\Prodotti\GestioneSagre.Prodotti.DataAccessLayer\GestioneSagre.Prodotti.DataAccessLayer.csproj", "{38C4E59F-A5ED-4052-8EEF-3ACF00CEFD37}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Prodotti.DataAccessLayer.Test", "src\Prodotti\GestioneSagre.Prodotti.DataAccessLayer.Test\GestioneSagre.Prodotti.DataAccessLayer.Test.csproj", "{EC039ACC-7EC4-4B4A-BFF4-4173C4065D03}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Prodotti.IntegrationTest", "src\Prodotti\GestioneSagre.Prodotti.IntegrationTest\GestioneSagre.Prodotti.IntegrationTest.csproj", "{9E758D60-CA22-4ED8-B517-7E4BEAECCA69}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Prodotti.Shared", "src\Prodotti\GestioneSagre.Prodotti.Shared\GestioneSagre.Prodotti.Shared.csproj", "{50134270-DA3A-4DC8-8179-6EC49844A4B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.ReverseProxy", "src\ReverseProxy\GestioneSagre.ReverseProxy\GestioneSagre.ReverseProxy.csproj", "{7BCFCEE1-ADB9-4163-95A1-CE1A8FD3B3F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +139,46 @@ Global
 		{D990EBE0-447C-4C94-B491-2AC5332C4AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D990EBE0-447C-4C94-B491-2AC5332C4AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D990EBE0-447C-4C94-B491-2AC5332C4AB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4731A526-DC16-4E1F-AC0A-67C642B2FB28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4731A526-DC16-4E1F-AC0A-67C642B2FB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4731A526-DC16-4E1F-AC0A-67C642B2FB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4731A526-DC16-4E1F-AC0A-67C642B2FB28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4D729ED-94E9-48FD-ACDF-C65C7B91839A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4D729ED-94E9-48FD-ACDF-C65C7B91839A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4D729ED-94E9-48FD-ACDF-C65C7B91839A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4D729ED-94E9-48FD-ACDF-C65C7B91839A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D99BC64-D5E1-4C1E-8FB5-8BCB5ABC45F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D99BC64-D5E1-4C1E-8FB5-8BCB5ABC45F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D99BC64-D5E1-4C1E-8FB5-8BCB5ABC45F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D99BC64-D5E1-4C1E-8FB5-8BCB5ABC45F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{739F9468-469A-451C-8F5F-FC47CC407ADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{739F9468-469A-451C-8F5F-FC47CC407ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{739F9468-469A-451C-8F5F-FC47CC407ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{739F9468-469A-451C-8F5F-FC47CC407ADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C316DF1A-DFAD-499C-9279-33F1BAFE3B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C316DF1A-DFAD-499C-9279-33F1BAFE3B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C316DF1A-DFAD-499C-9279-33F1BAFE3B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C316DF1A-DFAD-499C-9279-33F1BAFE3B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C4E59F-A5ED-4052-8EEF-3ACF00CEFD37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C4E59F-A5ED-4052-8EEF-3ACF00CEFD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C4E59F-A5ED-4052-8EEF-3ACF00CEFD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C4E59F-A5ED-4052-8EEF-3ACF00CEFD37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC039ACC-7EC4-4B4A-BFF4-4173C4065D03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC039ACC-7EC4-4B4A-BFF4-4173C4065D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC039ACC-7EC4-4B4A-BFF4-4173C4065D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC039ACC-7EC4-4B4A-BFF4-4173C4065D03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E758D60-CA22-4ED8-B517-7E4BEAECCA69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E758D60-CA22-4ED8-B517-7E4BEAECCA69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E758D60-CA22-4ED8-B517-7E4BEAECCA69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E758D60-CA22-4ED8-B517-7E4BEAECCA69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50134270-DA3A-4DC8-8179-6EC49844A4B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50134270-DA3A-4DC8-8179-6EC49844A4B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50134270-DA3A-4DC8-8179-6EC49844A4B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50134270-DA3A-4DC8-8179-6EC49844A4B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BCFCEE1-ADB9-4163-95A1-CE1A8FD3B3F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCFCEE1-ADB9-4163-95A1-CE1A8FD3B3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCFCEE1-ADB9-4163-95A1-CE1A8FD3B3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCFCEE1-ADB9-4163-95A1-CE1A8FD3B3F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +198,15 @@ Global
 		{CF7A943F-B0B2-4863-BE6F-D021886063F4} = {AEC21E5E-A5F0-401C-9AF2-B688BBF7BC1F}
 		{A0A6C6E0-B60D-4F69-9647-8D4AA3DF46E9} = {AEC21E5E-A5F0-401C-9AF2-B688BBF7BC1F}
 		{D990EBE0-447C-4C94-B491-2AC5332C4AB4} = {AEC21E5E-A5F0-401C-9AF2-B688BBF7BC1F}
+		{4731A526-DC16-4E1F-AC0A-67C642B2FB28} = {AEC21E5E-A5F0-401C-9AF2-B688BBF7BC1F}
+		{D4D729ED-94E9-48FD-ACDF-C65C7B91839A} = {AEC21E5E-A5F0-401C-9AF2-B688BBF7BC1F}
+		{7D99BC64-D5E1-4C1E-8FB5-8BCB5ABC45F2} = {E8D0A49A-F8A6-40D3-AD7E-251A3F2F32BD}
+		{739F9468-469A-451C-8F5F-FC47CC407ADE} = {E8D0A49A-F8A6-40D3-AD7E-251A3F2F32BD}
+		{C316DF1A-DFAD-499C-9279-33F1BAFE3B8A} = {E8D0A49A-F8A6-40D3-AD7E-251A3F2F32BD}
+		{38C4E59F-A5ED-4052-8EEF-3ACF00CEFD37} = {E8D0A49A-F8A6-40D3-AD7E-251A3F2F32BD}
+		{EC039ACC-7EC4-4B4A-BFF4-4173C4065D03} = {E8D0A49A-F8A6-40D3-AD7E-251A3F2F32BD}
+		{9E758D60-CA22-4ED8-B517-7E4BEAECCA69} = {E8D0A49A-F8A6-40D3-AD7E-251A3F2F32BD}
+		{50134270-DA3A-4DC8-8179-6EC49844A4B8} = {E8D0A49A-F8A6-40D3-AD7E-251A3F2F32BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3175CA6A-397B-47C0-90D2-4B126182BDB8}
