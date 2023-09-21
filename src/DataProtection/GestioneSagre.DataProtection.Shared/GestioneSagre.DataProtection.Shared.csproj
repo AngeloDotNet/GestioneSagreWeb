@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="GestioneSagre.EFCore" Version="1.1.4" />
-        <PackageReference Include="GestioneSagre.GenericServices" Version="1.1.12" />
+        <PackageReference Include="GestioneSagre.EFCore" Version="1.1.8" />
+        <PackageReference Include="GestioneSagre.GenericServices" Version="1.1.14" />
     </ItemGroup>
 
 </Project>
