@@ -4,11 +4,10 @@ Open source project that was born with the idea of wanting to create free softwa
 
 ## Apply migrations
 
-Add-Migration MIGRATION -Project GestioneSagre.PROJECT.DataAccessLayer
-Update-Database -Project GestioneSagre.PROJECT.DataAccessLayer
+1. Add-Migration MIGRATION -Project GestioneSagre.PROJECT.DataAccessLayer
+2. Update-Database -Project GestioneSagre.PROJECT.DataAccessLayer
 
-Example MIGRATION: InitialMigration
-Example PROJECT: Utility
+- Example MIGRATION: **InitialMigration** and PROJECT: **Utility**
 
 ## Related projects
 
