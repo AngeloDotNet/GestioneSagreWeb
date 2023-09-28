@@ -4,10 +4,8 @@ on:
   push:
     branches: [ "main" ]
     #paths:
-    #    # - '/src/Gateway/GestioneSagre.Gateway/**'
-    #    # - '/src/DataProtection/GestioneSagre.DataProtection/**'
-    #    # - '/src/Aggregator/GestioneSagre.Aggregator/**'
-    #    - '/src/**/GestioneSagre.*/**'
+    #  - '/src/**/**/**'
+    #  - '/src/**/GestioneSagre.*/**'
   workflow_dispatch:
 
 jobs:
@@ -51,6 +49,14 @@ jobs:
          file: ./src/Aggregator/GestioneSagre.Aggregator/Dockerfile
          push: true
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-aggregator:latest
+
+      - name: Build and push Reverse Proxy
+        uses: docker/build-push-action@v4
+        with:
+         context: .
+         file: ./src/ReverseProxy/GestioneSagre.ReverseProxy/Dockerfile
+         push: true
+         tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-reverseproxy:latest
 
       - name: Regenerate environments on Aruba
         uses: appleboy/ssh-action@master
