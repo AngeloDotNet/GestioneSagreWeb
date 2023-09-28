@@ -25,6 +25,36 @@ services:
     networks:
       - lan-network
 
+  proxy-dataprotection:
+    image: angelo87dock/gsweb-reverseproxy
+    container_name: proxy-dataprotection
+    networks:
+      - lan-network
+
+  api-utility:
+    image: angelo87dock/gsweb-utility
+    container_name: api-utility
+    networks:
+      - lan-network
+
+  proxy-utility:
+    image: angelo87dock/gsweb-reverseproxy
+    container_name: proxy-utility
+    networks:
+      - lan-network
+
+  api-prodotti:
+    image: angelo87dock/gsweb-prodotti
+    container_name: api-prodotti
+    networks:
+      - lan-network
+
+  proxy-prodotti:
+    image: angelo87dock/gsweb-reverseproxy
+    container_name: proxy-prodotti
+    networks:
+      - lan-network
+
 networks:
   lan-network:
     external:
