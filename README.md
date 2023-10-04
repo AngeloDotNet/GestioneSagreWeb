@@ -6,6 +6,7 @@ Open source project that was born with the idea of wanting to create free softwa
 
 1. Add-Migration MIGRATION -Project GestioneSagre.PROJECT.DataAccessLayer
 2. Update-Database -Project GestioneSagre.PROJECT.DataAccessLayer
+3. Script-Migration -o script-PROJECT.sql (Generate the migration sql script)
 
 - Example MIGRATION: **InitialMigration** and PROJECT: **Utility**
 
