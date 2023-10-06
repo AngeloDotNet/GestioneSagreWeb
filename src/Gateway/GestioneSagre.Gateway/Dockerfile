@@ -5,7 +5,13 @@ EXPOSE 5001
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["src/Gateway/GestioneSagre.Gateway/GestioneSagre.Gateway.csproj", "src/Gateway/GestioneSagre.Gateway/"]
+# START LOADING OCELOT JSON FILES
 COPY ["src/Gateway/GestioneSagre.Gateway/ocelot.json", "src/Gateway/GestioneSagre.Gateway/"]
+COPY ["src/Gateway/GestioneSagre.Gateway/ocelot-categorie.json", "src/Gateway/GestioneSagre.Gateway/"]
+COPY ["src/Gateway/GestioneSagre.Gateway/ocelot-dataprotection.json", "src/Gateway/GestioneSagre.Gateway/"]
+COPY ["src/Gateway/GestioneSagre.Gateway/ocelot-prodotti.json", "src/Gateway/GestioneSagre.Gateway/"]
+COPY ["src/Gateway/GestioneSagre.Gateway/ocelot-utility.json", "src/Gateway/GestioneSagre.Gateway/"]
+# FINISH LOADING OCELOT JSON FILES
 COPY ["src/Gateway/GestioneSagre.Gateway.BusinessLayer/GestioneSagre.Gateway.BusinessLayer.csproj", "src/Gateway/GestioneSagre.Gateway.BusinessLayer/"]
 RUN dotnet restore "src/Gateway/GestioneSagre.Gateway/GestioneSagre.Gateway.csproj"
 COPY . .
