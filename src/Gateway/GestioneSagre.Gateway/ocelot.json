@@ -2,7 +2,6 @@
     "Routes": [
         {
             "DownstreamPathTemplate": "/api/home/",
-            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
                     "Host": "api-gateway",
@@ -13,101 +12,18 @@
             "UpstreamHttpMethod": [ "Get" ]
         },
         {
-            "downstreampathtemplate": "/api/utility/checkapi",
-            "downstreamscheme": "http",
-            "downstreamhostandports": [
-                {
-                    "host": "yarp-utility",
-                    "port": 5001
-                }
-            ],
-            "upstreampathtemplate": "/checkapi",
-            "upstreamhttpmethod": [ "get" ]
-        },
-        {
-            "downstreampathtemplate": "/api/utility/gettipocliente",
-            "downstreamscheme": "http",
-            "downstreamhostandports": [
-                {
-                    "host": "yarp-utility",
-                    "port": 5001
-                }
-            ],
-            "upstreampathtemplate": "/gettipocliente",
-            "upstreamhttpmethod": [ "get" ]
-        },
-        {
-            "downstreampathtemplate": "/api/utility/gettiposcontrino",
-            "downstreamscheme": "http",
-            "downstreamhostandports": [
-                {
-                    "host": "yarp-utility",
-                    "port": 5001
-                }
-            ],
-            "upstreampathtemplate": "/gettiposcontrino",
-            "upstreamhttpmethod": [ "get" ]
-        },
-        {
-            "downstreampathtemplate": "/api/utility/gettipopagamento",
-            "downstreamscheme": "http",
-            "downstreamhostandports": [
-                {
-                    "host": "yarp-utility",
-                    "port": 5001
-                }
-            ],
-            "upstreampathtemplate": "/gettipopagamento",
-            "upstreamhttpmethod": [ "get" ]
-        },
-        {
-            "downstreampathtemplate": "/api/utility/getscontrinopagato",
-            "downstreamscheme": "http",
-            "downstreamhostandports": [
-                {
-                    "host": "yarp-utility",
-                    "port": 5001
-                }
-            ],
-            "upstreampathtemplate": "/getscontrinopagato",
-            "upstreamhttpmethod": [ "get" ]
-        },
-        {
-            "downstreampathtemplate": "/api/utility/getscontrinostato",
-            "downstreamscheme": "http",
-            "downstreamhostandports": [
-                {
-                    "host": "yarp-utility",
-                    "port": 5001
-                }
-            ],
-            "upstreampathtemplate": "/getscontrinostato",
-            "upstreamhttpmethod": [ "get" ]
-        },
-        {
-            "DownstreamPathTemplate": "/api/dataprotection/data-protect",
-            "DownstreamScheme": "http",
+            "DownstreamPathTemplate": "/health",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "api-dataprotection",
+                    "Host": "api-gateway",
                     "Port": 5001
                 }
             ],
-            "UpstreamPathTemplate": "/data-protect",
-            "UpstreamHttpMethod": [ "Post" ]
-        },
-        {
-            "downstreampathtemplate": "/api/dataprotection/data-unprotect",
-            "downstreamscheme": "http",
-            "downstreamhostandports": [
-                {
-                    "host": "api-dataprotection",
-                    "port": 5001
-                }
-            ],
-            "upstreampathtemplate": "/data-unprotect",
-            "upstreamhttpmethod": [ "Post" ]
+            "UpstreamPathTemplate": "/check-gateway",
+            "UpstreamHttpMethod": [ "Get" ]
         }
     ],
-    "GlobalConfiguration": {}
+    "GlobalConfiguration": {
+        "DownstreamScheme": "http"
+    }
 }

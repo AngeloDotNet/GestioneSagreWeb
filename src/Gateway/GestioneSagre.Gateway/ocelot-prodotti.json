@@ -1,0 +1,51 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/health",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-prodotti",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/check-prodotti",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/prodotti/listaprodotti",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-prodotti",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/getprodotti",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/prodotti/prodotto/{idProdotto}/{idFesta}",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-prodotti",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/getprodotto/{idProdotto}/{idFesta}",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/prodotti/prodotto",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-prodotti",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/prodotto",
+            "UpstreamHttpMethod": [ "Post", "Put", "Delete" ]
+        }
+    ],
+    "GlobalConfiguration": {
+        "DownstreamScheme": "http"
+    }
+}
