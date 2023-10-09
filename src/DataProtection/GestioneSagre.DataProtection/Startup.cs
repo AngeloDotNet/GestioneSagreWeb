@@ -29,10 +29,10 @@ public class Startup
     {
         IWebHostEnvironment env = app.Environment;
 
-        app.UseCors($"{serviceName}");
         app.UseSwaggerUINoRoutePrefix($"{swaggerName} v1");
-
         app.UseRouting();
+
+        app.UseCors($"{serviceName}");
         app.AddSerilogConfigureServices();
 
         app.UseEndpoints(endpoints =>
