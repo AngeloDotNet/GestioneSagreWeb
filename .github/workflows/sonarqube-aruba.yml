@@ -1,9 +1,9 @@
-name: Build and analyze with SonarQube
+name: Analyze with SonarQube
 
 on:
-  push:
-    branches:
-      - main
+  #push:
+  #  branches: [ "main" ]
+   workflow_dispatch:
 
 jobs:
   build:
