@@ -31,18 +31,15 @@ public class Startup
         {
             settings.SetHeaderText(Configuration.GetHealthCheckOptions().HeaderText);
             settings.SetEvaluationTimeInSeconds(Configuration.GetHealthCheckOptions().PollingInterval);
-            //settings.AddWebhookNotification("email",
-            //    uri: "http://localhost:5008/api/noti/email",
-            //    payload: "{ \"message\": \"Webhook report for [[LIVENESS]]: [[FAILURE]] - Description: [[DESCRIPTIONS]]\"}",
-            //    restorePayload: "{ \"message\": \"[[LIVENESS]] is back to life\"}"
-            //);
-            //settings.SetMinimumSecondsBetweenFailureNotifications(120);
+
+            settings.SetMinimumSecondsBetweenFailureNotifications(120);
             settings.MaximumHistoryEntriesPerEndpoint(100);
 
-            Configuration.GetHealthCheckServices().ForEach(service =>
-            {
-                settings.AddHealthCheckEndpoint(service.Name, service.Url);
-            });
+            Configuration.GetHealthCheckServices()
+                .ForEach(service =>
+                {
+                    settings.AddHealthCheckEndpoint(service.Name, service.Url);
+                });
         }).AddSqlServerStorage(connectionString);
     }
 
@@ -59,7 +56,7 @@ public class Startup
             {
                 setup.ApiPath = Configuration.GetHealthCheckOptions().ApiPath;
                 setup.UIPath = Configuration.GetHealthCheckOptions().UIPath;
-                setup.AsideMenuOpened = true;
+                setup.AsideMenuOpened = false;
                 setup.PageTitle = "Gestione Sagre Monitoring";
                 setup.AddCustomStylesheet("dotnet.css");
             });
