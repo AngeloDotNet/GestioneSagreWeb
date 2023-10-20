@@ -3,9 +3,9 @@ name: Push to DockerHub
 on:
   push:
     branches: [ "main" ]
-    #paths:
+    paths:
     #  - '/src/**/**/**'
-    #  - '/src/**/GestioneSagre.*/**'
+      - '/src/**/GestioneSagre.*/**'
   workflow_dispatch:
 
 jobs:
@@ -57,6 +57,30 @@ jobs:
          file: ./src/ReverseProxy/GestioneSagre.ReverseProxy/Dockerfile
          push: true
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-reverseproxy:latest
+
+      # - name: Build and push Prodotti
+      #   uses: docker/build-push-action@v4
+      #   with:
+      #    context: .
+      #    file: ./src/Prodotti/GestioneSagre.Prodotti/Dockerfile
+      #    push: true
+      #    tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-prodotti:latest
+
+      # - name: Build and push Categorie
+      #   uses: docker/build-push-action@v4
+      #   with:
+      #    context: .
+      #    file: ./src/Categorie/GestioneSagre.Categorie/Dockerfile
+      #    push: true
+      #    tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-categorie:latest
+
+      # - name: Build and push Utility
+      #   uses: docker/build-push-action@v4
+      #   with:
+      #    context: .
+      #    file: ./src/Utility/GestioneSagre.Utility/Dockerfile
+      #    push: true
+      #    tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-utility:latest
 
       - name: Regenerate environments on Aruba
         uses: appleboy/ssh-action@master
