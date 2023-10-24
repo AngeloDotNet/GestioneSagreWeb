@@ -55,6 +55,30 @@ services:
     networks:
       - lan-network
 
+  api-categorie:
+    image: angelo87dock/gsweb-categorie
+    container_name: api-categorie
+    networks:
+      - lan-network
+
+  proxy-categorie:
+    image: angelo87dock/gsweb-reverseproxy
+    container_name: proxy-categorie
+    networks:
+      - lan-network
+
+  api-operazioniavvio:
+    image: angelo87dock/gsweb-operazioniavvio
+    container_name: api-operazioniavvio
+    networks:
+      - lan-network
+
+  proxy-operazioniavvio:
+    image: angelo87dock/gsweb-reverseproxy
+    container_name: proxy-operazioniavvio
+    networks:
+      - lan-network
+
 networks:
   lan-network:
     external:

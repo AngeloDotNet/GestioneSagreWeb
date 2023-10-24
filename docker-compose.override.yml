@@ -36,8 +36,6 @@ services:
       - ASPNETCORE_URLS=http://*:5001
     volumes:
       - /docker/storage/storage-data-protection/appsettings.json:/app/appsettings.json
-    # ports:
-    #   - 5101:5001
 
   proxy-dataprotection:
     restart: "always"
@@ -46,8 +44,6 @@ services:
       - ASPNETCORE_URLS=http://*:5001
     volumes:
       - /docker/storage/proxy-data-protection/appsettings.json:/app/appsettings.json
-    # ports:
-    #   - 5201:5001
 
   api-utility:
     restart: "always"
@@ -56,8 +52,6 @@ services:
       - ASPNETCORE_URLS=http://*:5001
     volumes:
       - /docker/storage/storage-utility/appsettings.json:/app/appsettings.json
-    # ports:
-    #   - 5103:5001
 
   proxy-utility:
     restart: "always"
@@ -66,8 +60,6 @@ services:
       - ASPNETCORE_URLS=http://*:5001
     volumes:
       - /docker/storage/proxy-utility/appsettings.json:/app/appsettings.json
-    # ports:
-    #   - 5203:5001
 
   api-prodotti:
     restart: "always"
@@ -76,8 +68,6 @@ services:
       - ASPNETCORE_URLS=http://*:5001
     volumes:
       - /docker/storage/storage-prodotti/appsettings.json:/app/appsettings.json
-    # ports:
-    #   - 5104:5001
 
   proxy-prodotti:
     restart: "always"
@@ -86,5 +76,35 @@ services:
       - ASPNETCORE_URLS=http://*:5001
     volumes:
       - /docker/storage/proxy-prodotti/appsettings.json:/app/appsettings.json
-    # ports:
-    #   - 5204:5001
+
+  api-categorie:
+    restart: "always"
+    environment:
+      - ASPNETCORE_ENVIRONMENT="production"
+      - ASPNETCORE_URLS=http://*:5001
+    volumes:
+      - /docker/storage/storage-categorie/appsettings.json:/app/appsettings.json
+
+  proxy-categorie:
+    restart: "always"
+    environment:
+      - ASPNETCORE_ENVIRONMENT="production"
+      - ASPNETCORE_URLS=http://*:5001
+    volumes:
+      - /docker/storage/proxy-categorie/appsettings.json:/app/appsettings.json
+
+  api-operazioniavvio:
+    restart: "always"
+    environment:
+      - ASPNETCORE_ENVIRONMENT="production"
+      - ASPNETCORE_URLS=http://*:5001
+    volumes:
+      - /docker/storage/storage-operazioniavvio/appsettings.json:/app/appsettings.json
+
+  proxy-operazioniavvio:
+    restart: "always"
+    environment:
+      - ASPNETCORE_ENVIRONMENT="production"
+      - ASPNETCORE_URLS=http://*:5001
+    volumes:
+      - /docker/storage/proxy-operazioniavvio/appsettings.json:/app/appsettings.json
