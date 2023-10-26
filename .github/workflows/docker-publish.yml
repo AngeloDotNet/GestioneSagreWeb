@@ -3,9 +3,6 @@ name: Push to DockerHub
 on:
   push:
     branches: [ "main" ]
-    paths:
-    #  - '/src/**/**/**'
-      - '/src/**/GestioneSagre.*/**'
   workflow_dispatch:
 
 jobs:
