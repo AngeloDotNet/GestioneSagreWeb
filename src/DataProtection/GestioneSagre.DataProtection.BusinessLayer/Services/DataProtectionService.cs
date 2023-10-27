@@ -1,5 +1,6 @@
 ﻿using GestioneSagre.DataProtection.Shared.Models.InputModels;
 using GestioneSagre.DataProtection.Shared.Models.ViewModels;
+using GestioneSagre.Shared.OperationResults;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Logging;
 
@@ -17,9 +18,9 @@ public class DataProtectionService : IDataProtectionService
         this.dataProtectionProvider = dataProtectionProvider;
     }
 
-    public Task<ProtectionViewModel> EncryptMessage(ProtectionInputModel inputModel)
+    public Task<Result<ProtectionViewModel>> EncryptMessage(ProtectionInputModel inputModel)
     {
-        logger.LogInformation("Encrypting message");
+        logger.LogInformation("Inizio cifratura del messaggio");
 
         var protector = dataProtectionProvider.CreateProtector(keyProtector);
         var response = new ProtectionViewModel()
@@ -27,12 +28,15 @@ public class DataProtectionService : IDataProtectionService
             Message = protector.Protect(inputModel.Message)
         };
 
-        return Task.FromResult(response);
+        logger.LogInformation("Fine crittografia del messaggio");
+
+        var result = Task.FromResult<Result<ProtectionViewModel>>(response);
+        return result;
     }
 
-    public Task<ProtectionViewModel> DecryptMessage(ProtectionInputModel inputModel)
+    public Task<Result<ProtectionViewModel>> DecryptMessage(ProtectionInputModel inputModel)
     {
-        logger.LogInformation("Decrypting message");
+        logger.LogInformation("Inizio decifratura del messaggio");
 
         var protector = dataProtectionProvider.CreateProtector(keyProtector);
         var response = new ProtectionViewModel()
@@ -40,6 +44,9 @@ public class DataProtectionService : IDataProtectionService
             Message = protector.Unprotect(inputModel.Message)
         };
 
-        return Task.FromResult(response);
+        logger.LogInformation("Fine decifratura del messaggio");
+
+        var result = Task.FromResult<Result<ProtectionViewModel>>(response);
+        return result;
     }
 }
