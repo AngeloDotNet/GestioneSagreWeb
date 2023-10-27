@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.DataProtection.EntityFrameworkCore" Version="6.0.22" />
-    </ItemGroup>
-
-    <ItemGroup>
         <ProjectReference Include="..\GestioneSagre.DataProtection.Shared\GestioneSagre.DataProtection.Shared.csproj" />
     </ItemGroup>
 
