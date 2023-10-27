@@ -2,6 +2,7 @@
 using GestioneSagre.DataProtection.Controllers.Common;
 using GestioneSagre.DataProtection.Shared.Models.InputModels;
 using GestioneSagre.DataProtection.Shared.Models.ViewModels;
+using GestioneSagre.Shared.OperationResults.WebApi;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestioneSagre.DataProtection.Controllers;
@@ -16,10 +17,22 @@ public class DataProtectionController : BaseController
     }
 
     [HttpPost("data-protect")]
-    public Task<ProtectionViewModel> DataProtect(ProtectionInputModel inputModel)
-        => dataProtectionCommands.EncryptMessage(inputModel);
+    [ProducesResponseType(typeof(ProtectionViewModel), StatusCodes.Status200OK)]
+    public async Task<IActionResult> DataProtectAsync(ProtectionInputModel inputModel)
+    {
+        var result = await dataProtectionCommands.EncryptMessage(inputModel);
+        var response = HttpContext.CreateResponse(result);
+
+        return response;
+    }
 
     [HttpPost("data-unprotect")]
-    public Task<ProtectionViewModel> DataUnprotect(ProtectionInputModel inputModel)
-        => dataProtectionCommands.DecryptMessage(inputModel);
+    [ProducesResponseType(typeof(ProtectionViewModel), StatusCodes.Status200OK)]
+    public async Task<IActionResult> DataUnprotectAsync(ProtectionInputModel inputModel)
+    {
+        var result = await dataProtectionCommands.DecryptMessage(inputModel);
+        var response = HttpContext.CreateResponse(result);
+
+        return response;
+    }
 }

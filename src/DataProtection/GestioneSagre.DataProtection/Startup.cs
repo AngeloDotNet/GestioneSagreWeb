@@ -1,6 +1,6 @@
 ﻿using GestioneSagre.DataProtection.BusinessLayer.Extensions;
 using GestioneSagre.GenericServices.Extensions;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
+using GestioneSagre.Shared.Extensions;
 
 namespace GestioneSagre.DataProtection;
 
@@ -21,20 +21,15 @@ public class Startup
         services.AddControllers();
         services.AddRegisterConfigureServices(Configuration, serviceName, swaggerName);
 
-        services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
-        services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
+        services.AddDefaultOperationResult();
+        services.AddCustomProblemDetails(Configuration);
     }
 
     public void Configure(WebApplication app)
     {
         IWebHostEnvironment env = app.Environment;
 
-        app.UseSwaggerUINoRoutePrefix($"{swaggerName} v1");
-        app.UseRouting();
-
-        app.UseCors($"{serviceName}");
-        app.AddSerilogConfigureServices();
-
+        app.AddCustomConfigure(swaggerName, serviceName);
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllers();
