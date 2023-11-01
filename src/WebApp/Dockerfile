@@ -5,8 +5,8 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["src/webapp/GestioneSagre.Web.App.csproj", "src/webapp/"]
-COPY ["src/webapp/nginx.conf", "src/webapp/"]
+COPY ["src/WebApp/GestioneSagre.Web.App.csproj", "src/WebApp/"]
+COPY ["src/WebApp/nginx.conf", "src/WebApp/"]
 RUN dotnet restore "src/WebApp/GestioneSagre.Web.App.csproj"
 COPY . .
 
