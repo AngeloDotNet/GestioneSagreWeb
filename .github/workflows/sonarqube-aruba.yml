@@ -1,9 +1,9 @@
 name: Analyze with SonarQube
 
 on:
-  #push:
-  #  branches: [ "main" ]
-   workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -41,6 +41,6 @@ jobs:
         # env:
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"AngeloDotNet_GestioneSagreWeb_AYs0jR-t8G0M8WbYWRQM" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"AngeloDotNet_GestioneSagreWeb_AYuAVJgue4LlrjJNDKax" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
           dotnet build
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
