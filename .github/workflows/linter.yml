@@ -1,8 +1,8 @@
 name: Lint Code Base
 
 on:
-  push:
-    branches: [ "main" ]
+  # push:
+  #   branches: [ "main" ]
   workflow_dispatch:
   
 jobs:
