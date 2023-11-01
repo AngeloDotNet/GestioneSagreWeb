@@ -1,5 +1,8 @@
 ﻿@inject NavigationManager Navigation
 
+<MudBadge Content="@NumberNotifications" Color="Color.Default" Overlap="true" Class="mx-6 my-4" Origin="Origin.CenterRight">
+    <MudIconButton Icon="@Icons.Material.Filled.Notifications" Color="Color.Default" OnClick="OpenAboutNotify" Disabled="@StatusNotifications" />
+</MudBadge>
 <MudMenu>
     <ActivatorContent>
         <MudAvatar>
@@ -16,8 +19,29 @@
 </MudMenu>
 
 @code {
+    private bool StatusNotifications = true;
+    private int NumberNotifications;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        OnChangeNumber(0);
+    }
+
+    private void OnChangeNumber(int value)
+    {
+        NumberNotifications = value;
+        StateHasChanged();
+    }
+
     private void OpenAboutPage()
     {
         Navigation.NavigateTo("/about");
+    }
+
+    private void OpenAboutNotify()
+    {
+        Navigation.NavigateTo("/Notifications");
     }
 }
