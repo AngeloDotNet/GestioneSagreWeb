@@ -2,7 +2,7 @@
 
 Open source project that was born with the idea of wanting to create free software that allows the management of festivals, events or shows where it is necessary to check orders for the kitchen and/or bar
 
-![image](https://github.com/AngeloDotNet/GestioneSagreWeb/assets/49655304/8c0352d7-4ba8-4377-adae-64f2629cefb8)
+![image](https://github.com/AngeloDotNet/GestioneSagreWeb/assets/49655304/72d656ba-f991-4174-90df-bda5db189d33)
 
 ## Apply migrations
 
