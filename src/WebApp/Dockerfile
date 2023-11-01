@@ -4,7 +4,8 @@ EXPOSE 5001
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["src/WebApp/GestioneSagre.Web.App/GestioneSagre.Web.App.csproj", "src/WebApp/GestioneSagre.Web.App/"]
+#COPY ["src/WebApp/GestioneSagre.Web.App/GestioneSagre.Web.App.csproj", "src/WebApp/GestioneSagre.Web.App/"]
+COPY . .
 RUN dotnet restore "src/WebApp/GestioneSagre.Web.App/GestioneSagre.Web.App.csproj"
 COPY . .
 
