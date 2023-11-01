@@ -1,0 +1,23 @@
+﻿@inject NavigationManager Navigation
+
+<MudMenu>
+    <ActivatorContent>
+        <MudAvatar>
+            <MudIcon Icon="@Icons.Material.Filled.AccountCircle" Color="Color.Primary"></MudIcon>
+        </MudAvatar>
+    </ActivatorContent>
+    <ChildContent>
+        @* <MudMenuItem Icon="@Icons.Material.Filled.ManageAccounts" Disabled>Preferenze</MudMenuItem>
+        <MudMenuItem Icon="@Icons.Material.Filled.SupportAgent" Disabled>Supporto</MudMenuItem> *@
+        <MudMenuItem Icon="@Icons.Material.Filled.Info" OnClick="OpenAboutPage">About</MudMenuItem>
+        @* <MudDivider />
+        <MudMenuItem Icon="@Icons.Material.Filled.Logout" Disabled>Logout</MudMenuItem> *@
+    </ChildContent>
+</MudMenu>
+
+@code {
+    private void OpenAboutPage()
+    {
+        Navigation.NavigateTo("/about");
+    }
+}

@@ -4,9 +4,13 @@
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
     <NotFound>
-        <PageTitle>Not found</PageTitle>
         <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
+            <MudPaper Class="pa-md-3 mx-lg-auto" Elevation="3">
+                <MudText Class="mt-6" Align="Align.Center">
+                    <img src="images/404NotFound.png" alt="page not found" />
+                </MudText>
+                <MudText Typo="Typo.h6" Align="Align.Center" GutterBottom="true">La pagina richiesta non esiste.</MudText>
+            </MudPaper>
         </LayoutView>
     </NotFound>
 </Router>
