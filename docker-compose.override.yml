@@ -15,9 +15,9 @@ services:
     restart: "always"
     environment:
       - ASPNETCORE_ENVIRONMENT="production"
-      - ASPNETCORE_URLS=http://*:5001
+      - ASPNETCORE_URLS=http://*:80
     ports:
-      - 5200:5001
+      - 5200:80
 
   aggregator:
     restart: "always"
