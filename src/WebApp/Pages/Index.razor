@@ -1,20 +1,15 @@
 ﻿@page "/"
 
-<PageTitle>Gestione Sagre Web</PageTitle>
+<HeaderPage itemsList="_items" />
 
-<MudBreadcrumbs Items="_items"></MudBreadcrumbs>
-
-<div class="d-flex flex-grow-1 gap-3">
-    <MudPaper Class="flex-shrink-1 py-8" Width="95%" Elevation="0">
-        <MudText Typo="Typo.h5" Align="Align.Center" GutterBottom="true">Benvenuto in Gestione Sagre Web</MudText>
-        <MudImage Fluid="true" Src="images/hero.jpg" Alt="Home Page Images" Class="rounded-lg ml-10 mr-10" />
-        <MudText Typo="Typo.subtitle2" Align="Align.Center">
-            Foto di
-            <a href="https://www.pexels.com/it-it/foto/amici-che-mangiano-hamburger-in-strada-da-camion-di-cibo-5920744/" target="_blank">Kampus
-                Production</a> | versione @version
-        </MudText>
-    </MudPaper>
-</div>
+<MudContainer Class="mt-5 px-8" MaxWidth="MaxWidth.Large">
+<MudText Typo="Typo.h5" Align="Align.Center" GutterBottom="true">Benvenuto in Gestione Sagre Web</MudText>
+<MudImage Fluid="true" Src="images/hero.jpg" Alt="Home Page Images" ObjectPosition="ObjectPosition.Center" Elevation="25" Class="rounded-lg ml-5" />
+<MudText Typo="Typo.subtitle2" Align="Align.Center">Foto di
+    <a href="https://www.pexels.com/it-it/foto/amici-che-mangiano-hamburger-in-strada-da-camion-di-cibo-5920744/" target="_blank">
+        Kampus Production</a> | versione @version
+</MudText>
+</MudContainer>
 
 @code {
     private string version = "1.0.0";
