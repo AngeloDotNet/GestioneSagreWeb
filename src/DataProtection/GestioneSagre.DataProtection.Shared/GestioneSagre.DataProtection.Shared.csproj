@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="GestioneSagre.EFCore" Version="1.1.19" />
-        <PackageReference Include="GestioneSagre.GenericServices" Version="1.1.17" />
+        <PackageReference Include="GestioneSagre.EFCore" Version="1.1.20" />
+        <PackageReference Include="GestioneSagre.GenericServices" Version="1.1.18" />
         <PackageReference Include="GestioneSagre.Shared" Version="1.1.5" />
         <PackageReference Include="Microsoft.AspNetCore.DataProtection.EntityFrameworkCore" Version="6.0.24" />
     </ItemGroup>
