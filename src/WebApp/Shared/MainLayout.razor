@@ -11,27 +11,10 @@
         <MudSpacer />
         <UserDisplay />
     </MudAppBar>
-    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+    <MudDrawer @bind-Open="drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
         <NavMenu />
     </MudDrawer>
     <MudMainContent>
         @Body
     </MudMainContent>
 </MudLayout>
-
-@code {
-    //https://mudblazor.com/features/colors#material-colors-list-of-material-colors
-    private string chosenTheme = "Default";
-    public MudTheme appliedTheme = new();
-
-    protected override async Task OnInitializedAsync()
-    {
-        await base.OnInitializedAsync();
-
-        appliedTheme = ConfigStaticThemes.SetChosenTheme(chosenTheme);
-        StateHasChanged();
-    }
-
-    bool _drawerOpen = true;
-    void DrawerToggle() => _drawerOpen = !_drawerOpen;
-}
