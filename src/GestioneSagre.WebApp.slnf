@@ -2,7 +2,9 @@
   "solution": {
     "path": "..\\GestioneSagreWeb.sln",
     "projects": [
-      "src\\WebApp\\GestioneSagre.Web.App.csproj"
+      "src\\WebApp\\GestioneSagre.Web.App.csproj",
+      "src\\WebApp.Shared\\GestioneSagre.Web.Shared.csproj",
+	  "src\\ModuliWeb\\GestioneSagre.Modules.Dashboard\\GestioneSagre.Modules.Dashboard.csproj"
     ]
   }
 }
