@@ -1,4 +1,4 @@
-﻿using GestioneSagre.Web.App.Configuration;
+﻿using GestioneSagre.Web.Shared.Configuration;
 using MudBlazor;
 
 namespace GestioneSagre.Web.App.Shared;

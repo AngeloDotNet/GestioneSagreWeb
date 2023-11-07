@@ -9,12 +9,15 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.24" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.24" PrivateAssets="all" />
-        <PackageReference Include="MudBlazor" Version="6.11.0" />
-        <PackageReference Include="MudBlazor.Markdown" Version="0.1.2" />
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="wwwroot\font-awesome\" />
+        <ProjectReference Include="..\ModuliWeb\GestioneSagre.Modules.Dashboard\GestioneSagre.Modules.Dashboard.csproj" />
+        <ProjectReference Include="..\WebApp.Shared\GestioneSagre.Web.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <BlazorWebAssemblyLazyLoad Include="GestioneSagre.Modules.Dashboard.dll" />
     </ItemGroup>
 
 </Project>

@@ -6,6 +6,11 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["src/WebApp/GestioneSagre.Web.App.csproj", "src/WebApp/"]
 COPY ["src/WebApp/nginx.conf", "src/WebApp/"]
+COPY ["src/WebApp.Shared/GestioneSagre.Web.Shared.csproj", "src/WebApp.Shared/"]
+
+# Copy the "module" projects loaded from the web app
+COPY ["src/ModuliWeb/GestioneSagre.Modules.Dashboard/GestioneSagre.Modules.Dashboard.csproj", "src/ModuliWeb/GestioneSagre.Modules.Dashboard/"]
+
 RUN dotnet restore "src/WebApp/GestioneSagre.Web.App.csproj"
 COPY . .
 

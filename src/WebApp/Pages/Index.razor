@@ -1,18 +1,11 @@
 ﻿@page "/"
-
 <HeaderPage itemsList="_items" />
 
-<MudContainer Class="mt-5 px-8" MaxWidth="MaxWidth.Large">
-<MudText Typo="Typo.h5" Align="Align.Center" GutterBottom="true">Benvenuto in Gestione Sagre Web</MudText>
-<MudImage Fluid="true" Src="images/hero.jpg" Alt="Home Page Images" ObjectPosition="ObjectPosition.Center" Elevation="25" Class="rounded-lg ml-5" />
-<MudText Typo="Typo.subtitle2" Align="Align.Center">Foto di
-    <a href="https://www.pexels.com/it-it/foto/amici-che-mangiano-hamburger-in-strada-da-camion-di-cibo-5920744/" target="_blank">
-        Kampus Production</a> | versione @version
-</MudText>
-</MudContainer>
+<Welcome version="@appVersion" />
 
 @code {
-    private string version = "1.0.0";
+    private string appVersion = "1.0.0";
+
     private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
     {
         new BreadcrumbItem("Home Page", href: null, disabled: true)
