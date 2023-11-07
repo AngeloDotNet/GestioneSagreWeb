@@ -1,0 +1,51 @@
+﻿@page "/about"
+
+@using GestioneSagre.Web.Shared.Configuration;
+
+@* @inject HttpClient httpClient *@
+
+<HeaderPage itemsList="_items" />
+
+<MudText Typo="Typo.h5" Align="Align.Center" GutterBottom="true">Informazioni Software</MudText>
+<MudText Class="ma-10" Align="Align.Justify">
+    This program <b>Gestione Sagre Web</b> and all documentation, are copyright &copy; @yearCopyright by Angelo Pirola. <br /><br />
+    Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: <br /><br />
+    Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.<br /><br />
+    The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this
+    software in a product, an acknowledgment in the product documentation would be appreciated but is not required.<br /><br />
+    Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.<br /><br />
+    The name of the author may not be used to endorse or promote products derived from this software without specific prior
+    written permission.<br /><br />
+    THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+    OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+    INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+    USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</MudText>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        //Test to verify that the gateway api endpoint call was working
+        // var endpointAPI = FrontendParameters.ENDPOINT_GET_HELLOWORLD;
+        // var result = await httpClient.GetFromJsonAsync<string>($"{endpointAPI}");
+    }
+
+    private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
+    {
+        new BreadcrumbItem("Home Page", href: "/"),
+        new BreadcrumbItem("About", href: null, disabled: true)
+    };
+
+    private string yearCopyright => CalculateCurrentYear();
+    private string CalculateCurrentYear()
+    {
+        var startYear = 2023;
+        var currentYear = DateTime.Now.Year;
+        var years = startYear == currentYear ? $"{startYear}" : $"{startYear} - {currentYear}";
+
+        return years;
+    }
+}
