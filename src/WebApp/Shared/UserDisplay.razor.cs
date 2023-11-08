@@ -13,9 +13,9 @@ public partial class UserDisplay
         //OnChangeNumber(0);
     }
 
-    private void OpenAboutPage(MouseEventArgs args)
+    private void OpenAboutPage()
     {
-        Navigation.NavigateTo("/about");
+        Navigation.NavigateTo("/about", false);
     }
 
     // private void OnChangeNumber(int value)
