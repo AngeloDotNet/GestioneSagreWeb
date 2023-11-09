@@ -87,13 +87,13 @@ jobs:
       #    push: true
       #    tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-utility:latest
 
-      # - name: Build and push Operazioni Avvio
-      #   uses: docker/build-push-action@v4
-      #   with:
-      #    context: .
-      #    file: ./src/OperazioniAvvio/GestioneSagre.OperazioniAvvio/Dockerfile
-      #    push: true
-      #    tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-operazioniavvio:latest
+      - name: Build and push Operazioni Avvio
+        uses: docker/build-push-action@v4
+        with:
+         context: .
+         file: ./src/OperazioniAvvio/GestioneSagre.OperazioniAvvio/Dockerfile
+         push: true
+         tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-operazioniavvio:latest
 
       - name: Regenerate environments on Aruba
         uses: appleboy/ssh-action@master
