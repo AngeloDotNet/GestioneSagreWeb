@@ -4,5 +4,6 @@ public enum FestaStatus
 {
     Active,
     Inactive,
-    Deleted
+    Deleted,
+    Finished
 }
