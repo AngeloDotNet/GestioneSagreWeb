@@ -1,0 +1,18 @@
+﻿@typeparam TContent where TContent : class
+
+@if (editContext is not null)
+{
+    <EditForm EditContext="editContext" OnValidSubmit="SubmitAsync">
+        <DataAnnotationsValidator />
+
+        <MudCard Outlined="true">
+            <MudCardContent>
+                @ContentInfo(Model)
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton ButtonType="ButtonType.Button" Color="Color.Primary" Variant="Variant.Outlined" Class="mr-4" OnClick="CancelAsync">Annulla</MudButton>
+                <MudButton ButtonType="ButtonType.Submit" Color="Color.Primary" Variant="Variant.Filled">Salva</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </EditForm>
+}

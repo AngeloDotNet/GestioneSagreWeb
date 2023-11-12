@@ -15,4 +15,8 @@
         <PackageReference Include="MudBlazor.Markdown" Version="0.1.2" />
     </ItemGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\WebApp.Services\GestioneSagre.Web.Services.csproj" />
+    </ItemGroup>
+
 </Project>
