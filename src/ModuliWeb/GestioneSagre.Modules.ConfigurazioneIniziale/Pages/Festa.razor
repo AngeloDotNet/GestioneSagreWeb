@@ -1,0 +1,29 @@
+﻿@page "/Festa"
+@page "/Festa/{id:guid}"
+
+<HeaderPage itemsList="items" />
+
+<PageLayout PageTitle="Gestione Festa">
+    <PageContent>
+        @if (!string.IsNullOrWhiteSpace(errorMessage))
+        {
+            Snackbar.Add(errorMessage, Severity.Error, config =>
+            {
+                config.ShowCloseIcon = false;
+                config.VisibleStateDuration = 10000;
+                config.HideTransitionDuration = 500;
+                config.ShowTransitionDuration = 500;
+                config.SnackbarVariant = Variant.Filled;
+            });
+        }
+
+        @if (Id != Guid.Empty)
+        {
+            <FormEditFesta IdDetail="Id" OnSave="UpdateFestaAsync" />
+        }
+        else
+        {
+            <FormFesta Model="model" OnSave="SaveFestaAsync" />
+        }
+    </PageContent>
+</PageLayout>

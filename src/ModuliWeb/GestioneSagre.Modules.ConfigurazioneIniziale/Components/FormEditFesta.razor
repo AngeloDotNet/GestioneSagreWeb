@@ -1,0 +1,20 @@
+﻿<EditorForm TContent="FestaViewModel" Model="Model" Context="EditModel" OnSave="SubmitAsync" OnCancel="CancelAsync">
+    <ContentInfo>
+        <MudGrid>
+            <MudItem xs="12" md="3">
+                <MudDatePicker Label="Data Inizio" @bind-Date="EditModel.DataInizio" For="@(() => Model.DataInizio)" Variant="Variant.Outlined" Editable="true" AutoClose="true" id="datainizio" />
+            </MudItem>
+            <MudItem xs="12" md="3">
+                <MudDatePicker Label="Data Fine" @bind-Date="EditModel.DataFine" For="@(() => Model.DataFine)" Variant="Variant.Outlined" Editable="true" AutoClose="true" id="datafine" />
+            </MudItem>
+            <MudItem xs="12" md="3">
+                <MudSelect Label="Stato Festa" @bind-Value="EditModel.StatusFesta" Variant="Variant.Outlined" id="status">
+                    @foreach (FestaStatus item in Enum.GetValues(typeof(FestaStatus)))
+                    {
+                        <MudSelectItem Value="@item">@item</MudSelectItem>
+                    }
+                </MudSelect>
+            </MudItem>
+        </MudGrid>
+    </ContentInfo>
+</EditorForm>
