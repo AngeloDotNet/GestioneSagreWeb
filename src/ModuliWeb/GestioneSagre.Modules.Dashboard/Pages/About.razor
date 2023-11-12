@@ -1,14 +1,10 @@
 ﻿@page "/about"
 
-@using GestioneSagre.Web.Shared.Configuration;
-
-@* @inject HttpClient httpClient *@
-
-<HeaderPage itemsList="_items" />
+<HeaderPage itemsList="items" />
 
 <MudText Typo="Typo.h5" Align="Align.Center" GutterBottom="true">Informazioni Software</MudText>
 <MudText Class="ma-10" Align="Align.Justify">
-    This program <b>Gestione Sagre Web</b> and all documentation, are copyright &copy; @yearCopyright by Angelo Pirola. <br /><br />
+    This program <b>Gestione Sagre Web</b> and all documentation, are copyright &copy; @YearCopyright by Angelo Pirola. <br /><br />
     Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: <br /><br />
     Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.<br /><br />
     The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this
@@ -22,30 +18,3 @@
     USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
     (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 </MudText>
-
-@code {
-    protected override async Task OnInitializedAsync()
-    {
-        await base.OnInitializedAsync();
-
-        //Test to verify that the gateway api endpoint call was working
-        // var endpointAPI = FrontendParameters.ENDPOINT_GET_HELLOWORLD;
-        // var result = await httpClient.GetFromJsonAsync<string>($"{endpointAPI}");
-    }
-
-    private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
-    {
-        new BreadcrumbItem("Home Page", href: "/"),
-        new BreadcrumbItem("About", href: null, disabled: true)
-    };
-
-    private string yearCopyright => CalculateCurrentYear();
-    private string CalculateCurrentYear()
-    {
-        var startYear = 2023;
-        var currentYear = DateTime.Now.Year;
-        var years = startYear == currentYear ? $"{startYear}" : $"{startYear} - {currentYear}";
-
-        return years;
-    }
-}
