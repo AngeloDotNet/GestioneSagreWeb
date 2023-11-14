@@ -1,7 +1,4 @@
-﻿using GestioneSagre.Gateway.Controllers.Common;
-using Microsoft.AspNetCore.Mvc;
-
-namespace GestioneSagre.Gateway.Controllers;
+﻿namespace GestioneSagre.Gateway.Controllers;
 
 public class HomeController : BaseController
 {

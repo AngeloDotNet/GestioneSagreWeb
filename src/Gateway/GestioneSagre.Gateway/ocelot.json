@@ -313,7 +313,7 @@
             "UpstreamHttpMethod": [ "Get" ]
         },
         {
-            "DownstreamPathTemplate": "/api/impostazioni/impostazione/{id}/{idFesta}",
+            "DownstreamPathTemplate": "/api/impostazioni/impostazione/{idFesta}",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
@@ -321,7 +321,7 @@
                     "Port": 5001
                 }
             ],
-            "UpstreamPathTemplate": "/getimpostazione/{id}/{idFesta}",
+            "UpstreamPathTemplate": "/getimpostazione/{idFesta}",
             "UpstreamHttpMethod": [ "Get" ]
         },
         {
@@ -349,7 +349,7 @@
             "UpstreamHttpMethod": [ "Get" ]
         },
         {
-            "DownstreamPathTemplate": "/api/intestazioni/intestazione/{id}/{idFesta}",
+            "DownstreamPathTemplate": "/api/intestazioni/intestazione/{idFesta}",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
@@ -357,7 +357,7 @@
                     "Port": 5001
                 }
             ],
-            "UpstreamPathTemplate": "/getintestazione/{id}/{idFesta}",
+            "UpstreamPathTemplate": "/getintestazione/{idFesta}",
             "UpstreamHttpMethod": [ "Get" ]
         },
         {

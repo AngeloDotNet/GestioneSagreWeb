@@ -1,5 +1,3 @@
-using GestioneSagre.GenericServices.Extensions;
-
 namespace GestioneSagre.Gateway;
 
 public class Program
