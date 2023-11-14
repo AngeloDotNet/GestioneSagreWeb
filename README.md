@@ -2,7 +2,7 @@
 
 Open source project that was born with the idea of wanting to create free software that allows the management of festivals, events or shows where it is necessary to check orders for the kitchen and/or bar
 
-![image](https://github.com/AngeloDotNet/GestioneSagreWeb/assets/49655304/647d61f4-7778-4425-8b4d-5a503325dcce)
+![image](https://github.com/AngeloDotNet/GestioneSagreWeb/assets/49655304/12940b13-46d3-4b23-8df9-b01f2b6553d5)
 
 ## Features
 
@@ -15,14 +15,16 @@ Open source project that was born with the idea of wanting to create free softwa
 
 - **Client:** Blazor, .NET 6
 - **Server:** Microservices Web API, .NET 6
-- **Database:** SQLServer 2022 CU8 ubuntu 20.04
-- **Graphics:** MudBlazor 6.11.0, Font Awesome Free 6.4.2
+- **Database:** SQLServer 2022 CU9 ubuntu 20.04
+- **Graphics:** MudBlazor 6.11.0
+- **Logging:** Serilog with SEQ (Datalust)
 
 ## Related projects
 
 | [Gestione Sagre Web Infrastructure](https://github.com/AngeloDotNet/GestioneSagreWeb.Infrastructure) | [Gestione Sagre Web Tools](https://github.com/AngeloDotNet/GestioneSagreWeb.Tools) |
 | :---------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
 
+<!--
 ## Apply migrations
 
 1. Add-Migration MIGRATION -Project GestioneSagre.PROJECT.DataAccessLayer
@@ -30,6 +32,7 @@ Open source project that was born with the idea of wanting to create free softwa
 3. Script-Migration -o script-PROJECT.sql (Generate the migration sql script)
 
 - Example MIGRATION: **InitialMigration** and PROJECT: **Utility**
+-->
 
 ## Support
 
