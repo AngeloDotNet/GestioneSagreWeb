@@ -1,6 +1,3 @@
-using GestioneSagre.Aggregator.Shared.Options;
-using Microsoft.Extensions.Configuration;
-
 namespace GestioneSagre.Aggregator.Shared.Extensions;
 
 public static class ConfigurationExtensions
