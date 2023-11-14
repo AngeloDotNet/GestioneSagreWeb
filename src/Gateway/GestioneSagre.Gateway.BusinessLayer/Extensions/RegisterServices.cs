@@ -1,9 +1,4 @@
-﻿using GestioneSagre.GenericServices.Extensions;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
-
-namespace GestioneSagre.Gateway.BusinessLayer.Extensions;
+﻿namespace GestioneSagre.Gateway.BusinessLayer.Extensions;
 
 public static class RegisterServices
 {
