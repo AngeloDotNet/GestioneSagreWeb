@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="GestioneSagre.GenericServices" Version="1.1.18" />
+        <PackageReference Include="GestioneSagre.GenericServices" Version="1.1.19" />
     </ItemGroup>
 
 </Project>
