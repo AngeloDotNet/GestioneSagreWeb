@@ -1,7 +1,4 @@
-﻿using GestioneSagre.Aggregator.Shared.Extensions;
-using GestioneSagre.GenericServices.Extensions;
-
-namespace GestioneSagre.Aggregator;
+﻿namespace GestioneSagre.Aggregator;
 
 public class Startup
 {
