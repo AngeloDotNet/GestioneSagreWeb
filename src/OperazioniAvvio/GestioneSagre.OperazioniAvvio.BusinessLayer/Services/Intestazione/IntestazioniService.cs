@@ -52,14 +52,14 @@ public class IntestazioniService : IIntestazioniService
         return result;
     }
 
-    public async Task<Result<IntestazioneViewModel>> GetIntestazioneAsync(Guid id, Guid idFesta)
+    public async Task<Result<IntestazioneViewModel>> GetIntestazioneAsync(Guid idFesta)
     {
         logger.LogInformation("Ottenimento dettaglio delle intestazioni della festa");
 
         var options = new ItemOptions<Entities.Intestazione>
         {
             Includes = null,
-            ConditionWhere = x => x.Id == id
+            ConditionWhere = x => x.IdFesta == idFesta
         };
 
         var item = await uOwIntestazione.Repository.GetItemByIdAsync(options.Includes, options.ConditionWhere);

@@ -52,14 +52,14 @@ public class ImpostazioniService : IImpostazioniService
         return result;
     }
 
-    public async Task<Result<ImpostazioneViewModel>> GetImpostazioneAsync(Guid id, Guid idFesta)
+    public async Task<Result<ImpostazioneViewModel>> GetImpostazioneAsync(Guid idFesta)
     {
         logger.LogInformation("Ottenimento dettaglio delle impostazioni della festa");
 
         var options = new ItemOptions<Entities.Impostazione>
         {
             Includes = null,
-            ConditionWhere = x => x.Id == id
+            ConditionWhere = x => x.IdFesta == idFesta
         };
 
         var item = await uOwImpostazione.Repository.GetItemByIdAsync(options.Includes, options.ConditionWhere);
