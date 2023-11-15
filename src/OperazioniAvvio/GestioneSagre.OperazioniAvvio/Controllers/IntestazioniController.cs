@@ -35,15 +35,15 @@ public class IntestazioniController : BaseController
         }
     }
 
-    [HttpGet("Intestazione/{id}/{idFesta}")]
+    [HttpGet("Intestazione/{idFesta}")]
     [ProducesResponseType(typeof(IntestazioneViewModel), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> GetImpostazioneAsync(Guid id, Guid idFesta)
+    public async Task<IActionResult> GetImpostazioneAsync(Guid idFesta)
     {
         try
         {
-            var result = await intestazioniService.GetIntestazioneAsync(id, idFesta);
+            var result = await intestazioniService.GetIntestazioneAsync(idFesta);
             var response = HttpContext.CreateResponse(result);
 
             return response;

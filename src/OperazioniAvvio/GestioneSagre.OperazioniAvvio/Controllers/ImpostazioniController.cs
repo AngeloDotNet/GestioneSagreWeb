@@ -35,15 +35,15 @@ public class ImpostazioniController : BaseController
         }
     }
 
-    [HttpGet("Impostazione/{id}/{idFesta}")]
+    [HttpGet("Impostazione/{idFesta}")]
     [ProducesResponseType(typeof(ImpostazioneViewModel), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> GetImpostazioneAsync(Guid id, Guid idFesta)
+    public async Task<IActionResult> GetImpostazioneAsync(Guid idFesta)
     {
         try
         {
-            var result = await impostazioniService.GetImpostazioneAsync(id, idFesta);
+            var result = await impostazioniService.GetImpostazioneAsync(idFesta);
             var response = HttpContext.CreateResponse(result);
 
             return response;
