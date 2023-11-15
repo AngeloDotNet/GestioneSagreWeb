@@ -9,5 +9,4 @@ public class Impostazione
     public bool StampaCarta { get; set; }
     //public bool StampaLogo { get; set; }
     public bool StampaRicevuta { get; set; }
-    public virtual Festa Festa { get; set; }
 }

@@ -14,15 +14,5 @@ public class FestaConfiguration : IEntityTypeConfiguration<Festa>
 
         builder.Property(f => f.DataInizio).IsRequired();
         builder.Property(f => f.DataFine).IsRequired();
-
-        builder.HasMany(f => f.Intestazioni)
-            .WithOne(i => i.Festa)
-            .HasForeignKey(i => i.IdFesta)
-            .OnDelete(DeleteBehavior.Cascade);
-
-        builder.HasMany(f => f.Impostazioni)
-            .WithOne(i => i.Festa)
-            .HasForeignKey(i => i.IdFesta)
-            .OnDelete(DeleteBehavior.Cascade);
     }
 }

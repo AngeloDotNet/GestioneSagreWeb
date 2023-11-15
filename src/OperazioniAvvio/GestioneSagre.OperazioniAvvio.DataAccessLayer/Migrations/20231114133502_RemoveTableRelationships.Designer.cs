@@ -4,6 +4,7 @@ using GestioneSagre.OperazioniAvvio.DataAccessLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestioneSagre.OperazioniAvvio.DataAccessLayer.Migrations
 {
     [DbContext(typeof(OperazioniAvvioDbContext))]
-    partial class OperazioniAvvioDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231114133502_RemoveTableRelationships")]
+    partial class RemoveTableRelationships
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

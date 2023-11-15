@@ -8,5 +8,4 @@ public class Intestazione
     public string Edizione { get; set; }
     public string Luogo { get; set; }
     //public string Logo { get; set; }
-    public virtual Festa Festa { get; set; }
 }

@@ -8,6 +8,4 @@ public class Festa
     public DateTime DataInizio { get; set; }
     public DateTime DataFine { get; set; }
     public FestaStatus StatusFesta { get; set; }
-    public virtual ICollection<Intestazione> Intestazioni { get; set; }
-    public virtual ICollection<Impostazione> Impostazioni { get; set; }
 }
