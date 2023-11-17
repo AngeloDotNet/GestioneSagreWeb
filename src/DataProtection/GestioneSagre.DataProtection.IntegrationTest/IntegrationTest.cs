@@ -1,10 +1,4 @@
-﻿using System.Net;
-using System.Net.Http.Json;
-using GestioneSagre.DataProtection.Shared.Models.InputModels;
-using GestioneSagre.DataProtection.Shared.Models.ViewModels;
-using Xunit;
-
-namespace GestioneSagre.DataProtection.IntegrationTest;
+﻿namespace GestioneSagre.DataProtection.IntegrationTest;
 
 public class IntegrationTest
 {

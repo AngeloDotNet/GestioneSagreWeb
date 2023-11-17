@@ -1,0 +1,10 @@
+﻿global using System.Net;
+global using System.Net.Http.Json;
+global using GestioneSagre.DataProtection.DataAccessLayer;
+global using GestioneSagre.DataProtection.Shared.Models.InputModels;
+global using GestioneSagre.DataProtection.Shared.Models.ViewModels;
+global using Microsoft.AspNetCore.Hosting;
+global using Microsoft.AspNetCore.Mvc.Testing;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.DependencyInjection;
+global using Xunit;

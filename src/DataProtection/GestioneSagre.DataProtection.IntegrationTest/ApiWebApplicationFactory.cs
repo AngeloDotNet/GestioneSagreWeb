@@ -1,10 +1,4 @@
-﻿using GestioneSagre.DataProtection.DataAccessLayer;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace GestioneSagre.DataProtection.IntegrationTest;
+﻿namespace GestioneSagre.DataProtection.IntegrationTest;
 
 public class ApiWebApplicationFactory : WebApplicationFactory<Startup>
 {
