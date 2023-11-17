@@ -1,10 +1,4 @@
-﻿using GestioneSagre.DataProtection.Shared.Models.InputModels;
-using GestioneSagre.DataProtection.Shared.Models.ViewModels;
-using GestioneSagre.Shared.OperationResults;
-using Microsoft.AspNetCore.DataProtection;
-using Microsoft.Extensions.Logging;
-
-namespace GestioneSagre.DataProtection.BusinessLayer.Commands;
+﻿namespace GestioneSagre.DataProtection.BusinessLayer.Commands;
 
 public class DataProtectionService : IDataProtectionService
 {

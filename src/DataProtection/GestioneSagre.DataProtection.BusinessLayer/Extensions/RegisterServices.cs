@@ -1,22 +1,4 @@
-﻿using System.Diagnostics;
-using GestioneSagre.DataProtection.BusinessLayer.Commands;
-using GestioneSagre.DataProtection.DataAccessLayer;
-using GestioneSagre.EFCore.Extensions;
-using GestioneSagre.GenericServices.Extensions;
-using GestioneSagre.Shared.OperationResults;
-using Hellang.Middleware.ProblemDetails;
-using Hellang.Middleware.ProblemDetails.Mvc;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.DataProtection;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
-
-namespace GestioneSagre.DataProtection.BusinessLayer.Extensions;
+﻿namespace GestioneSagre.DataProtection.BusinessLayer.Extensions;
 
 public static class RegisterServices
 {
