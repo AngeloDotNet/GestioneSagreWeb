@@ -1,8 +1,4 @@
-﻿using GestioneSagre.DataProtection.BusinessLayer.Extensions;
-using GestioneSagre.GenericServices.Extensions;
-using GestioneSagre.Shared.Extensions;
-
-namespace GestioneSagre.DataProtection;
+﻿namespace GestioneSagre.DataProtection;
 
 public class Startup
 {

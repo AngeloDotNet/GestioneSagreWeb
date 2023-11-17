@@ -1,7 +1,4 @@
-﻿using System.Net.Mime;
-using Microsoft.AspNetCore.Mvc;
-
-namespace GestioneSagre.DataProtection.Controllers.Common;
+﻿namespace GestioneSagre.DataProtection.Controllers.Common;
 
 [ApiController]
 [Route("api/[controller]")]
