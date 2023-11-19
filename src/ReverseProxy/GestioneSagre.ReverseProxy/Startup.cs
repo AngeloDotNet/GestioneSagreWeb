@@ -1,7 +1,4 @@
-﻿using GestioneSagre.GenericServices.Extensions;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
-
-namespace GestioneSagre.ReverseProxy;
+﻿namespace GestioneSagre.ReverseProxy;
 
 public class Startup
 {

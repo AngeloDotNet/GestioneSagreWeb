@@ -1,5 +1,3 @@
-using GestioneSagre.GenericServices.Extensions;
-
 namespace GestioneSagre.ReverseProxy;
 
 public class Program
