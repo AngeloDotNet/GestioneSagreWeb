@@ -48,7 +48,6 @@ Contributions and/or suggestions are always welcome.
 [![.NET Build and Test](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/dotnet.yml)
 [![Lint Code Base](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/linter.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/linter.yml)
 [![Push DockerHub](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/docker-publish.yml)
-<!--[![Analyze SonarQube](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/sonarqube-aruba.yml/badge.svg?branch=main)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/sonarqube-aruba.yml)-->
 
 ## License
 
