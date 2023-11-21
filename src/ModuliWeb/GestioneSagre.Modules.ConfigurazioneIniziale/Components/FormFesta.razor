@@ -1,11 +1,27 @@
-﻿<EditorForm TContent="FestaViewModel" Model="Model" OnSave="SubmitAsync" OnCancel="CancelAsync">
+﻿<EditorForm TContent="ConfigInizialeViewModel" Model="Model" OnSave="SubmitAsync" OnCancel="CancelAsync">
     <ContentInfo>
         <MudGrid>
             <MudItem xs="12" md="3">
-                <MudDatePicker Label="Data Inizio" @bind-Date="Model.DataInizio" For="@(() => Model.DataInizio)" Variant="Variant.Outlined" Editable="true" AutoClose="true" id="datainizio" />
+                <MudTextField Label="Nome Festa" @bind-Value="Model.Titolo" For="@(() => Model.Titolo)" HelperText="@requiredField" Variant="Variant.Outlined" id="Titolo" />
             </MudItem>
             <MudItem xs="12" md="3">
-                <MudDatePicker Label="Data Fine" @bind-Date="Model.DataFine" For="@(() => Model.DataFine)" Variant="Variant.Outlined" Editable="true" AutoClose="true" id="datafine" />
+                <MudTextField Label="Edizione" @bind-Value="Model.Edizione" For="@(() => Model.Edizione)" HelperText="@requiredField" Variant="Variant.Outlined" id="Edizione" />
+            </MudItem>
+            <MudItem xs="12" md="3">
+                <MudTextField Label="Luogo" @bind-Value="Model.Luogo" For="@(() => Model.Luogo)" HelperText="@requiredField" Variant="Variant.Outlined" id="Luogo" />
+            </MudItem>
+            <MudItem xs="12" md="3">
+                <MudSwitch Label="Gestione Menu" Checked="Model.GestioneMenu" CheckedChanged="@(async (bool isChecked) => ChangeStatusGestioneMenu(isChecked))" For="@(() => Model.GestioneMenu)" Variant="Variant.Outlined" Color="Color.Primary" id="GestioneMenu" />
+                <MudSwitch Label="Gestione Categorie" Checked="Model.GestioneCategorie" CheckedChanged="@(async (bool isChecked) => ChangeStatusGestioneCategorie(isChecked))" For="@(() => Model.GestioneCategorie)" Variant="Variant.Outlined" Color="Color.Primary" id="GestioneCategorie" />
+            </MudItem>
+        </MudGrid>
+        <MudDivider Style="margin-top:30px; margin-bottom:30px" />
+        <MudGrid Style="margin-bottom:30px">
+            <MudItem xs="12" md="3">
+                <MudDatePicker Label="Data Inizio" @bind-Date="Model.DataInizio" For="@(() => Model.DataInizio)" HelperText="@requiredField" Variant="Variant.Outlined" AutoClose="true" id="DataInizio" />
+            </MudItem>
+            <MudItem xs="12" md="3">
+                <MudDatePicker Label="Data Fine" @bind-Date="Model.DataFine" For="@(() => Model.DataFine)" HelperText="@requiredField" Variant="Variant.Outlined" AutoClose="true" id="DataFine" />
             </MudItem>
             <MudItem xs="12" md="3">
                 <MudSelect Label="Stato Festa" @bind-Value="EnumValue" Variant="Variant.Outlined" ReadOnly="true" id="status">
@@ -14,6 +30,10 @@
                         <MudSelectItem Value="@item">@item</MudSelectItem>
                     }
                 </MudSelect>
+            </MudItem>
+            <MudItem xs="12" md="3">
+                <MudSwitch Label="Stampa su carta" Checked="Model.StampaCarta" CheckedChanged="@(async (bool isChecked) => ChangeStatusStampaCarta(isChecked))" For="@(() => Model.StampaCarta)" Variant="Variant.Outlined" Color="Color.Primary" id="StampaCarta" />
+                <MudSwitch Label="Stampa ricevuta" Checked="Model.StampaRicevuta" CheckedChanged="@(async (bool isChecked) => ChangeStatusStampaRicevuta(isChecked))" For="@(() => Model.StampaRicevuta)" Variant="Variant.Outlined" Color="Color.Primary" id="StampaRicevuta" />
             </MudItem>
         </MudGrid>
     </ContentInfo>

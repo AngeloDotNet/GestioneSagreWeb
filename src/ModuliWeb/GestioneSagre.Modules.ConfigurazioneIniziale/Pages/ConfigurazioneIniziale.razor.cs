@@ -1,15 +1,10 @@
-﻿using GestioneSagre.Web.Models.ConfigurazioneIniziale;
-using GestioneSagre.Web.Services.ConfigurazioneIniziale;
-using Microsoft.AspNetCore.Components;
-using MudBlazor;
-
-namespace GestioneSagre.Modules.ConfigurazioneIniziale.Pages;
+﻿namespace GestioneSagre.Modules.ConfigurazioneIniziale.Pages;
 
 public partial class ConfigurazioneIniziale
 {
     [Inject] public IConfigurazioneInizialeService Service { get; set; }
     [Inject] public NavigationManager Navigation { get; set; }
-    [Inject] ISnackbar Snackbar { get; set; }
+    [Inject] public ISnackbar Snackbar { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -23,11 +18,17 @@ public partial class ConfigurazioneIniziale
         new BreadcrumbItem("Configurazione Iniziale", href: null, disabled: true)
     };
 
-    private List<FestaViewModel> listItems = new();
+    private List<ConfigInizialeViewModel> listItems = new();
     private string errorMessage;
 
     private bool isLoading = false;
     private bool disableBtnFesta = false;
+
+    private readonly bool disableBtnAttivaFesta = true;
+    private readonly bool disableBtnDisattivaFesta = true;
+    private readonly bool disableBtnModificaFesta = false;
+    private readonly bool disableBtnTerminaFesta = true;
+    private readonly bool disableBtnEliminaFesta = true;
 
     private async Task LoadDatiAsync()
     {
@@ -35,6 +36,10 @@ public partial class ConfigurazioneIniziale
         {
             isLoading = true;
             listItems = await Service.GetListaFeste();
+
+            var EnabledMenu = await Service.VerifyStatusMenu();
+            await Service.ManagementNavMenuAsync(EnabledMenu);
+            StateHasChanged();
 
             if (listItems.Any(x => x.StatusFesta is FestaStatus.Active or FestaStatus.Inactive))
             {
@@ -57,7 +62,7 @@ public partial class ConfigurazioneIniziale
         }
     }
 
-    private async Task AttivaFestaAsync(FestaViewModel model)
+    private async Task AttivaFestaAsync(ConfigInizialeViewModel model)
     {
         try
         {
@@ -77,7 +82,7 @@ public partial class ConfigurazioneIniziale
 
             Snackbar.Add("Festa attivata con successo !", Severity.Success);
 
-            await LoadDatiAsync();
+            await ExecuteLastStepsAsync();
         }
         catch (ApplicationException ex)
         {
@@ -89,7 +94,7 @@ public partial class ConfigurazioneIniziale
         }
     }
 
-    private async Task DisattivaFestaAsync(FestaViewModel model)
+    private async Task DisattivaFestaAsync(ConfigInizialeViewModel model)
     {
         try
         {
@@ -109,7 +114,7 @@ public partial class ConfigurazioneIniziale
 
             Snackbar.Add("Festa disattivata con successo !", Severity.Success);
 
-            await LoadDatiAsync();
+            await ExecuteLastStepsAsync();
         }
         catch (ApplicationException ex)
         {
@@ -121,10 +126,10 @@ public partial class ConfigurazioneIniziale
         }
     }
 
-    private void ModificaFestaAsync(FestaViewModel model)
-        => Navigation.NavigateTo(errorMessage is null ? $"/festa/{model.Id}" : "/configurazione-iniziale");
+    private void ModificaFestaAsync(ConfigInizialeViewModel model)
+        => Navigation.NavigateTo(errorMessage is null ? $"/festa/{model.Id}" : "/ConfigurazioneIniziale");
 
-    private async Task TerminaFestaAsync(FestaViewModel model)
+    private async Task TerminaFestaAsync(ConfigInizialeViewModel model)
     {
         try
         {
@@ -144,7 +149,7 @@ public partial class ConfigurazioneIniziale
 
             Snackbar.Add("Festa terminata con successo !", Severity.Success);
 
-            await LoadDatiAsync();
+            await ExecuteLastStepsAsync();
         }
         catch (ApplicationException ex)
         {
@@ -156,7 +161,7 @@ public partial class ConfigurazioneIniziale
         }
     }
 
-    private async Task EliminaFestaAsync(FestaViewModel model)
+    private async Task EliminaFestaAsync(ConfigInizialeViewModel model)
     {
         try
         {
@@ -176,7 +181,7 @@ public partial class ConfigurazioneIniziale
 
             Snackbar.Add("Festa eliminata con successo !", Severity.Success);
 
-            await LoadDatiAsync();
+            await ExecuteLastStepsAsync();
         }
         catch (ApplicationException ex)
         {
@@ -186,5 +191,13 @@ public partial class ConfigurazioneIniziale
         {
             isLoading = false;
         }
+    }
+
+    private async Task ExecuteLastStepsAsync()
+    {
+        await LoadDatiAsync();
+
+        await Task.Delay(1500);
+        Navigation.NavigateTo("/", true);
     }
 }

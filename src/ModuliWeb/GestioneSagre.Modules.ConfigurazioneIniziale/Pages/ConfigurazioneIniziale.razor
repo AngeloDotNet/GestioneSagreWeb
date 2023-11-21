@@ -9,16 +9,11 @@
         </MudButtonGroup>
     </Toolbar>
     <PageContent>
-        @if (!string.IsNullOrWhiteSpace(errorMessage))
+        @if (errorMessage != null)
         {
-            Snackbar.Add(errorMessage, Severity.Error, config =>
-            {
-                config.ShowCloseIcon = true;
-                config.VisibleStateDuration = 20000;
-                config.HideTransitionDuration = 500;
-                config.ShowTransitionDuration = 500;
-                config.SnackbarVariant = Variant.Filled;
-            });
+            <MudPaper>
+                <MudText Color="Color.Error">@errorMessage</MudText>
+            </MudPaper>
         }
         <MudPaper>
             <MudTable Items="listItems" Loading="isLoading" LoadingProgressColor="Color.Primary">
@@ -53,21 +48,36 @@
                         <MudButtonGroup Color="Color.Inherit" Variant="Variant.Outlined">
                             @if (context.StatusFesta == FestaStatus.Active)
                             {
-                                <MudButton id="@($"disattivaFesta-{context.Id}")" OnClick="() => DisattivaFestaAsync(context)" StartIcon="@Icons.Material.Filled.DoNotTouch" Style="margin-right:10px">DISATTIVA</MudButton>
-                                <MudButton id="@($"modificaFesta-{context.Id}")" OnClick="() => ModificaFestaAsync(context)" StartIcon="@Icons.Material.Filled.Edit" Style="margin-right:15px">MODIFICA</MudButton>
-                                <MudButton id="@($"terminaFesta-{context.Id}")" OnClick="() => TerminaFestaAsync(context)" StartIcon="@Icons.Material.Filled.FreeCancellation" Style="margin-right:15px">TERMINA</MudButton>
-                                <MudButton id="@($"eliminaFesta-{context.Id}")" OnClick="() => EliminaFestaAsync(context)" StartIcon="@Icons.Material.Filled.Delete">ELIMINA</MudButton>
+                                <MudButton id="@($"disattivaFesta-{context.Id}")" OnClick="() => DisattivaFestaAsync(context)"
+                                           StartIcon="@Icons.Material.Filled.DoNotTouch" Style="margin-right:10px" Disabled="@disableBtnDisattivaFesta">DISATTIVA</MudButton>
+
+                                <MudButton id="@($"modificaFesta-{context.Id}")" OnClick="() => ModificaFestaAsync(context)"
+                                           StartIcon="@Icons.Material.Filled.Edit" Style="margin-right:15px" Disabled="@disableBtnModificaFesta">MODIFICA</MudButton>
+
+                                <MudButton id="@($"terminaFesta-{context.Id}")" OnClick="() => TerminaFestaAsync(context)"
+                                           StartIcon="@Icons.Material.Filled.FreeCancellation" Style="margin-right:15px" Disabled="@disableBtnTerminaFesta">TERMINA</MudButton>
+
+                                <MudButton id="@($"eliminaFesta-{context.Id}")" OnClick="() => EliminaFestaAsync(context)"
+                                           StartIcon="@Icons.Material.Filled.Delete" Disabled="@disableBtnEliminaFesta">ELIMINA</MudButton>
                             }
                             else if (context.StatusFesta == FestaStatus.Inactive)
                             {
-                                <MudButton id="@($"attivaFesta-{context.Id}")" OnClick="() => AttivaFestaAsync(context)" StartIcon="@Icons.Material.Filled.TouchApp" Style="margin-right:15px">ATTIVA</MudButton>
-                                <MudButton id="@($"modificaFesta-{context.Id}")" OnClick="() => ModificaFestaAsync(context)" StartIcon="@Icons.Material.Filled.Edit" Style="margin-right:15px">MODIFICA</MudButton>
-                                <MudButton id="@($"terminaFesta-{context.Id}")" OnClick="() => TerminaFestaAsync(context)" StartIcon="@Icons.Material.Filled.FreeCancellation" Style="margin-right:15px">TERMINA</MudButton>
-                                <MudButton id="@($"eliminaFesta-{context.Id}")" OnClick="() => EliminaFestaAsync(context)" StartIcon="@Icons.Material.Filled.Delete">ELIMINA</MudButton>
+                                <MudButton id="@($"attivaFesta-{context.Id}")" OnClick="() => AttivaFestaAsync(context)"
+                                           StartIcon="@Icons.Material.Filled.TouchApp" Style="margin-right:15px" Disabled="@disableBtnAttivaFesta">ATTIVA</MudButton>
+
+                                <MudButton id="@($"modificaFesta-{context.Id}")" OnClick="() => ModificaFestaAsync(context)"
+                                           StartIcon="@Icons.Material.Filled.Edit" Style="margin-right:15px" Disabled="@disableBtnModificaFesta">MODIFICA</MudButton>
+
+                                <MudButton id="@($"terminaFesta-{context.Id}")" OnClick="() => TerminaFestaAsync(context)"
+                                           StartIcon="@Icons.Material.Filled.FreeCancellation" Style="margin-right:15px" Disabled="@disableBtnTerminaFesta">TERMINA</MudButton>
+
+                                <MudButton id="@($"eliminaFesta-{context.Id}")" OnClick="() => EliminaFestaAsync(context)"
+                                           StartIcon="@Icons.Material.Filled.Delete" Disabled="@disableBtnEliminaFesta">ELIMINA</MudButton>
                             }
                             else if (context.StatusFesta == FestaStatus.Finished)
                             {
-                                <MudButton id="@($"eliminaFesta-{context.Id}")" OnClick="() => EliminaFestaAsync(context)" StartIcon="@Icons.Material.Filled.Delete">ELIMINA</MudButton>
+                                <MudButton id="@($"eliminaFesta-{context.Id}")" OnClick="() => EliminaFestaAsync(context)"
+                                           StartIcon="@Icons.Material.Filled.Delete" Disabled="@disableBtnEliminaFesta">ELIMINA</MudButton>
                             }
                         </MudButtonGroup>
                     </MudTd>

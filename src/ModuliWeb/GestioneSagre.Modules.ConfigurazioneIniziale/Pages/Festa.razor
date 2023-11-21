@@ -5,16 +5,11 @@
 
 <PageLayout PageTitle="Gestione Festa">
     <PageContent>
-        @if (!string.IsNullOrWhiteSpace(errorMessage))
+        @if (errorMessage != null)
         {
-            Snackbar.Add(errorMessage, Severity.Error, config =>
-            {
-                config.ShowCloseIcon = false;
-                config.VisibleStateDuration = 10000;
-                config.HideTransitionDuration = 500;
-                config.ShowTransitionDuration = 500;
-                config.SnackbarVariant = Variant.Filled;
-            });
+            <MudPaper>
+                <MudText Color="Color.Error">@errorMessage</MudText>
+            </MudPaper>
         }
 
         @if (Id != Guid.Empty)
