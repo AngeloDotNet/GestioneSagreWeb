@@ -12,13 +12,8 @@ public partial class About
         new BreadcrumbItem("About", href: null, disabled: true)
     };
 
-    private static string YearCopyright => CalculateCurrentYear();
-    private static string CalculateCurrentYear()
-    {
-        var startYear = 2023;
-        var currentYear = DateTime.Now.Year;
-        var years = startYear == currentYear ? $"{startYear}" : $"{startYear} - {currentYear}";
-
-        return years;
-    }
+    public static string years = string.Empty;
+    private static string YearCopyright => CalculateCurrentYear(2023, DateTime.Now.Year);
+    private static string CalculateCurrentYear(int startYear, int actualYear)
+        => years = startYear == actualYear ? $"{startYear}" : $"{startYear} - {actualYear}";
 }
