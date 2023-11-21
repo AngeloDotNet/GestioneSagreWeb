@@ -1,14 +1,15 @@
 name: CodeQL
 
 on:
-  # push:
-  #   branches: [ "main" ]
+#  push:
+#    branches: [ master ]
+#    paths: [ 'src/**' ]
+#  pull_request:
+#    branches: [ master, develop]
+#    paths: [ 'src/**' ]
   workflow_dispatch:
-  # schedule:
-  #   - cron: '0 0 1,15 * *'
-    
-env:
-  NET_VERSION: '6.0.x'
+#  schedule:
+#    - cron: '0 0 1,15 * *'
     
 jobs:
   analyze:
@@ -25,23 +26,18 @@ jobs:
         language: [ 'csharp' ]
 
     steps:
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
 
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: ${{ matrix.language }}
 
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
-        with:
-          languages: ${{ matrix.language }}
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v2
 
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v2
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
