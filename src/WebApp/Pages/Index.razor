@@ -1,13 +1,4 @@
 ﻿@page "/"
-<HeaderPage itemsList="_items" />
+<HeaderPage itemsList="items" />
 
-<Welcome version="@appVersion" />
-
-@code {
-    private string appVersion = "1.0.0";
-
-    private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
-    {
-        new BreadcrumbItem("Home Page", href: null, disabled: true)
-    };
-}
+<Welcome version="@appVersion" Channel="@distroVersion" />

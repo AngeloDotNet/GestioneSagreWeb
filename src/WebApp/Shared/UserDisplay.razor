@@ -1,12 +1,19 @@
 ﻿@inject NavigationManager Navigation
 
-@*<MudBadge Content="@NumberNotifications" Color="Color.Inherit" Overlap="true" Class="mx-6 my-4" Origin="Origin.CenterRight">
-    <MudMenu Icon="@Icons.Material.Filled.Notifications" Color="Color.Inherit" AnchorOrigin="Origin.BottomCenter"></MudMenu>
-</MudBadge>
-<MudMenu Icon="@Icons.Material.Filled.Language" Color="Color.Inherit" AnchorOrigin="Origin.BottomCenter"></MudMenu> *@
+@* <MudMenu Icon="@Icons.Material.Filled.Language" Color="Color.Inherit" AnchorOrigin="Origin.BottomCenter"></MudMenu> *@
+<MudBadge Content="@numberNotifications" Color="Color.Inherit" Overlap="true" Class="mx-6 my-4" Origin="Origin.CenterRight">
+    <MudMenu Icon="@Icons.Material.Filled.Notifications" Color="Color.Surface" AnchorOrigin="Origin.BottomCenter"></MudMenu>
+</MudBadge> 
 
 <MudMenu Icon="@Icons.Material.Filled.AccountCircle" Color="Color.Inherit" AnchorOrigin="Origin.BottomCenter">
-    @* <MudMenuItem Icon="@Icons.Material.Filled.ManageAccounts" Disabled>Preferenze</MudMenuItem>
-    <MudMenuItem Icon="@Icons.Material.Filled.SupportAgent" Disabled>Supporto</MudMenuItem> *@
-    <MudMenuItem Icon="@Icons.Material.Filled.Info" OnClick="OpenAboutPage">About</MudMenuItem>
+    <ActivatorContent>
+        <MudAvatar Color="Color.Surface" Variant="Variant.Filled">
+            <MudIcon Icon="@Icons.Material.Filled.Person" />
+        </MudAvatar>
+    </ActivatorContent>
+    <ChildContent>
+        @* <MudListItem Icon="@Icons.Material.Filled.ManageAccounts" Disabled>Preferenze</MudListItem>
+        <MudListItem Icon="@Icons.Material.Filled.SupportAgent" Disabled>Supporto</MudListItem> *@
+        <MudListItem Icon="@Icons.Material.Filled.Info" Text="About" OnClick="OpenAboutPage" />
+    </ChildContent>
 </MudMenu>

@@ -7,9 +7,12 @@ WORKDIR /src
 COPY ["src/WebApp/GestioneSagre.Web.App.csproj", "src/WebApp/"]
 COPY ["src/WebApp/nginx.conf", "src/WebApp/"]
 COPY ["src/WebApp.Shared/GestioneSagre.Web.Shared.csproj", "src/WebApp.Shared/"]
+COPY ["src/WebApp.Services/GestioneSagre.Web.Services.csproj", "src/WebApp.Services/"]
+COPY ["src/WebApp.Models/GestioneSagre.Web.Models.csproj", "src/WebApp.Models/"]
 
 # Copy the "module" projects loaded from the web app
 COPY ["src/ModuliWeb/GestioneSagre.Modules.Dashboard/GestioneSagre.Modules.Dashboard.csproj", "src/ModuliWeb/GestioneSagre.Modules.Dashboard/"]
+COPY ["src/ModuliWeb/GestioneSagre.Modules.ConfigurazioneIniziale/GestioneSagre.Modules.ConfigurazioneIniziale.csproj", "src/ModuliWeb/GestioneSagre.Modules.ConfigurazioneIniziale/"]
 
 RUN dotnet restore "src/WebApp/GestioneSagre.Web.App.csproj"
 COPY . .

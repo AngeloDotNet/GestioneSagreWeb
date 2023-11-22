@@ -2,64 +2,67 @@
     @* <MudPaper Class="pa-3 mb-5 rounded-lg" Elevation="0" Outlined="true" Square="true" Style="color: white; background-color:#FF9800; text-align: center">Versione DEMO</MudPaper> *@
 
     <div class="d-flex justify-center">
-        <MudImage Src="images/logo_menu.png" ObjectFit="ObjectFit.ScaleDown" ObjectPosition="ObjectPosition.Center"
-        Width="100" Alt="gestione sagre web" Class="rounded-lg mt-2 mb-5" />
+        <MudImage Src="images/logo_menu.png" ObjectFit="ObjectFit.ScaleDown" ObjectPosition="ObjectPosition.Center" Width="100" Alt="gestione sagre web" Class="rounded-lg mt-2 mb-5" />
     </div>
 
     <MudNavLink Href="/" Icon="@Icons.Material.Filled.Dashboard">Dashboard</MudNavLink>
-
     <MudDivider />
 
-    <MudNavGroup Title="Operazioni di avvio" Icon="@Icons.Material.Filled.Start" @bind-Expanded="isStartExpanded">
-        <MudNavLink Href="#" Icon="@Icons.Material.Filled.DisplaySettings">Configurazione Iniziale</MudNavLink>
-        <MudNavLink Href="#" Icon="@Icons.Material.Filled.Settings">Impostazioni</MudNavLink>
-    </MudNavGroup>
-
+    @* <MudNavGroup Title="Operazioni di avvio" Icon="@Icons.Material.Filled.Start" @bind-Expanded="isStartExpanded">
+        <MudNavLink Href="/ConfigurazioneIniziale" Icon="@Icons.Material.Filled.DisplaySettings">Configurazione Iniziale</MudNavLink>
+        <MudNavLink Href="#" Icon="@Icons.Material.Filled.Settings" Disabled>Impostazioni</MudNavLink>
+    </MudNavGroup> *@
+    <MudNavLink Href="/ConfigurazioneIniziale" Icon="@Icons.Material.Filled.DisplaySettings">Configurazione Iniziale</MudNavLink>
     <MudDivider />
 
-    <MudNavGroup Title="Magazzino" Icon="@Icons.Material.Filled.Warehouse" @bind-Expanded="isWarehouseExpanded">
+    <MudNavGroup Title="Magazzino" Icon="@Icons.Material.Filled.Warehouse" @bind-Expanded="isWarehouseExpanded" Disabled="@isWarehouseDisabled">
         <MudNavLink Href="#" Icon="@Icons.Material.Filled.Category">Categorie</MudNavLink>
         <MudNavLink Href="#" Icon="@Icons.Material.Filled.ProductionQuantityLimits">Prodotti</MudNavLink>
         <MudNavLink Href="#" Icon="@Icons.Material.Filled.RestaurantMenu">Menu</MudNavLink>
     </MudNavGroup>
-
     <MudDivider />
 
-    <MudNavGroup Title="Cassa" Icon="@Icons.Material.Filled.Store" @bind-Expanded="isStoreExpanded">
-        <MudNavLink Href="#" Icon="@Icons.Material.Filled.AddBusiness">Gestione Festa</MudNavLink>
+    <MudNavLink Href="#" Icon="@Icons.Material.Filled.Dining" Disabled="@isScontrinoDisabled">Nuovo Scontrino</MudNavLink>
+    <MudDivider />
+
+    @* <MudNavLink Href="#" Icon="@Icons.Material.Filled.Receipt">Gestione Scontrini</MudNavLink> *@
+    <MudNavGroup Title="Modifica Scontrini" Icon="@Icons.Material.Filled.Receipt" @bind-Expanded="isReceiptsExpanded" Disabled="@isReceiptsDisabled">
+    @* <MudNavLink Href="#" Icon="@Icons.Material.Filled.Dining">Nuovo scontrino</MudNavLink> *@
+    <MudNavLink Href="#" Icon="@Icons.Material.Filled.Print">Ristampa scontrino</MudNavLink>
+    <MudNavLink Href="#" Icon="@Icons.Material.Filled.SignalWifiStatusbarNull">Cambia stato</MudNavLink>
+    <MudNavLink Href="#" Icon="@Icons.Material.Filled.ReceiptLong">Cambia tipologia</MudNavLink>
+    <MudNavLink Href="#" Icon="@Icons.Material.Filled.Payment">Cambia pagamento</MudNavLink>
+    </MudNavGroup>
+    <MudDivider />
+
+    <MudNavGroup Title="Cassa" Icon="@Icons.Material.Filled.Store" @bind-Expanded="isStoreExpanded" Disabled="@isStoreDisabled">
+        @* <MudNavLink Href="#" Icon="@Icons.Material.Filled.AddBusiness">Gestione Festa</MudNavLink> *@
         <MudNavLink Href="#" Icon="@Icons.Material.Filled.CalendarMonth">Prenotazioni</MudNavLink>
         <MudNavLink Href="#" Icon="@Icons.Material.Filled.WorkHistory">Movimenti Cassa</MudNavLink>
     </MudNavGroup>
-
     <MudDivider />
 
-    <MudNavGroup Title="Scontrini" Icon="@Icons.Material.Filled.Receipt" @bind-Expanded="isReceiptsExpanded">
-        <MudNavLink Href="#" Icon="@Icons.Material.Filled.Dining">Nuovo scontrino</MudNavLink>
-        <MudNavLink Href="#" Icon="@Icons.Material.Filled.Print">Ristampa scontrino</MudNavLink>
-        <MudNavLink Href="#" Icon="@Icons.Material.Filled.SignalWifiStatusbarNull">Cambia stato</MudNavLink>
-        <MudNavLink Href="#" Icon="@Icons.Material.Filled.ReceiptLong">Cambia tipologia</MudNavLink>
-        <MudNavLink Href="#" Icon="@Icons.Material.Filled.Payment">Cambia pagamento</MudNavLink>
-    </MudNavGroup>
-
-    <MudDivider />
-
-    <MudNavGroup Title="Stampe" Icon="@Icons.Material.Filled.Print" @bind-Expanded="isPrintsExpanded">
+    <MudNavGroup Title="Stampe" Icon="@Icons.Material.Filled.Print" @bind-Expanded="isPrintsExpanded" Disabled="@isPrintsDisabled">
         <MudNavLink Href="#" Icon="@Icons.Material.Filled.WorkHistory">Contabilità cassa</MudNavLink>
         <MudNavLink Href="#" Icon="@Icons.Material.Filled.CalendarMonth">Stampa prenotazioni</MudNavLink>
         <MudNavLink Href="#" Icon="@Icons.Material.Filled.Print">Stampa menu</MudNavLink>
     </MudNavGroup>
-
     <MudDivider />
 
-    <MudNavGroup Title="Statistiche" Icon="@Icons.Material.Filled.QueryStats" @bind-Expanded="isStatsExpanded">
+    <MudNavGroup Title="Statistiche" Icon="@Icons.Material.Filled.QueryStats" @bind-Expanded="isStatsExpanded" Disabled="@isStatsDisabled">
         <MudNavLink Href="#" Icon="@Icons.Material.Filled.Today">Consumi giornata</MudNavLink>
         <MudNavLink Href="#" Icon="@Icons.Material.Filled.Today">Consumi totali</MudNavLink>
         <MudNavLink Href="#" Icon="@Icons.Material.Filled.Summarize">Riepilogo cassa</MudNavLink>
         <MudNavLink Href="#" Icon="@Icons.Material.Filled.Summarize">Riepilogo incassi</MudNavLink>
     </MudNavGroup>
+    <MudDivider />
 
-    @* <MudDivider />
+    <MudNavLink Href="#" Icon="@Icons.Material.Filled.Login" Disabled="@isLoginDisabled">Login</MudNavLink>
+    <MudDivider />
 
-    <MudNavLink Href="#" Icon="@Icons.Material.Filled.Login">Login</MudNavLink>
-    <MudNavLink Href="#" Icon="@Icons.Material.Filled.Logout">Logout</MudNavLink> *@
+    <MudNavLink Href="#" Icon="@Icons.Material.Filled.Logout" Disabled="@isLogoutDisabled">Logout</MudNavLink>
+    <MudDivider />
+
+    <MudNavLink Href="#" Icon="@Icons.Material.Filled.LockPerson" Disabled="@isAdminDisabled">Amministrazione</MudNavLink>
+    <MudDivider />
 </MudNavMenu>

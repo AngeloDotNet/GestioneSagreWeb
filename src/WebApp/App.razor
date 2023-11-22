@@ -1,6 +1,4 @@
-﻿@using GestioneSagre.Web.App.Shared;
-
-@inherits AppBase
+﻿@inherits AppBase
 
 <Router AppAssembly="@typeof(Program).Assembly" AdditionalAssemblies="@LazyLoadedAssemblies" OnNavigateAsync="@OnNavigateAsync">
     <Found Context="routeData">
@@ -13,16 +11,6 @@
                     <img src="images/404NotFound.png" alt="page not found" />
                 </MudText>
                 <MudText Typo="Typo.h6" Align="Align.Center" GutterBottom="true">La pagina richiesta non esiste.</MudText>
-                <MudText Typo="Typo.subtitle2" Align="Align.Center" GutterBottom="true">
-                    <p><br /><br /></p>
-                    <p>
-                        Gli assembly caricati sono: <br />
-                        @foreach (var assembly in LazyLoadedAssemblies)
-                        {
-                            <h5>@assembly.FullName</h5>
-                        }
-                    </p>
-                </MudText>
             </MudPaper>
         </LayoutView>
     </NotFound>
