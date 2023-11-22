@@ -1,6 +1,4 @@
-﻿using MudBlazor;
-
-namespace GestioneSagre.Web.Shared.Configuration;
+﻿namespace GestioneSagre.Web.Shared.Configuration;
 
 public static class ConfigStaticThemes
 {

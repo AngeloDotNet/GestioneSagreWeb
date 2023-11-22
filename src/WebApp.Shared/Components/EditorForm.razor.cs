@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Forms;
-using MudBlazor;
-
-namespace GestioneSagre.Web.Shared.Components;
+﻿namespace GestioneSagre.Web.Shared.Components;
 
 public partial class EditorForm<TContent>
 {
@@ -14,12 +10,13 @@ public partial class EditorForm<TContent>
     [Inject] public IDialogService Dialog { get; set; } = default!;
 
     private EditContext editContext;
+    private readonly bool DisableBtnSave = true; //Se TRUE disabilita il salvataggio delle form
 
     protected override void OnParametersSet()
     {
         editContext = new EditContext(Model);
     }
 
-    async Task SubmitAsync() => await OnSave.InvokeAsync(Model);
-    async Task CancelAsync() => await OnCancel.InvokeAsync();
+    public async Task SubmitAsync() => await OnSave.InvokeAsync(Model);
+    public async Task CancelAsync() => await OnCancel.InvokeAsync();
 }

@@ -1,12 +1,3 @@
-﻿@inject NavigationManager navigation
+﻿@inject NavigationManager navigation;
 
 <MudButton OnClick="OnButtonClicked" StartIcon="@IconButton" Variant="Variant.Filled" Disabled="@Disabled" Color="Color.Primary">@Label</MudButton>
-
-@code {
-    [Parameter, EditorRequired] public string IconButton { get; set; }
-    [Parameter, EditorRequired] public string Page { get; set; }
-    [Parameter, EditorRequired] public string Label { get; set; }
-    [Parameter, EditorRequired] public bool Disabled { get; set; }
-
-    void OnButtonClicked() => navigation.NavigateTo(Page);
-}
