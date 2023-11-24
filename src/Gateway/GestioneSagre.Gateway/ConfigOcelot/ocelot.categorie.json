@@ -1,0 +1,66 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/health",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-categorie",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/check-categorie",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/categorie/listacategorie",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-categorie",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/getcategorie",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/categorie/categoria/{idCategoria}/{idFesta}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-categorie",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/getcategoria/{idCategoria}/{idFesta}",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/categorie/categoria",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-categorie",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/categoria",
+            "UpstreamHttpMethod": [ "Post", "Put" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/categorie/categoria/{idCategoria}/{idFesta}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-categorie",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/categoria/{idCategoria}/{idFesta}",
+            "UpstreamHttpMethod": [ "Delete" ]
+        }
+    ],
+    "GlobalConfiguration": {
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/home/",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "api-gateway",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/helloworld/",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/health",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "api-gateway",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/check-gateway",
+            "UpstreamHttpMethod": [ "Get" ]
+        }
+    ],
+    "GlobalConfiguration": {
+    }
+}

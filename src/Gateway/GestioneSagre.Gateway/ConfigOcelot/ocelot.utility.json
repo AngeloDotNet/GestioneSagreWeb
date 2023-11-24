@@ -1,0 +1,78 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/health",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-utility",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/check-utility",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "downstreampathtemplate": "/api/utility/tipocliente",
+            "DownstreamScheme": "http",
+            "downstreamhostandports": [
+                {
+                    "host": "proxy-utility",
+                    "port": 5001
+                }
+            ],
+            "upstreampathtemplate": "/gettipocliente",
+            "upstreamhttpmethod": [ "get" ]
+        },
+        {
+            "downstreampathtemplate": "/api/utility/tipopagamento",
+            "DownstreamScheme": "http",
+            "downstreamhostandports": [
+                {
+                    "host": "proxy-utility",
+                    "port": 5001
+                }
+            ],
+            "upstreampathtemplate": "/gettipopagamento",
+            "upstreamhttpmethod": [ "get" ]
+        },
+        {
+            "downstreampathtemplate": "/api/utility/statoscontrino",
+            "DownstreamScheme": "http",
+            "downstreamhostandports": [
+                {
+                    "host": "proxy-utility",
+                    "port": 5001
+                }
+            ],
+            "upstreampathtemplate": "/getstatoscontrino",
+            "upstreamhttpmethod": [ "get" ]
+        },
+        {
+            "downstreampathtemplate": "/api/utility/tiposcontrino",
+            "DownstreamScheme": "http",
+            "downstreamhostandports": [
+                {
+                    "host": "proxy-utility",
+                    "port": 5001
+                }
+            ],
+            "upstreampathtemplate": "/gettiposcontrino",
+            "upstreamhttpmethod": [ "get" ]
+        },
+        {
+            "downstreampathtemplate": "/api/utility/valutemonetarie",
+            "DownstreamScheme": "http",
+            "downstreamhostandports": [
+                {
+                    "host": "proxy-utility",
+                    "port": 5001
+                }
+            ],
+            "upstreampathtemplate": "/getvalutemonetarie",
+            "upstreamhttpmethod": [ "get" ]
+        }
+    ],
+    "GlobalConfiguration": {
+    }
+}

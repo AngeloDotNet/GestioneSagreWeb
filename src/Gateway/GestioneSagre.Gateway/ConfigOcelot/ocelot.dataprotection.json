@@ -1,0 +1,42 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/health",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-dataprotection",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/check-dataprotection",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/dataprotection/data-protect",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-dataprotection",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/dataprotect",
+            "UpstreamHttpMethod": [ "Post" ]
+        },
+        {
+            "downstreampathtemplate": "/api/dataprotection/data-unprotect",
+            "DownstreamScheme": "http",
+            "downstreamhostandports": [
+                {
+                    "host": "proxy-dataprotection",
+                    "port": 5001
+                }
+            ],
+            "upstreampathtemplate": "/dataunprotect",
+            "upstreamhttpmethod": [ "Post" ]
+        }
+    ],
+    "GlobalConfiguration": {
+    }
+}

@@ -1,0 +1,126 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/feste/listafeste",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-operazioniavvio",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/getfeste",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/feste/festa/{idFesta}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-operazioniavvio",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/getfesta/{idFesta}",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/feste/festa",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-operazioniavvio",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/festa",
+            "UpstreamHttpMethod": [ "Post", "Put" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/feste/festa/{idFesta}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-operazioniavvio",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/festa/{idFesta}",
+            "UpstreamHttpMethod": [ "Delete" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/impostazioni/listaimpostazioni",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-operazioniavvio",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/getimpostazioni",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/impostazioni/impostazione/{idFesta}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-operazioniavvio",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/getimpostazione/{idFesta}",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/impostazioni/impostazione",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-operazioniavvio",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/impostazione",
+            "UpstreamHttpMethod": [ "Post", "Put" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/intestazioni/listaintestazioni",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-operazioniavvio",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/getintestazioni",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/intestazioni/intestazione/{idFesta}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-operazioniavvio",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/getintestazione/{idFesta}",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/intestazioni/intestazione",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-operazioniavvio",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/intestazione",
+            "UpstreamHttpMethod": [ "Post", "Put" ]
+        }
+    ],
+    "GlobalConfiguration": {
+    }
+}
