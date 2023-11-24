@@ -127,7 +127,7 @@ public partial class ConfigurazioneIniziale
     }
 
     private void ModificaFestaAsync(ConfigInizialeViewModel model)
-        => Navigation.NavigateTo(errorMessage is null ? $"/festa/{model.Id}" : "/ConfigurazioneIniziale");
+        => Navigation.NavigateTo(errorMessage is null ? $"/festa/{model.Id}" : "/configurazioneiniziale");
 
     private async Task TerminaFestaAsync(ConfigInizialeViewModel model)
     {

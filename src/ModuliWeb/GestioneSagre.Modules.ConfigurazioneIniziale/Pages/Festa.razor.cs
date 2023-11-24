@@ -12,7 +12,7 @@ public partial class Festa
     private readonly List<BreadcrumbItem> items = new List<BreadcrumbItem>
     {
         new BreadcrumbItem("Home Page", href: "/"),
-        new BreadcrumbItem("Configurazione Iniziale", href: "/ConfigurazioneIniziale"),
+        new BreadcrumbItem("Configurazione Iniziale", href: "configurazioneiniziale"),
         new BreadcrumbItem("Gestione Festa", href: null, disabled: true)
     };
 
