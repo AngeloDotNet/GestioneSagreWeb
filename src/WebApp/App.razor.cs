@@ -12,7 +12,7 @@ public class AppBase : ComponentBase, IDisposable
         {
             switch (args.Path)
             {
-                case "ConfigurazioneIniziale":
+                case "configurazioneiniziale":
                     {
                         var assemblies = await AssemblyLoader.LoadAssembliesAsync(new[] { "GestioneSagre.Modules.ConfigurazioneIniziale.dll" });
                         LazyLoadedAssemblies.AddRange(assemblies);
@@ -20,7 +20,7 @@ public class AppBase : ComponentBase, IDisposable
                         break;
                     }
 
-                //case "Categorie":
+                //case "categorie":
                 //    {
                 //        var assemblies = await AssemblyLoader.LoadAssembliesAsync(new[] { "GestioneSagre.Modules.Categorie.dll" });
                 //        LazyLoadedAssemblies.AddRange(assemblies);
