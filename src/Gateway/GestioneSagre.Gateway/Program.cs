@@ -7,7 +7,6 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         builder.AddSerilogOptionsBuilder();
-        //builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
         builder.Configuration.AddOcelot("ConfigOcelot", builder.Environment);
 
         Startup startup = new(builder.Configuration);

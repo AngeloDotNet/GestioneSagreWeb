@@ -5,7 +5,6 @@ EXPOSE 5001
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["src/Gateway/GestioneSagre.Gateway/GestioneSagre.Gateway.csproj", "src/Gateway/GestioneSagre.Gateway/"]
-#COPY ["src/Gateway/GestioneSagre.Gateway/ocelot.json", "src/Gateway/GestioneSagre.Gateway/"]
 COPY ["src/Gateway/GestioneSagre.Gateway.BusinessLayer/GestioneSagre.Gateway.BusinessLayer.csproj", "src/Gateway/GestioneSagre.Gateway.BusinessLayer/"]
 
 # Copy the Ocelot configuration files
