@@ -2,9 +2,13 @@
   "solution": {
     "path": "..\\GestioneSagreWeb.sln",
     "projects": [
-      "src\\WebApp\\GestioneSagre.Web.App.csproj",
+      "src\\ModuliWeb\\GestioneSagre.Modules.Categorie\\GestioneSagre.Modules.Categorie.csproj",
+      "src\\ModuliWeb\\GestioneSagre.Modules.ConfigurazioneIniziale\\GestioneSagre.Modules.ConfigurazioneIniziale.csproj",
+      "src\\ModuliWeb\\GestioneSagre.Modules.Dashboard\\GestioneSagre.Modules.Dashboard.csproj",
+      "src\\WebApp.Models\\GestioneSagre.Web.Models.csproj",
+      "src\\WebApp.Services\\GestioneSagre.Web.Services.csproj",
       "src\\WebApp.Shared\\GestioneSagre.Web.Shared.csproj",
-	  "src\\ModuliWeb\\GestioneSagre.Modules.Dashboard\\GestioneSagre.Modules.Dashboard.csproj"
+      "src\\WebApp\\GestioneSagre.Web.App.csproj"
     ]
   }
 }
