@@ -26,3 +26,4 @@ RUN dotnet publish "GestioneSagre.Web.App.csproj" -c Release -o /app/publish
 FROM nginx:alpine AS final
 WORKDIR /usr/share/nginx/html
 COPY --from=publish /app/publish/wwwroot .
+COPY --from=publish /app/publish/nginx.conf /etc/nginx/nginx.conf
