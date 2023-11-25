@@ -5,7 +5,6 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["src/WebApp/GestioneSagre.Web.App.csproj", "src/WebApp/"]
-COPY ["src/WebApp/nginx.conf", "src/WebApp/"]
 COPY ["src/WebApp.Shared/GestioneSagre.Web.Shared.csproj", "src/WebApp.Shared/"]
 COPY ["src/WebApp.Services/GestioneSagre.Web.Services.csproj", "src/WebApp.Services/"]
 COPY ["src/WebApp.Models/GestioneSagre.Web.Models.csproj", "src/WebApp.Models/"]
@@ -26,4 +25,3 @@ RUN dotnet publish "GestioneSagre.Web.App.csproj" -c Release -o /app/publish
 FROM nginx:alpine AS final
 WORKDIR /usr/share/nginx/html
 COPY --from=publish /app/publish/wwwroot .
-COPY --from=publish /app/publish/nginx.conf /etc/nginx/nginx.conf
