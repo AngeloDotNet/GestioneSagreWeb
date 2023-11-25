@@ -16,6 +16,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT="production"
       - ASPNETCORE_URLS=http://*:80
+    volumes:
+      - /docker/storage/storage-webapp/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 5200:80
 
