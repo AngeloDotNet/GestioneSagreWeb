@@ -9,22 +9,21 @@ public partial class Festa
 
     protected override async Task OnInitializedAsync() => await base.OnInitializedAsync();
 
-    private readonly List<BreadcrumbItem> items = new List<BreadcrumbItem>
+    public string errorMessage;
+
+    private ConfigInizialeViewModel model = new();
+    private readonly List<BreadcrumbItem> items = new()
     {
         new BreadcrumbItem("Home Page", href: "/"),
         new BreadcrumbItem("Configurazione Iniziale", href: "configurazioneiniziale"),
         new BreadcrumbItem("Gestione Festa", href: null, disabled: true)
     };
 
-    private ConfigInizialeViewModel model = new();
-
     protected override async Task OnParametersSetAsync()
     {
         await base.OnParametersSetAsync();
         model = await Service.GetFestaByID(Id);
     }
-
-    public string errorMessage;
 
     private async Task SaveFestaAsync(ConfigInizialeViewModel model)
     {
