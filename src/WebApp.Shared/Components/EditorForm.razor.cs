@@ -10,7 +10,7 @@ public partial class EditorForm<TContent>
     [Inject] public IDialogService Dialog { get; set; } = default!;
 
     private EditContext editContext;
-    private readonly bool DisableBtnSave = true; //Se TRUE disabilita il salvataggio delle form
+    private readonly bool disableBtnSave = true; //TODO: Se TRUE disabilita il salvataggio delle form
 
     protected override void OnParametersSet()
     {

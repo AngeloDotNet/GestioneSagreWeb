@@ -8,7 +8,7 @@ public static class ConfigStaticThemes
     {
         appliedTheme = theme switch
         {
-            //"Default" => GenerateDefaultTheme(),
+            "Default" => GenerateDefaultTheme(),
             //"Purple" => GeneratePurpleTheme(),
             _ => GenerateDefaultTheme(),
         };

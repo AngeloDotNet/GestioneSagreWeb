@@ -2,5 +2,5 @@
 
 public partial class HeaderPage
 {
-    [Parameter] public List<BreadcrumbItem> itemsList { get; set; } = new();
+    [Parameter] public List<BreadcrumbItem> ItemsList { get; set; } = new();
 }
