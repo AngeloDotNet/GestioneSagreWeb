@@ -15,7 +15,7 @@ Open source project that was born with the idea of wanting to create free softwa
 
 - **Client:** Blazor, .NET 6
 - **Server:** Microservices Web API, .NET 6
-- **Database:** SQLServer 2022 CU9 ubuntu 20.04
+- **Database:** SQLServer 2022 CU10 ubuntu 20.04
 - **Graphics:** MudBlazor 6.11.0
 - **Logging:** Serilog with SEQ (Datalust)
 
@@ -33,6 +33,10 @@ Open source project that was born with the idea of wanting to create free softwa
 
 - Example MIGRATION: **InitialMigration** and PROJECT: **Utility**
 -->
+
+## Demo
+
+Dev Environment: http://sagre-web.aepserver.it/
 
 ## Support
 
