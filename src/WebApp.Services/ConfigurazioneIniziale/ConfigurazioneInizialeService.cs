@@ -202,13 +202,22 @@ public class ConfigurazioneInizialeService : IConfigurazioneInizialeService
     {
         var LoadingFesteList = await GetListaFeste() ?? new();
 
-        if (LoadingFesteList.Count == 0 || (LoadingFesteList.Where(y => y.StatusFesta == FestaStatus.Inactive).Count() > 0) ||
-            (LoadingFesteList.Where(y => y.StatusFesta == FestaStatus.Finished || y.StatusFesta == FestaStatus.Deleted).Count() > 0))
+        if (LoadingFesteList.Count == 0 || (LoadingFesteList.Any(y => !CheckStatusFesta(y.StatusFesta))))
         {
             return false;
         }
 
-        if (LoadingFesteList.Where(y => y.StatusFesta == FestaStatus.Active).Count() > 0)
+        if (LoadingFesteList.Any(y => CheckStatusFesta(y.StatusFesta)))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private static bool CheckStatusFesta(FestaStatus status)
+    {
+        if (status == FestaStatus.Active)
         {
             return true;
         }
