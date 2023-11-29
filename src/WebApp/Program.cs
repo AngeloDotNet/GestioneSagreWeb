@@ -10,17 +10,18 @@ public class Program
 
         builder.Services.AddMudServices(config =>
             {
-                config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.TopCenter;
+                config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.TopRight;
                 config.SnackbarConfiguration.PreventDuplicates = false;
                 config.SnackbarConfiguration.NewestOnTop = false;
                 config.SnackbarConfiguration.ShowCloseIcon = false;
-                config.SnackbarConfiguration.VisibleStateDuration = 3000; //5000;
+                config.SnackbarConfiguration.VisibleStateDuration = 5000;
                 config.SnackbarConfiguration.HideTransitionDuration = 500;
                 config.SnackbarConfiguration.ShowTransitionDuration = 500;
                 config.SnackbarConfiguration.SnackbarVariant = Variant.Filled;
             });
 
-        builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+        builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://sagre-api.aepserver.it") });
+        //builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://api-gateway:5001") });
 
         builder.Services.Scan(scan => scan.FromAssemblyOf<IConfigurazioneInizialeService>()
                 .AddClasses(services => services.Where(type => type.Name.EndsWith("Service")))
