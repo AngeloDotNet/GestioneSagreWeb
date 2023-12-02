@@ -1,0 +1,14 @@
+{
+  "solution": {
+    "path": "..\\GestioneSagreWeb.sln",
+    "projects": [
+      "src\\Categorie\\GestioneSagre.Categorie.BusinessLayer.Test\\GestioneSagre.Categorie.BusinessLayer.Test.csproj",
+      "src\\Categorie\\GestioneSagre.Categorie.BusinessLayer\\GestioneSagre.Categorie.BusinessLayer.csproj",
+      "src\\Categorie\\GestioneSagre.Categorie.DataAccessLayer.Test\\GestioneSagre.Categorie.DataAccessLayer.Test.csproj",
+      "src\\Categorie\\GestioneSagre.Categorie.DataAccessLayer\\GestioneSagre.Categorie.DataAccessLayer.csproj",
+      "src\\Categorie\\GestioneSagre.Categorie.IntegrationTest\\GestioneSagre.Categorie.IntegrationTest.csproj",
+      "src\\Categorie\\GestioneSagre.Categorie.Shared\\GestioneSagre.Categorie.Shared.csproj",
+      "src\\Categorie\\GestioneSagre.Categorie\\GestioneSagre.Categorie.csproj"
+    ]
+  }
+}
