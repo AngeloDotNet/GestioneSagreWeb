@@ -16,13 +16,13 @@ Open source project that was born with the idea of wanting to create free softwa
 - **Client:** Blazor, .NET 6
 - **Server:** Microservices Web API, .NET 6
 - **Database:** SQLServer 2022 CU10 ubuntu 20.04
-- **Graphics:** MudBlazor 6.11.0
-- **Logging:** Serilog with SEQ (Datalust)
+- **Graphics:** MudBlazor 6.11.1
+- **Logging:** Serilog with SEQ (Datalust) 2023.4
 
 ## Related projects
 
-| [Gestione Sagre Web Infrastructure](https://github.com/AngeloDotNet/GestioneSagreWeb.Infrastructure) | [Gestione Sagre Web Tools](https://github.com/AngeloDotNet/GestioneSagreWeb.Tools) |
-| :---------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
+| [Gestione Sagre Web Client](https://github.com/AngeloDotNet/GestioneSagreWeb.Client) | [Gestione Sagre Web Infrastructure](https://github.com/AngeloDotNet/GestioneSagreWeb.Infrastructure) | [Gestione Sagre Web Tools](https://github.com/AngeloDotNet/GestioneSagreWeb.Tools) |
+| :---------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
 
 <!--
 ## Apply migrations
@@ -34,9 +34,11 @@ Open source project that was born with the idea of wanting to create free softwa
 - Example MIGRATION: **InitialMigration** and PROJECT: **Utility**
 -->
 
-## Demo
+## Demo (DEV)
 
-Dev Environment: http://sagre-web.aepserver.it/
+Environment Web: http://sagre-web.aepserver.it/
+
+Environment Monitoring: https://sagre-monitor.aepserver.it/health-ui
 
 ## Support
 
