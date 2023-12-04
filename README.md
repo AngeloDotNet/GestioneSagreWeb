@@ -2,8 +2,6 @@
 
 Open source project that was born with the idea of wanting to create free software that allows the management of festivals, events or shows where it is necessary to check orders for the kitchen and/or bar
 
-![image](https://github.com/AngeloDotNet/GestioneSagreWeb/assets/49655304/12940b13-46d3-4b23-8df9-b01f2b6553d5)
-
 ## Features
 
 - No server required
@@ -13,7 +11,7 @@ Open source project that was born with the idea of wanting to create free softwa
 
 ## Tech Stack
 
-- **Client:** Blazor, .NET 6
+- **Client:** The source code is available by [clicking here](https://github.com/AngeloDotNet/GestioneSagreWeb.Client)
 - **Server:** Microservices Web API, .NET 6
 - **Database:** SQLServer 2022 CU10 ubuntu 20.04
 - **Graphics:** MudBlazor 6.11.1
@@ -21,8 +19,8 @@ Open source project that was born with the idea of wanting to create free softwa
 
 ## Related projects
 
-| [Gestione Sagre Web Client](https://github.com/AngeloDotNet/GestioneSagreWeb.Client) | [Gestione Sagre Web Infrastructure](https://github.com/AngeloDotNet/GestioneSagreWeb.Infrastructure) | [Gestione Sagre Web Tools](https://github.com/AngeloDotNet/GestioneSagreWeb.Tools) |
-| :---------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
+| [Gestione Sagre Web Infrastructure](https://github.com/AngeloDotNet/GestioneSagreWeb.Infrastructure) | [Gestione Sagre Web Tools](https://github.com/AngeloDotNet/GestioneSagreWeb.Tools) |
+| :---------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
 
 <!--
 ## Apply migrations
