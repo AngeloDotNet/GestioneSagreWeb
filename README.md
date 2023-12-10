@@ -19,8 +19,8 @@ Open source project that was born with the idea of wanting to create free softwa
 
 ## Related projects
 
-| [Gestione Sagre Web Infrastructure](https://github.com/AngeloDotNet/GestioneSagreWeb.Infrastructure) | [Gestione Sagre Web Tools](https://github.com/AngeloDotNet/GestioneSagreWeb.Tools) |
-| :---------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
+| [Gestione Sagre Web Client](https://github.com/AngeloDotNet/GestioneSagreWeb.Client) | [Gestione Sagre Web Infrastructure](https://github.com/AngeloDotNet/GestioneSagreWeb.Infrastructure) | [Gestione Sagre Web Tools](https://github.com/AngeloDotNet/GestioneSagreWeb.Tools) |
+| :---------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
 
 <!--
 ## Apply migrations
