@@ -55,14 +55,6 @@ jobs:
          push: true
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-reverseproxy:latest
 
-      - name: Build and push WebApp
-        uses: docker/build-push-action@v4
-        with:
-         context: .
-         file: ./src/WebApp/Dockerfile
-         push: true
-         tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-webapp:latest
-
       # - name: Build and push Prodotti
       #   uses: docker/build-push-action@v4
       #   with:
