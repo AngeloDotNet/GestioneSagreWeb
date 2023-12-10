@@ -15,20 +15,6 @@ services:
     networks:
       - lan-network
 
-  webapp:
-    image: angelo87dock/gsweb-webapp
-    container_name: webapp
-    restart: "always"
-    environment:
-      - ASPNETCORE_ENVIRONMENT="production"
-      - ASPNETCORE_URLS=http://*:80
-    volumes:
-      - /docker/storage/storage-webapp/nginx.conf:/etc/nginx/nginx.conf
-    ports:
-      - 5200:80
-    networks:
-      - lan-network
-
   aggregator:
     image: angelo87dock/gsweb-aggregator
     container_name: aggregator
