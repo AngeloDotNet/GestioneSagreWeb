@@ -6,9 +6,8 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        var builder = WebApplication.CreateBuilder(args);
-
-        builder.AddSerilogOptionsBuilder();
+        var builder = WebApplication.CreateBuilder(args)
+            .AddSerilogOptionsBuilder();
 
         Startup startup = new(builder.Configuration);
 

@@ -1,5 +1,6 @@
 ﻿using GestioneSagre.GenericServices.Extensions;
 using GestioneSagre.OperazioniAvvio.BusinessLayer.Extensions;
+using GestioneSagre.OperazioniAvvio.MessageBroker.Extensions;
 using GestioneSagre.Shared.Extensions;
 
 namespace GestioneSagre.OperazioniAvvio;
@@ -19,11 +20,12 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
-
         services.AddRegisterConfigureServices(Configuration, serviceName, swaggerName);
-        services.AddDefaultOperationResult();
 
+        services.AddDefaultOperationResult();
         services.AddCustomProblemDetails(Configuration);
+
+        services.AddServiceMessageBroker(Configuration);
     }
 
     public void Configure(WebApplication app)
