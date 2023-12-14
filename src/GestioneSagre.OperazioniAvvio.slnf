@@ -8,6 +8,7 @@
       "src\\OperazioniAvvio\\GestioneSagre.OperazioniAvvio.DataAccessLayer\\GestioneSagre.OperazioniAvvio.DataAccessLayer.csproj",
       "src\\OperazioniAvvio\\GestioneSagre.OperazioniAvvio.IntegrationTest\\GestioneSagre.OperazioniAvvio.IntegrationTest.csproj",
       "src\\OperazioniAvvio\\GestioneSagre.OperazioniAvvio.Shared\\GestioneSagre.OperazioniAvvio.Shared.csproj",
+	  "src\\OperazioniAvvio\\GestioneSagre.OperazioniAvvio.MessageBroker\\GestioneSagre.OperazioniAvvio.MessageBroker.csproj"
       "src\\OperazioniAvvio\\GestioneSagre.OperazioniAvvio\\GestioneSagre.OperazioniAvvio.csproj"
     ]
   }
