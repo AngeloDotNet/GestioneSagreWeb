@@ -25,6 +25,18 @@
             "UpstreamHttpMethod": [ "Get" ]
         },
         {
+            "DownstreamPathTemplate": "/api/categorie/recoveryidfesta",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-categorie",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/getidfesta",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
             "DownstreamPathTemplate": "/api/categorie/categoria/{idCategoria}/{idFesta}",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
