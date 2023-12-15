@@ -11,11 +11,11 @@ Open source project that was born with the idea of wanting to create free softwa
 
 ## Tech Stack
 
-- **Client:** The source code is available by [clicking here](https://github.com/AngeloDotNet/GestioneSagreWeb.Client)
+- **Client:** The source code is available by clicking [here](https://github.com/AngeloDotNet/GestioneSagreWeb.Client)
 - **Server:** Microservices Web API, .NET 6
-- **Database:** SQLServer 2022 CU10 ubuntu 20.04
-- **Graphics:** MudBlazor 6.11.1
-- **Logging:** Serilog with SEQ (Datalust) 2023.4
+- **Database:** SQLServer - Dockerized
+- **Graphics:** MudBlazor
+- **Logging:** Serilog with SEQ (Datalust) - Dockerized
 
 ## Related projects
 
@@ -42,16 +42,15 @@ Environment Monitoring: https://sagre-monitor.aepserver.it/health-ui
 
 If you found this Implementation helpful or used it in your Projects, do give it a ⭐ (or follow me) on Github. Thanks!
 
+## Donation
+
+This is a project created in order to create a web application that can be used in events / festivals in your country without any cost to bear, but if you want to give a coffee as a gift, feel free !
+
+[![](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/angelodotnet)
+
 ## Contributing
 
 Contributions and/or suggestions are always welcome.
-
-## Badges
-
-[![CodeQL](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/codeql.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/codeql.yml)
-[![.NET Build and Test](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/dotnet.yml)
-[![Lint Code Base](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/linter.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/linter.yml)
-[![Push DockerHub](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagreWeb/actions/workflows/docker-publish.yml)
 
 ## License
 
