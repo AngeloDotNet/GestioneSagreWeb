@@ -12,4 +12,8 @@
         <PackageReference Include="GestioneSagre.Shared" Version="1.1.6" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\Messaging\GestioneSagre.Messaging\GestioneSagre.Messaging.csproj" />
+    </ItemGroup>
+
 </Project>
