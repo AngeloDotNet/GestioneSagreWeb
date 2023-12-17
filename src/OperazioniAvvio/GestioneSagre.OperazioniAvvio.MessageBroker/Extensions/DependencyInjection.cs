@@ -1,5 +1,5 @@
-﻿using GestioneSagre.OperazioniAvvio.MessageBroker.Models.InputModels;
-using GestioneSagre.OperazioniAvvio.MessageBroker.Models.Options;
+﻿using GestioneSagre.Messaging.Models.Options;
+using GestioneSagre.OperazioniAvvio.MessageBroker.Consumers;
 using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,11 +10,11 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddServiceMessageBroker(this IServiceCollection services, IConfiguration configuration)
     {
-        var rabbitOptions = configuration.GetSection("RabbitMQ").Get<RabbitOptions>();
+        var rabbitOptions = configuration.GetSection("RabbitMQ").Get<RabbitConsumerOptions>();
 
         services.AddMassTransit(x =>
         {
-            x.AddConsumers(typeof(RequestFestaAttiva).Assembly);
+            x.AddConsumer<ConsumerFestaAttiva>();
 
             x.SetKebabCaseEndpointNameFormatter();
             x.UsingRabbitMq((context, rabbit) =>
@@ -32,7 +32,7 @@ public static class DependencyInjection
                     e.ExchangeType = rabbitOptions.ExchangeType;
                     e.PrefetchCount = rabbitOptions.PrefetchCount;
 
-                    e.ConfigureConsumers(context);
+                    e.ConfigureConsumer<ConsumerFestaAttiva>(context);
                 });
             });
         });
