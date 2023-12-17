@@ -12,6 +12,7 @@ COPY ["src/OperazioniAvvio/GestioneSagre.OperazioniAvvio.DataAccessLayer.Test/Ge
 COPY ["src/OperazioniAvvio/GestioneSagre.OperazioniAvvio.IntegrationTest/GestioneSagre.OperazioniAvvio.IntegrationTest.csproj", "src/OperazioniAvvio/GestioneSagre.OperazioniAvvio.IntegrationTest/"]
 COPY ["src/OperazioniAvvio/GestioneSagre.OperazioniAvvio.Shared/GestioneSagre.OperazioniAvvio.Shared.csproj", "src/OperazioniAvvio/GestioneSagre.OperazioniAvvio.Shared/"]
 COPY ["src/OperazioniAvvio/GestioneSagre.OperazioniAvvio.MessageBroker/GestioneSagre.OperazioniAvvio.MessageBroker.csproj", "src/OperazioniAvvio/GestioneSagre.OperazioniAvvio.MessageBroker/"]
+COPY ["src/Messaging/GestioneSagre.Messaging/GestioneSagre.Messaging.csproj", "src/Messaging/GestioneSagre.Messaging/"]
 RUN dotnet restore "src/OperazioniAvvio/GestioneSagre.OperazioniAvvio/GestioneSagre.OperazioniAvvio.csproj"
 COPY . .
 
