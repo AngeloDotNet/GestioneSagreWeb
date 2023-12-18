@@ -15,11 +15,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\GestioneSagre.Categorie.BusinessLayer\GestioneSagre.Categorie.BusinessLayer.csproj" />
+        <Folder Include="Logs\" />
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Logs\" />
+      <ProjectReference Include="..\GestioneSagre.Categorie.MessageBroker\GestioneSagre.Categorie.MessageBroker.csproj" />
     </ItemGroup>
 
 </Project>

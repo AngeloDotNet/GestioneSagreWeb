@@ -1,4 +1,5 @@
 ﻿using GestioneSagre.Categorie.BusinessLayer.Extensions;
+using GestioneSagre.Categorie.MessageBroker.Extensions;
 using GestioneSagre.GenericServices.Extensions;
 using GestioneSagre.Shared.Extensions;
 
@@ -23,6 +24,8 @@ public class Startup
 
         services.AddDefaultOperationResult();
         services.AddCustomProblemDetails(Configuration);
+
+        services.AddServiceMessageBroker(Configuration);
     }
 
     public void Configure(WebApplication app)

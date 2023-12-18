@@ -2,8 +2,11 @@
 using GestioneSagre.Categorie.Controllers.Common;
 using GestioneSagre.Categorie.Shared.Models.InputModels;
 using GestioneSagre.Categorie.Shared.Models.ViewModels;
+using GestioneSagre.Messaging.Models.InputModels;
+using GestioneSagre.Messaging.Models.ViewModels;
 using GestioneSagre.Shared.OperationResults;
 using GestioneSagre.Shared.OperationResults.WebApi;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestioneSagre.Categorie.Controllers;
@@ -11,10 +14,14 @@ namespace GestioneSagre.Categorie.Controllers;
 public class CategorieController : BaseController
 {
     private readonly ICategorieService categorieService;
+    private readonly IRequestClient<RequestFestaAttiva> requestClient;
+    private readonly ILogger<CategorieController> logger;
 
-    public CategorieController(ICategorieService categorieService)
+    public CategorieController(ICategorieService categorieService, IRequestClient<RequestFestaAttiva> requestClient, ILogger<CategorieController> logger)
     {
         this.categorieService = categorieService;
+        this.requestClient = requestClient;
+        this.logger = logger;
     }
 
     [HttpGet("ListaCategorie")]
@@ -28,6 +35,39 @@ public class CategorieController : BaseController
             var response = HttpContext.CreateResponse(result);
 
             return response;
+        }
+        catch (Exception exc)
+        {
+            return HttpContext.CreateResponse(Result.Fail(FailureReasons.BadRequest, "Richiesta non valida", detail: exc.Message));
+        }
+    }
+
+    [HttpGet("RecoveryIdFesta")]
+    [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> GetRecoveryIdFestaAsync()
+    {
+        try
+        {
+            Result<string> idFesta = string.Empty;
+
+            using (var request = requestClient.Create(new RequestFestaAttiva { }))
+            {
+                var response = await request.GetResponse<ResponseFestaAttiva>();
+
+                if (response.Message.IdFesta == null)
+                {
+                    logger.LogWarning("Nessun riferimento di festa attiva trovato");
+                    return HttpContext.CreateResponse(Result.Fail(FailureReasons.NotFound, "Nessun dato trovato", "Nessun riferimento di festa attiva trovato"));
+                }
+
+                idFesta = response.Message.IdFesta;
+            }
+
+            var result = HttpContext.CreateResponse(idFesta);
+
+            return result;
         }
         catch (Exception exc)
         {
