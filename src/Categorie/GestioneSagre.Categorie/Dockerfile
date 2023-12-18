@@ -11,6 +11,8 @@ COPY ["src/Categorie/GestioneSagre.Categorie.DataAccessLayer/GestioneSagre.Categ
 COPY ["src/Categorie/GestioneSagre.Categorie.DataAccessLayer.Test/GestioneSagre.Categorie.DataAccessLayer.Test.csproj", "src/Categorie/GestioneSagre.Categorie.DataAccessLayer.Test/"]
 COPY ["src/Categorie/GestioneSagre.Categorie.IntegrationTest/GestioneSagre.Categorie.IntegrationTest.csproj", "src/Categorie/GestioneSagre.Categorie.IntegrationTest/"]
 COPY ["src/Categorie/GestioneSagre.Categorie.Shared/GestioneSagre.Categorie.Shared.csproj", "src/Categorie/GestioneSagre.Categorie.Shared/"]
+COPY ["src/Categorie/GestioneSagre.Categorie.MessageBroker/GestioneSagre.Categorie.MessageBroker.csproj", "src/Categorie/GestioneSagre.Categorie.MessageBroker/"]
+COPY ["src/Messaging/GestioneSagre.Messaging/GestioneSagre.Messaging.csproj", "src/Messaging/GestioneSagre.Messaging/"]
 RUN dotnet restore "src/Categorie/GestioneSagre.Categorie/GestioneSagre.Categorie.csproj"
 COPY . .
 
