@@ -109,6 +109,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.OperazioniAvv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Categorie.MessageBroker", "src\Categorie\GestioneSagre.Categorie.MessageBroker\GestioneSagre.Categorie.MessageBroker.csproj", "{98171E12-3F20-47AF-AE2B-0BCD6A327C9F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messaging", "Messaging", "{3800D583-0EF6-4F97-9B99-65692FE43AD3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Messaging", "src\Messaging\GestioneSagre.Messaging\GestioneSagre.Messaging.csproj", "{2B9C70E9-9905-4527-8AB4-146DA156992E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -275,6 +279,10 @@ Global
 		{98171E12-3F20-47AF-AE2B-0BCD6A327C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98171E12-3F20-47AF-AE2B-0BCD6A327C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98171E12-3F20-47AF-AE2B-0BCD6A327C9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B9C70E9-9905-4527-8AB4-146DA156992E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9C70E9-9905-4527-8AB4-146DA156992E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9C70E9-9905-4527-8AB4-146DA156992E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9C70E9-9905-4527-8AB4-146DA156992E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -320,6 +328,7 @@ Global
 		{353CBA71-73D4-4AC1-AE55-27E2C086AD26} = {2A855DA1-9323-4C2A-8321-C7300D2C1E89}
 		{E318CCFE-0488-4E0F-B739-D6ECA9F65101} = {2A855DA1-9323-4C2A-8321-C7300D2C1E89}
 		{98171E12-3F20-47AF-AE2B-0BCD6A327C9F} = {99EAA17E-FEA6-496C-8971-A663F3DE6757}
+		{2B9C70E9-9905-4527-8AB4-146DA156992E} = {3800D583-0EF6-4F97-9B99-65692FE43AD3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3175CA6A-397B-47C0-90D2-4B126182BDB8}
