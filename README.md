@@ -44,9 +44,13 @@ If you found this Implementation helpful or used it in your Projects, do give it
 
 ## Donation
 
+If you like this project and want to support it, you can <a href="https://www.buymeacoffee.com/angelodotnet">buy me a coffee</a> ☕
+
+<!--
 This is a project created in order to create a web application that can be used in events / festivals in your country without any cost to bear, but if you want to give a coffee as a gift, feel free !
 
 [![](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/angelodotnet)
+-->
 
 ## Contributing
 
