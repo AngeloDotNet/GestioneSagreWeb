@@ -71,13 +71,13 @@ jobs:
          push: true
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-categorie:latest
 
-      # - name: Build and push Utility
-      #   uses: docker/build-push-action@v4
-      #   with:
-      #    context: .
-      #    file: ./src/Utility/GestioneSagre.Utility/Dockerfile
-      #    push: true
-      #    tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-utility:latest
+      - name: Build and push Utility
+        uses: docker/build-push-action@v4
+        with:
+         context: .
+         file: ./src/Utility/GestioneSagre.Utility/Dockerfile
+         push: true
+         tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-utility:latest
 
       - name: Build and push Operazioni Avvio
         uses: docker/build-push-action@v4
