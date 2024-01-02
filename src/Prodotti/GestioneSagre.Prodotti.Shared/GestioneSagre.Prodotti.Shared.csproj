@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="GestioneSagre.EFCore" Version="1.1.22" />
+        <PackageReference Include="GestioneSagre.GenericServices" Version="1.1.21" />
+        <PackageReference Include="GestioneSagre.Shared" Version="1.1.6" />
+    </ItemGroup>
+
+</Project>
