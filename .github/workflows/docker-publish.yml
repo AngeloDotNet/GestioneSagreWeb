@@ -55,13 +55,13 @@ jobs:
          push: true
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-reverseproxy:latest
 
-      # - name: Build and push Prodotti
-      #   uses: docker/build-push-action@v4
-      #   with:
-      #    context: .
-      #    file: ./src/Prodotti/GestioneSagre.Prodotti/Dockerfile
-      #    push: true
-      #    tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-prodotti:latest
+      - name: Build and push Prodotti
+        uses: docker/build-push-action@v4
+        with:
+         context: .
+         file: ./src/Prodotti/GestioneSagre.Prodotti/Dockerfile
+         push: true
+         tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-prodotti:latest
 
       - name: Build and push Categorie
         uses: docker/build-push-action@v4
