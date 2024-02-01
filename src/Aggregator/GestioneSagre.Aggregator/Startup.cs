@@ -11,18 +11,6 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        var connectionString = string.Empty;
-        var connectionSystem = Configuration.GetSection("ConnectionStrings");
-
-        if (connectionSystem["TypeStartup"] == "Default")
-        {
-            connectionString = connectionSystem["Default"];
-        }
-        else
-        {
-            connectionString = connectionSystem["Docker"];
-        }
-
         services.AddSerilogSeqServices();
         services.AddHealthChecksUI(settings =>
         {
@@ -30,14 +18,14 @@ public class Startup
             settings.SetEvaluationTimeInSeconds(Configuration.GetHealthCheckOptions().PollingInterval);
 
             settings.SetMinimumSecondsBetweenFailureNotifications(120);
-            settings.MaximumHistoryEntriesPerEndpoint(100);
+            settings.MaximumHistoryEntriesPerEndpoint(50);
 
             Configuration.GetHealthCheckServices()
                 .ForEach(service =>
                 {
                     settings.AddHealthCheckEndpoint(service.Name, service.Url);
                 });
-        }).AddSqlServerStorage(connectionString);
+        }).AddInMemoryStorage();
     }
 
     public void Configure(WebApplication app)
@@ -54,7 +42,7 @@ public class Startup
                 setup.ApiPath = Configuration.GetHealthCheckOptions().ApiPath;
                 setup.UIPath = Configuration.GetHealthCheckOptions().UIPath;
                 setup.AsideMenuOpened = false;
-                setup.PageTitle = "Gestione Sagre Monitoring";
+                setup.PageTitle = "Gestione Sagre HealthCheck";
                 setup.AddCustomStylesheet("dotnet.css");
             });
         });
