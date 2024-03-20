@@ -1,4 +1,6 @@
-﻿namespace GestioneSagre.Gateway;
+﻿using Prometheus;
+
+namespace GestioneSagre.Gateway;
 
 public class Startup
 {
@@ -29,6 +31,11 @@ public class Startup
 
         app.UseSwaggerUINoRoutePrefix($"{swaggerName} v1");
         app.UseRouting();
+
+        app.UseHttpMetrics(options =>
+        {
+            options.AddCustomLabel("host", context => context.Request.Host.Host);
+        });
 
         app.UseCors($"{serviceName}");
         app.AddSerilogConfigureServices();
