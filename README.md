@@ -11,18 +11,17 @@ Open source project that was born with the idea of wanting to create free softwa
 
 ## Tech Stack
 
-- **Client:** The source code is available by clicking [here](https://github.com/AngeloDotNet/GestioneSagreWeb.Client)
+- **Client:** The source code is available [here](https://github.com/AngeloDotNet/GestioneSagreWeb.Client)
 - **Server:** Microservices Web API, .NET 6
-- **Database:** SQLServer - Dockerized
+- **Database:** SQLServer
 - **Graphics:** MudBlazor
-- **Logging:** Serilog with SEQ (Datalust) - Dockerized
+- **Logging:** Serilog with SEQ (Datalust)
 
 ## Related projects
 
 | [Gestione Sagre Web Client](https://github.com/AngeloDotNet/GestioneSagreWeb.Client) | [Gestione Sagre Web Infrastructure](https://github.com/AngeloDotNet/GestioneSagreWeb.Infrastructure) | [Gestione Sagre Web Tools](https://github.com/AngeloDotNet/GestioneSagreWeb.Tools) |
 | :---------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
 
-<!--
 ## Apply migrations
 
 1. Add-Migration MIGRATION -Project GestioneSagre.PROJECT.DataAccessLayer
@@ -30,7 +29,6 @@ Open source project that was born with the idea of wanting to create free softwa
 3. Script-Migration -o script-PROJECT.sql (Generate the migration sql script)
 
 - Example MIGRATION: **InitialMigration** and PROJECT: **Utility**
--->
 
 ## Demo (DEV)
 
@@ -40,17 +38,11 @@ Environment Monitoring: https://sagre-monitor.aepserver.it/health-ui
 
 ## Support
 
-If you found this Implementation helpful or used it in your Projects, do give it a ⭐ (or follow me) on Github. Thanks!
+If you found this implementation helpful or used it in your Projects, do give it a ⭐ (or follow me) on Github. Thanks!
 
 ## Donation
 
 If you like this project and want to support it, you can <a href="https://www.buymeacoffee.com/angelodotnet">buy me a coffee</a> ☕
-
-<!--
-This is a project created in order to create a web application that can be used in events / festivals in your country without any cost to bear, but if you want to give a coffee as a gift, feel free !
-
-[![](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/angelodotnet)
--->
 
 ## Contributing
 
