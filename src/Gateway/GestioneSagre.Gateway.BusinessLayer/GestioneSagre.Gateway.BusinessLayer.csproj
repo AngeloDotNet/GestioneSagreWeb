@@ -8,7 +8,10 @@
 
     <ItemGroup>
         <PackageReference Include="GestioneSagre.GenericServices" Version="1.2.1" />
-        <PackageReference Include="Ocelot" Version="22.0.1" />
+        <PackageReference Include="Ocelot" Version="23.1.0" />
+        <PackageReference Include="prometheus-net" Version="8.2.1" />
+        <PackageReference Include="prometheus-net.AspNetCore" Version="8.2.1" />
+        <PackageReference Include="prometheus-net.AspNetCore.HealthChecks" Version="8.2.1" />
     </ItemGroup>
 
 </Project>
