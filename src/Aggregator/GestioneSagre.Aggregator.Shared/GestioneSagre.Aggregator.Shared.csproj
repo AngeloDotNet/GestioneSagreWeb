@@ -8,7 +8,7 @@
 
     <ItemGroup>
         <!--<PackageReference Include="GestioneSagre.GenericServices" Version="1.1.21" /> VERSIONE PER SQLSERVER STORAGE (.NET 6) -->
-        <PackageReference Include="GestioneSagre.GenericServices" Version="1.2.1" />
+        <PackageReference Include="GestioneSagre.GenericServices" Version="1.2.2" />
     </ItemGroup>
 
 </Project>
