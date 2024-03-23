@@ -22,6 +22,11 @@ public class Startup
         services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
         services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 
+        services.AddMetricServer(options =>
+        {
+            options.Url = "/metrics";
+            //options.Port = 5678;
+        });
         services.AddOcelot(Configuration);
     }
 
@@ -36,6 +41,7 @@ public class Startup
         {
             options.AddCustomLabel("host", context => context.Request.Host.Host);
         });
+        app.MapMetrics();
 
         app.UseCors($"{serviceName}");
         app.AddSerilogConfigureServices();
