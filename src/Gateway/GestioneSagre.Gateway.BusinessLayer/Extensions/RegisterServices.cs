@@ -9,9 +9,9 @@ public static class RegisterServices
 
         var connStringRedis = serverService["Redis-Host"] + ":" + serverService["Redis-Port"];
         var connStringSeq = serverService["Seq-Host"];
-        //var connStringRabbitMQ = "amqp://" + serverService["RabbitMQ-Username"] + ":" + serverService["RabbitMQ-Password"] + "@" + serverService["RabbitMQ-Host"] + ":" + serverService["RabbitMQ-Port"];
         var connStringRabbitMQ = "amqp://" + serverService["RabbitMQ-Login"] + "@" + serverService["RabbitMQ-Host"];
         var SeqApiKey = serverService["Seq-ApiKey"];
+
         var tagsAPI = new[] { "web api", "swagger" };
         var tagsRedis = new string[] { "infrastructure", "redis" };
         var tagsRabbitMQ = new string[] { "infrastructure", "rabbitMQ" };
@@ -23,7 +23,9 @@ public static class RegisterServices
         services.AddHealthChecks()
             .AddRedis(connStringRedis, "Redis Check", HealthStatus.Degraded, tagsRedis)
             .AddRabbitMQ(connStringRabbitMQ, null, "RabbitMQ Check", HealthStatus.Degraded, tagsRabbitMQ, TimeSpan.FromSeconds(5));
+
         services.AddCustomHealthChecks(customServices["Url"], customServices["Name"], tagsAPI, connStringSeq, SeqApiKey);
+        services.AddMetricServer(options => options.Url = "/metrics");
 
         return services;
     }

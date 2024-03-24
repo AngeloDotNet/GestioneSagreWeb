@@ -6,3 +6,4 @@ global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.AspNetCore.Server.Kestrel.Core;
 global using Ocelot.DependencyInjection;
 global using Ocelot.Middleware;
+global using Prometheus;
