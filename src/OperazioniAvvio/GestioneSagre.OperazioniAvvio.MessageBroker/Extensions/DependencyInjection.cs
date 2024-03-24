@@ -14,25 +14,27 @@ public static class DependencyInjection
 
         services.AddMassTransit(x =>
         {
-            x.AddConsumer<ConsumerFestaAttiva>();
+            //x.AddConsumer<ConsumerFestaAttiva>();
+            x.AddConsumers(typeof(ConsumerFestaAttiva).Assembly);
 
             x.SetKebabCaseEndpointNameFormatter();
-            x.UsingRabbitMq((context, rabbit) =>
+            x.UsingRabbitMq((context, cfg) =>
             {
-                rabbit.Host(rabbitOptions.Host, rabbitOptions.VirtualHost, h =>
+                cfg.Host(rabbitOptions.Host, rabbitOptions.VirtualHost, h =>
                 {
                     h.Username(rabbitOptions.Username);
                     h.Password(rabbitOptions.Password);
                 });
 
-                rabbit.ReceiveEndpoint(rabbitOptions.ReceivedEndpoint, e =>
+                cfg.ReceiveEndpoint(rabbitOptions.ReceivedEndpoint, e =>
                 {
                     e.Durable = rabbitOptions.Durable;
                     e.AutoDelete = rabbitOptions.AutoDelete;
                     e.ExchangeType = rabbitOptions.ExchangeType;
                     e.PrefetchCount = rabbitOptions.PrefetchCount;
 
-                    e.ConfigureConsumer<ConsumerFestaAttiva>(context);
+                    //e.ConfigureConsumer<ConsumerFestaAttiva>(context);
+                    e.ConfigureConsumers(context);
                 });
             });
         });
