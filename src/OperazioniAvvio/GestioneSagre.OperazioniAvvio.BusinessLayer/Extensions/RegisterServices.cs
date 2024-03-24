@@ -23,6 +23,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Prometheus;
 
 namespace GestioneSagre.OperazioniAvvio.BusinessLayer.Extensions;
 
@@ -54,9 +55,10 @@ public static class RegisterServices
         services.AddHealthChecks().AddSqlServer(connectionString, null, "DataBase Service", HealthStatus.Degraded, tagsSQLServer);
         services.AddCustomHealthChecks(customServices["Url"], customServices["Name"], tagsAPI, connStringSeq, SeqApiKey);
 
+        services.AddMetricServer(options => options.Url = "/metrics");
         services.AddDbContextSQLServer<OperazioniAvvioDbContext>(connectionString);
-        services.AddTransient<IFesteService, FesteService>();
 
+        services.AddTransient<IFesteService, FesteService>();
         services.AddTransient<IImpostazioniService, ImpostazioniService>();
         services.AddTransient<IIntestazioniService, IntestazioniService>();
 
@@ -146,6 +148,12 @@ public static class RegisterServices
         app.UseSwaggerUINoRoutePrefix($"{swaggerName} v1");
 
         app.UseRouting();
+        app.UseHttpMetrics(options =>
+        {
+            options.AddCustomLabel("host", context => context.Request.Host.Host);
+        });
+
+        app.MapMetrics();
         app.UseCors($"{serviceName}");
 
         app.AddSerilogConfigureServices();
