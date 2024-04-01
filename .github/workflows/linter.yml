@@ -17,7 +17,7 @@ jobs:
         fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
 
     - name: Lint Code Base
-      uses: github/super-linter@v6.3.0
+      uses: github/super-linter@v5.7.0
       env:
         LINTER_RULES_PATH: '.'
         EDITORCONFIG_FILE_NAME: '.editorconfig'
