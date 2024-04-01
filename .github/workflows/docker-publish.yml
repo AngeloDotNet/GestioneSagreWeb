@@ -12,19 +12,19 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.1.0
 
       - name: Login to Docker Hub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3.1.0
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3.2.0
 
       - name: Build and push Gateway
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5.3.0
         with:
          context: .
          file: ./src/Gateway/GestioneSagre.Gateway/Dockerfile
@@ -32,7 +32,7 @@ jobs:
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-gateway:latest
 
       - name: Build and push Data Protection
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5.3.0
         with:
          context: .
          file: ./src/DataProtection/GestioneSagre.DataProtection/Dockerfile
@@ -40,7 +40,7 @@ jobs:
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-dataprotection:latest
          
       - name: Build and push Aggregator
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5.3.0
         with:
          context: .
          file: ./src/Aggregator/GestioneSagre.Aggregator/Dockerfile
@@ -48,7 +48,7 @@ jobs:
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-aggregator:latest
 
       - name: Build and push Reverse Proxy
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5.3.0
         with:
          context: .
          file: ./src/ReverseProxy/GestioneSagre.ReverseProxy/Dockerfile
@@ -56,7 +56,7 @@ jobs:
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-reverseproxy:latest
 
       - name: Build and push Prodotti
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5.3.0
         with:
          context: .
          file: ./src/Prodotti/GestioneSagre.Prodotti/Dockerfile
@@ -64,7 +64,7 @@ jobs:
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-prodotti:latest
 
       - name: Build and push Categorie
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5.3.0
         with:
          context: .
          file: ./src/Categorie/GestioneSagre.Categorie/Dockerfile
@@ -72,7 +72,7 @@ jobs:
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-categorie:latest
 
       - name: Build and push Utility
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5.3.0
         with:
          context: .
          file: ./src/Utility/GestioneSagre.Utility/Dockerfile
@@ -80,7 +80,7 @@ jobs:
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-utility:latest
 
       - name: Build and push Operazioni Avvio
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5.3.0
         with:
          context: .
          file: ./src/OperazioniAvvio/GestioneSagre.OperazioniAvvio/Dockerfile

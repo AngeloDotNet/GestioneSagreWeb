@@ -19,7 +19,7 @@ jobs:
         # fetch-depth: 0
     
     - name: Setup .NET SDK ${{ env.NET_VERSION }}
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v4.0.0
       with:
         dotnet-version: ${{ env.NET_VERSION }}
         
@@ -46,7 +46,7 @@ jobs:
         thresholds: '60 90'
 
     - name: Add Coverage PR Comment
-      uses: marocchino/sticky-pull-request-comment@v2
+      uses: marocchino/sticky-pull-request-comment@v2.9.0
       #if: github.event_name == 'pull_request'
       with:
         recreate: true
