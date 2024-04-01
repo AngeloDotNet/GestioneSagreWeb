@@ -1,6 +1,8 @@
 ﻿using GestioneSagre.Categorie.BusinessLayer.Extensions;
-using GestioneSagre.Categorie.MessageBroker.Extensions;
 using GestioneSagre.GenericServices.Extensions;
+using GestioneSagre.Messaging.Extensions;
+using GestioneSagre.Messaging.Models.InputModels;
+using GestioneSagre.Messaging.Models.Options;
 using GestioneSagre.Shared.Extensions;
 
 namespace GestioneSagre.Categorie;
@@ -25,7 +27,24 @@ public class Startup
         services.AddDefaultOperationResult();
         services.AddCustomProblemDetails(Configuration);
 
-        services.AddServiceMessageBroker(Configuration);
+        //services.AddServiceMessageBroker(Configuration);
+        var rabbitOptions = Configuration.GetSection("RabbitMQ").Get<RabbitProducerOptions>();
+        var rabbitConfig = new RabbitOptions()
+        {
+            Host = rabbitOptions.Host,
+            VirtualHost = rabbitOptions.VirtualHost,
+            Username = rabbitOptions.Username,
+            Password = rabbitOptions.Password,
+            ReceivedEndpoint = rabbitOptions.ReceivedEndpoint,
+            Durable = rabbitOptions.Durable,
+            AutoDelete = rabbitOptions.AutoDelete,
+            ExchangeType = rabbitOptions.ExchangeType,
+            PrefetchCount = rabbitOptions.PrefetchCount,
+            RetryCount = rabbitOptions.RetryCount,
+            RetryInterval = rabbitOptions.RetryInterval,
+            QueueExpiration = rabbitOptions.QueueExpiration
+        };
+        services.AddRabbitMQSender<RequestFestaAttiva>(rabbitConfig);
     }
 
     public void Configure(WebApplication app)

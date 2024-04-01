@@ -14,16 +14,17 @@ public static class DependencyInjection
 
         services.AddMassTransit(x =>
         {
-            x.UsingRabbitMq((context, rabbit) =>
+            x.UsingRabbitMq((context, cfg) =>
             {
-                rabbit.QueueExpiration = TimeSpan.FromSeconds(rabbitOptions.QueueExpiration);
-                rabbit.Host(rabbitOptions.Host, rabbitOptions.VirtualHost, h =>
+                cfg.QueueExpiration = TimeSpan.FromSeconds(rabbitOptions.QueueExpiration);
+
+                cfg.Host(rabbitOptions.Host, rabbitOptions.VirtualHost, h =>
                 {
                     h.Username(rabbitOptions.Username);
                     h.Password(rabbitOptions.Password);
                 });
 
-                rabbit.ReceiveEndpoint(rabbitOptions.ReceivedEndpoint, e =>
+                cfg.ReceiveEndpoint(rabbitOptions.ReceivedEndpoint, e =>
                 {
                     e.Durable = rabbitOptions.Durable;
                     e.AutoDelete = rabbitOptions.AutoDelete;
@@ -34,7 +35,8 @@ public static class DependencyInjection
                 });
             });
 
-            x.AddRequestClient<RequestFestaAttiva>();
+            x.AddRequestClient(typeof(RequestFestaAttiva));
+            //x.AddRequestClient<RequestFestaAttiva>();
         });
 
         return services;
