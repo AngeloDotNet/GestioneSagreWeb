@@ -12,7 +12,6 @@ public static class DependencyInjection
         {
             x.UsingRabbitMq((context, cfg) =>
             {
-                //cfg.QueueExpiration = TimeSpan.FromSeconds(rabbitOptions.QueueExpiration);
                 cfg.QueueExpiration = TimeSpan.FromSeconds(RabbitStaticConfig.queueExpiration);
 
                 cfg.Host(rabbitOptions.Host, rabbitOptions.VirtualHost, h =>
@@ -23,12 +22,12 @@ public static class DependencyInjection
 
                 cfg.ReceiveEndpoint(rabbitOptions.ReceivedEndpoint, e =>
                 {
-                    e.Durable = RabbitStaticConfig.durable; //rabbitOptions.Durable;
-                    e.AutoDelete = RabbitStaticConfig.autoDelete; //rabbitOptions.AutoDelete;
-                    e.ExchangeType = RabbitStaticConfig.exchangeType; //rabbitOptions.ExchangeType;
-                    e.PrefetchCount = RabbitStaticConfig.prefetchCount; //rabbitOptions.PrefetchCount;
+                    e.Durable = RabbitStaticConfig.durable;
+                    e.AutoDelete = RabbitStaticConfig.autoDelete;
+                    e.ExchangeType = RabbitStaticConfig.exchangeType;
+                    e.PrefetchCount = RabbitStaticConfig.prefetchCount;
+                    //e.Bind("TestExchangeSender");
 
-                    //e.UseMessageRetry(r => r.Interval(rabbitOptions.RetryCount, rabbitOptions.RetryInterval));
                     e.UseMessageRetry(r => r.Interval(RabbitStaticConfig.retryCount, RabbitStaticConfig.interval));
                 });
             });
@@ -56,10 +55,11 @@ public static class DependencyInjection
 
                 cfg.ReceiveEndpoint(rabbitOptions.ReceivedEndpoint, e =>
                 {
-                    e.Durable = RabbitStaticConfig.durable; //rabbitOptions.Durable;
-                    e.AutoDelete = RabbitStaticConfig.autoDelete; //rabbitOptions.AutoDelete;
-                    e.ExchangeType = RabbitStaticConfig.exchangeType; //rabbitOptions.ExchangeType;
-                    e.PrefetchCount = RabbitStaticConfig.prefetchCount; //rabbitOptions.PrefetchCount;
+                    e.Durable = RabbitStaticConfig.durable;
+                    e.AutoDelete = RabbitStaticConfig.autoDelete;
+                    e.ExchangeType = RabbitStaticConfig.exchangeType;
+                    e.PrefetchCount = RabbitStaticConfig.prefetchCount;
+                    //e.Bind("TestExchangeReceiver");
 
                     e.ConfigureConsumers(context);
                 });
