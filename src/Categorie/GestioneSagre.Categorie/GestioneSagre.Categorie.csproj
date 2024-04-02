@@ -19,7 +19,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <!--<ProjectReference Include="..\GestioneSagre.Categorie.MessageBroker\GestioneSagre.Categorie.MessageBroker.csproj" />-->
         <ProjectReference Include="..\GestioneSagre.Categorie.BusinessLayer\GestioneSagre.Categorie.BusinessLayer.csproj" />
     </ItemGroup>
 
