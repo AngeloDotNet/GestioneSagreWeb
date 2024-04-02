@@ -10,7 +10,6 @@ using GestioneSagre.OperazioniAvvio.BusinessLayer.Services.Festa;
 using GestioneSagre.OperazioniAvvio.BusinessLayer.Services.Impostazione;
 using GestioneSagre.OperazioniAvvio.BusinessLayer.Services.Intestazione;
 using GestioneSagre.OperazioniAvvio.DataAccessLayer;
-using GestioneSagre.OperazioniAvvio.DataAccessLayer.Entities;
 using GestioneSagre.Shared.OperationResults;
 using Hellang.Middleware.ProblemDetails;
 using Hellang.Middleware.ProblemDetails.Mvc;
@@ -70,14 +69,17 @@ public static class RegisterServices
 
     public static IServiceCollection RegisterUnitOfWorkServices(this IServiceCollection services)
     {
-        services.AddScoped<IUnitOfWork<Festa>, UnitOfWork<Festa>>();
-        services.AddScoped<IRepository<Festa>, Repository<Festa>>();
+        services.AddScoped(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));
+        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
-        services.AddScoped<IUnitOfWork<Impostazione>, UnitOfWork<Impostazione>>();
-        services.AddScoped<IRepository<Impostazione>, Repository<Impostazione>>();
+        //services.AddScoped<IUnitOfWork<Festa>, UnitOfWork<Festa>>();
+        //services.AddScoped<IRepository<Festa>, Repository<Festa>>();
 
-        services.AddScoped<IUnitOfWork<Intestazione>, UnitOfWork<Intestazione>>();
-        services.AddScoped<IRepository<Intestazione>, Repository<Intestazione>>();
+        //services.AddScoped<IUnitOfWork<Impostazione>, UnitOfWork<Impostazione>>();
+        //services.AddScoped<IRepository<Impostazione>, Repository<Impostazione>>();
+
+        //services.AddScoped<IUnitOfWork<Intestazione>, UnitOfWork<Intestazione>>();
+        //services.AddScoped<IRepository<Intestazione>, Repository<Intestazione>>();
 
         return services;
     }
