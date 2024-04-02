@@ -36,13 +36,13 @@ public class Startup
             Username = rabbitOptions.Username,
             Password = rabbitOptions.Password,
             ReceivedEndpoint = rabbitOptions.ReceivedEndpoint,
-            Durable = rabbitOptions.Durable,
-            AutoDelete = rabbitOptions.AutoDelete,
-            ExchangeType = rabbitOptions.ExchangeType,
-            PrefetchCount = rabbitOptions.PrefetchCount,
-            RetryCount = rabbitOptions.RetryCount,
-            RetryInterval = rabbitOptions.RetryInterval,
-            QueueExpiration = rabbitOptions.QueueExpiration
+            //Durable = rabbitOptions.Durable,
+            //AutoDelete = rabbitOptions.AutoDelete,
+            //ExchangeType = rabbitOptions.ExchangeType,
+            //PrefetchCount = rabbitOptions.PrefetchCount,
+            //RetryCount = rabbitOptions.RetryCount,
+            //RetryInterval = rabbitOptions.RetryInterval,
+            //QueueExpiration = rabbitOptions.QueueExpiration
         };
         services.AddRabbitMQSender<RequestFestaAttiva>(rabbitConfig);
     }
