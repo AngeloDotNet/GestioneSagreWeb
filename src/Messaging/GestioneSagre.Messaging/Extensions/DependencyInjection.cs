@@ -12,8 +12,7 @@ public static class DependencyInjection
         {
             x.UsingRabbitMq((context, cfg) =>
             {
-                cfg.QueueExpiration = TimeSpan.FromSeconds(RabbitStaticConfig.queueExpiration);
-
+                //cfg.QueueExpiration = TimeSpan.FromSeconds(RabbitStaticConfig.queueExpiration);
                 cfg.Host(rabbitOptions.Host, rabbitOptions.VirtualHost, h =>
                 {
                     h.Username(rabbitOptions.Username);
@@ -26,6 +25,7 @@ public static class DependencyInjection
                     e.AutoDelete = RabbitStaticConfig.autoDelete;
                     e.ExchangeType = RabbitStaticConfig.exchangeType;
                     e.PrefetchCount = RabbitStaticConfig.prefetchCount;
+                    e.QueueExpiration = TimeSpan.FromSeconds(RabbitStaticConfig.queueExpiration);
                     //e.Bind("TestExchangeSender");
 
                     e.UseMessageRetry(r => r.Interval(RabbitStaticConfig.retryCount, RabbitStaticConfig.interval));
