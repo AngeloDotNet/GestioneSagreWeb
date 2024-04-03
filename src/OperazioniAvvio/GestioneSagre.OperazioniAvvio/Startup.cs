@@ -28,23 +28,25 @@ public class Startup
         services.AddCustomProblemDetails(Configuration);
 
         //services.AddServiceMessageBroker(Configuration);
-        var rabbitOptions = Configuration.GetSection("RabbitMQ").Get<RabbitConsumerOptions>();
-        var rabbitConfig = new RabbitOptions()
-        {
-            Host = rabbitOptions.Host,
-            VirtualHost = rabbitOptions.VirtualHost,
-            Username = rabbitOptions.Username,
-            Password = rabbitOptions.Password,
-            ReceivedEndpoint = rabbitOptions.ReceivedEndpoint,
-            //Durable = rabbitOptions.Durable,
-            //AutoDelete = rabbitOptions.AutoDelete,
-            //ExchangeType = rabbitOptions.ExchangeType,
-            //PrefetchCount = rabbitOptions.PrefetchCount,
-            //RetryCount = 0,
-            //RetryInterval = 0,
-            //QueueExpiration = 0
-        };
-        services.AddRabbitMQReceiver<ConsumerFestaAttiva>(rabbitConfig);
+        //var rabbitOptions = Configuration.GetSection("RabbitMQ").Get<RabbitConsumerOptions>();
+        //var rabbitConfig = new RabbitOptions()
+        //{
+        //    Host = rabbitOptions.Host,
+        //    VirtualHost = rabbitOptions.VirtualHost,
+        //    Username = rabbitOptions.Username,
+        //    Password = rabbitOptions.Password,
+        //    ReceivedEndpoint = rabbitOptions.ReceivedEndpoint,
+        //    //Durable = rabbitOptions.Durable,
+        //    //AutoDelete = rabbitOptions.AutoDelete,
+        //    //ExchangeType = rabbitOptions.ExchangeType,
+        //    //PrefetchCount = rabbitOptions.PrefetchCount,
+        //    //RetryCount = 0,
+        //    //RetryInterval = 0,
+        //    //QueueExpiration = 0
+        //};
+        //services.AddRabbitMQReceiver<ConsumerFestaAttiva>(rabbitConfig);
+        var rabbitOptions = Configuration.GetSection("RabbitMQ").Get<RabbitOptions>();
+        services.AddRabbitMQReceiver<ConsumerFestaAttiva>(rabbitOptions);
     }
 
     public void Configure(WebApplication app)
