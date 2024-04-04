@@ -21,6 +21,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Prometheus;
 
 namespace GestioneSagre.Categorie.BusinessLayer.Extensions;
 
@@ -135,6 +136,12 @@ public static class RegisterServices
         app.UseSwaggerUINoRoutePrefix($"{swaggerName} v1");
 
         app.UseRouting();
+        app.UseHttpMetrics(options =>
+        {
+            options.AddCustomLabel("host", context => context.Request.Host.Host);
+        });
+
+        app.MapMetrics();
         app.UseCors($"{serviceName}");
 
         app.AddSerilogConfigureServices();
