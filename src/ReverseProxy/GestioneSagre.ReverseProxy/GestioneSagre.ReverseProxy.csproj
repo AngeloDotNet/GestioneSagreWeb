@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="GestioneSagre.GenericServices" Version="1.2.2" />
+        <PackageReference Include="GestioneSagre.GenericServices" Version="1.2.4" />
         <PackageReference Include="Yarp.ReverseProxy" Version="2.1.0" />
     </ItemGroup>
 
