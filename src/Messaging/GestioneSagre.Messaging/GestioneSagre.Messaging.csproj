@@ -7,9 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="MassTransit" Version="8.2.0" />
+      <PackageReference Include="MassTransit" Version="8.2.1" />
       <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
-      <PackageReference Include="MassTransit.RabbitMQ" Version="8.2.0" />
+      <PackageReference Include="MassTransit.RabbitMQ" Version="8.2.1" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
     </ItemGroup>
