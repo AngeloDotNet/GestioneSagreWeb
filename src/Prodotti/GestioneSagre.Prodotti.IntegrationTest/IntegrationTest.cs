@@ -161,11 +161,7 @@ public class IntegrationTest
             Descrizione = "Prodotto test 1",
             ProdottoAttivo = true,
             IdCategoria = Guid.NewGuid(),
-            Prezzo = new Price
-            {
-                Amount = 10.00m,
-                Currency = "EUR"
-            },
+            Prezzo = new Price("EUR", 10.00m),
             Quantita = 10,
             QuantitaAttiva = true,
             QuantitaScorta = 5,
@@ -203,11 +199,7 @@ public class IntegrationTest
             Descrizione = "Prodotto test 1",
             ProdottoAttivo = true,
             IdCategoria = Guid.NewGuid(),
-            Prezzo = new Price
-            {
-                Amount = 10.00m,
-                Currency = "EUR"
-            },
+            Prezzo = new Price("EUR", 10.00m),
             Quantita = 10,
             QuantitaAttiva = true,
             QuantitaScorta = 5,
@@ -245,11 +237,7 @@ public class IntegrationTest
             Descrizione = "Prodotto test 1",
             ProdottoAttivo = true,
             IdCategoria = Guid.NewGuid(),
-            Prezzo = new Price
-            {
-                Amount = 10.00m,
-                Currency = "EUR"
-            },
+            Prezzo = new Price("EUR", 10.00m),
             Quantita = 10,
             QuantitaAttiva = true,
             QuantitaScorta = 5,
@@ -333,11 +321,7 @@ public class IntegrationTest
                 Descrizione = "Prodotto 1",
                 ProdottoAttivo = true,
                 IdCategoria = Guid.NewGuid(),
-                Prezzo = new Price
-                {
-                    Amount = 10.00m,
-                    Currency = "EUR"
-                },
+                Prezzo = new Price("EUR", 10.00m),
                 Quantita = 10,
                 QuantitaAttiva = true,
                 QuantitaScorta = 5,
@@ -352,11 +336,7 @@ public class IntegrationTest
                 Descrizione = "Prodotto 2",
                 ProdottoAttivo = true,
                 IdCategoria = Guid.NewGuid(),
-                Prezzo = new Price
-                {
-                    Amount = 10.00m,
-                    Currency = "EUR"
-                },
+                Prezzo = new Price("EUR", 10.00m),
                 Quantita = 10,
                 QuantitaAttiva = true,
                 QuantitaScorta = 5,
@@ -371,11 +351,7 @@ public class IntegrationTest
                 Descrizione = "Prodotto 3",
                 ProdottoAttivo = true,
                 IdCategoria = Guid.NewGuid(),
-                Prezzo = new Price
-                {
-                    Amount = 10.00m,
-                    Currency = "EUR"
-                },
+                Prezzo = new Price("EUR", 10.00m),
                 Quantita = 10,
                 QuantitaAttiva = true,
                 QuantitaScorta = 5,
@@ -390,11 +366,7 @@ public class IntegrationTest
                 Descrizione = "Prodotto 4",
                 ProdottoAttivo = true,
                 IdCategoria = Guid.NewGuid(),
-                Prezzo = new Price
-                {
-                    Amount = 10.00m,
-                    Currency = "EUR"
-                },
+                Prezzo = new Price("EUR", 10.00m),
                 Quantita = 10,
                 QuantitaAttiva = true,
                 QuantitaScorta = 5,
@@ -409,11 +381,7 @@ public class IntegrationTest
                 Descrizione = "Prodotto 5",
                 ProdottoAttivo = true,
                 IdCategoria = Guid.NewGuid(),
-                Prezzo = new Price
-                {
-                    Amount = 10.00m,
-                    Currency = "EUR"
-                },
+                Prezzo = new Price("EUR", 10.00m),
                 Quantita = 10,
                 QuantitaAttiva = true,
                 QuantitaScorta = 5,
@@ -428,11 +396,7 @@ public class IntegrationTest
                 Descrizione = "Prodotto 6",
                 ProdottoAttivo = true,
                 IdCategoria = Guid.NewGuid(),
-                Prezzo = new Price
-                {
-                    Amount = 10.00m,
-                    Currency = "EUR"
-                },
+                Prezzo = new Price("EUR", 10.00m),
                 Quantita = 10,
                 QuantitaAttiva = true,
                 QuantitaScorta = 5,
