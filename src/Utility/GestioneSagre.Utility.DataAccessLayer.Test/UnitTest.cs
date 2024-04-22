@@ -1,6 +1,3 @@
-using GestioneSagre.Utility.DataAccessLayer.Entities;
-using Xunit;
-
 namespace GestioneSagre.Utility.DataAccessLayer.Test;
 
 public class UnitTest : DatabaseTest

@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace GestioneSagre.Utility.DataAccessLayer.Test;
+﻿namespace GestioneSagre.Utility.DataAccessLayer.Test;
 
 public abstract class DatabaseTest
 {
