@@ -1,11 +1,4 @@
-﻿using System.Net;
-using System.Net.Http.Json;
-using GestioneSagre.Utility.DataAccessLayer;
-using GestioneSagre.Utility.Shared.Models.ViewModels;
-using Microsoft.Extensions.DependencyInjection;
-using Xunit;
-
-namespace GestioneSagre.Utility.IntegrationTest;
+﻿namespace GestioneSagre.Utility.IntegrationTest;
 
 public class IntegrationTest
 {
