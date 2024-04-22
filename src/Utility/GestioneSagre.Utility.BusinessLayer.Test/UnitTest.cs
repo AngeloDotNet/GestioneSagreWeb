@@ -1,8 +1,3 @@
-using GestioneSagre.Utility.BusinessLayer.Services;
-using GestioneSagre.Utility.Shared.Models.ViewModels;
-using Moq;
-using NUnit.Framework;
-
 namespace GestioneSagre.Utility.BusinessLayer.Test;
 
 public class UnitTest
