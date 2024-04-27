@@ -1,11 +1,4 @@
-﻿using GestioneSagre.Shared.OperationResults;
-using GestioneSagre.Shared.OperationResults.WebApi;
-using GestioneSagre.Utility.BusinessLayer.Services;
-using GestioneSagre.Utility.Controllers.Common;
-using GestioneSagre.Utility.Shared.Models.ViewModels;
-using Microsoft.AspNetCore.Mvc;
-
-namespace GestioneSagre.Utility.Controllers;
+﻿namespace GestioneSagre.Utility.Controllers;
 
 public class UtilityController : BaseController
 {
