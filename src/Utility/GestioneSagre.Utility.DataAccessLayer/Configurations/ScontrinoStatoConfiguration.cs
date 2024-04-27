@@ -1,8 +1,4 @@
-﻿using GestioneSagre.Utility.DataAccessLayer.Entities;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-namespace GestioneSagre.Utility.DataAccessLayer.Configurations;
+﻿namespace GestioneSagre.Utility.DataAccessLayer.Configurations;
 
 public class ScontrinoStatoConfiguration : IEntityTypeConfiguration<ScontrinoStato>
 {

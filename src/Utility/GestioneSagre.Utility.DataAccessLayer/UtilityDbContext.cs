@@ -1,8 +1,4 @@
-﻿using System.Reflection;
-using GestioneSagre.Utility.DataAccessLayer.Entities;
-using Microsoft.EntityFrameworkCore;
-
-namespace GestioneSagre.Utility.DataAccessLayer;
+﻿namespace GestioneSagre.Utility.DataAccessLayer;
 
 public class UtilityDbContext : DbContext
 {

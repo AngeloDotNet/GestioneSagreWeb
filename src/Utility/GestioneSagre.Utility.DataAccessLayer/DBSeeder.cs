@@ -1,8 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using GestioneSagre.Utility.DataAccessLayer.Entities;
-using Microsoft.EntityFrameworkCore;
-
-namespace GestioneSagre.Utility.DataAccessLayer;
+﻿namespace GestioneSagre.Utility.DataAccessLayer;
 
 [ExcludeFromCodeCoverage]
 public class DBSeeder
