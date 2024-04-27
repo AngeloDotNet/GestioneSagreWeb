@@ -1,13 +1,4 @@
-﻿using AutoMapper;
-using GestioneSagre.EFCore.Models.Enums;
-using GestioneSagre.EFCore.Models.Options;
-using GestioneSagre.EFCore.UnitOfWork.Interfaces;
-using GestioneSagre.Shared.OperationResults;
-using GestioneSagre.Utility.DataAccessLayer.Entities;
-using GestioneSagre.Utility.Shared.Models.ViewModels;
-using Microsoft.Extensions.Logging;
-
-namespace GestioneSagre.Utility.BusinessLayer.Services;
+﻿namespace GestioneSagre.Utility.BusinessLayer.Services;
 
 public class UtilityService : IUtilityService
 {

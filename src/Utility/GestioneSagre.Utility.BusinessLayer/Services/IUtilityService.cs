@@ -1,7 +1,4 @@
-﻿using GestioneSagre.Shared.OperationResults;
-using GestioneSagre.Utility.Shared.Models.ViewModels;
-
-namespace GestioneSagre.Utility.BusinessLayer.Services;
+﻿namespace GestioneSagre.Utility.BusinessLayer.Services;
 
 public interface IUtilityService
 {

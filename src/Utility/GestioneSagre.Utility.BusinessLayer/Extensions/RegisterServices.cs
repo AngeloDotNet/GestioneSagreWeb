@@ -1,28 +1,4 @@
-﻿using System.Diagnostics;
-using GestioneSagre.EFCore.Extensions;
-using GestioneSagre.EFCore.GenericRepository;
-using GestioneSagre.EFCore.GenericRepository.Interfaces;
-using GestioneSagre.EFCore.UnitOfWork;
-using GestioneSagre.EFCore.UnitOfWork.Interfaces;
-using GestioneSagre.GenericServices.Extensions;
-using GestioneSagre.Shared.OperationResults;
-using GestioneSagre.Utility.BusinessLayer.Mappers;
-using GestioneSagre.Utility.BusinessLayer.Services;
-using GestioneSagre.Utility.DataAccessLayer;
-using GestioneSagre.Utility.DataAccessLayer.Entities;
-using Hellang.Middleware.ProblemDetails;
-using Hellang.Middleware.ProblemDetails.Mvc;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
-
-namespace GestioneSagre.Utility.BusinessLayer.Extensions;
+﻿namespace GestioneSagre.Utility.BusinessLayer.Extensions;
 
 public static class RegisterServices
 {
@@ -63,20 +39,23 @@ public static class RegisterServices
 
     public static IServiceCollection RegisterUnitOfWorkServices(this IServiceCollection services)
     {
-        services.AddScoped<IUnitOfWork<ClienteTipo>, UnitOfWork<ClienteTipo>>();
-        services.AddScoped<IRepository<ClienteTipo>, Repository<ClienteTipo>>();
+        services.AddScoped(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));
+        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
-        services.AddScoped<IUnitOfWork<PagamentoTipo>, UnitOfWork<PagamentoTipo>>();
-        services.AddScoped<IRepository<PagamentoTipo>, Repository<PagamentoTipo>>();
+        //services.AddScoped<IUnitOfWork<ClienteTipo>, UnitOfWork<ClienteTipo>>();
+        //services.AddScoped<IRepository<ClienteTipo>, Repository<ClienteTipo>>();
 
-        services.AddScoped<IUnitOfWork<ScontrinoStato>, UnitOfWork<ScontrinoStato>>();
-        services.AddScoped<IRepository<ScontrinoStato>, Repository<ScontrinoStato>>();
+        //services.AddScoped<IUnitOfWork<PagamentoTipo>, UnitOfWork<PagamentoTipo>>();
+        //services.AddScoped<IRepository<PagamentoTipo>, Repository<PagamentoTipo>>();
 
-        services.AddScoped<IUnitOfWork<ScontrinoTipo>, UnitOfWork<ScontrinoTipo>>();
-        services.AddScoped<IRepository<ScontrinoTipo>, Repository<ScontrinoTipo>>();
+        //services.AddScoped<IUnitOfWork<ScontrinoStato>, UnitOfWork<ScontrinoStato>>();
+        //services.AddScoped<IRepository<ScontrinoStato>, Repository<ScontrinoStato>>();
 
-        services.AddScoped<IUnitOfWork<Valuta>, UnitOfWork<Valuta>>();
-        services.AddScoped<IRepository<Valuta>, Repository<Valuta>>();
+        //services.AddScoped<IUnitOfWork<ScontrinoTipo>, UnitOfWork<ScontrinoTipo>>();
+        //services.AddScoped<IRepository<ScontrinoTipo>, Repository<ScontrinoTipo>>();
+
+        //services.AddScoped<IUnitOfWork<Valuta>, UnitOfWork<Valuta>>();
+        //services.AddScoped<IRepository<Valuta>, Repository<Valuta>>();
 
         return services;
     }
