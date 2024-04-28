@@ -36,11 +36,7 @@ public class UnitTest
                 Descrizione = $"Prodotto {i}",
                 ProdottoAttivo = true,
                 IdCategoria = Guid.NewGuid(),
-                Prezzo = new Price
-                {
-                    Amount = 10.00m,
-                    Currency = "EUR"
-                },
+                Prezzo = new Price("EUR", 10.00m),
                 Quantita = 10,
                 QuantitaAttiva = true,
                 QuantitaScorta = 5,
@@ -67,11 +63,7 @@ public class UnitTest
             Descrizione = $"Prodotto 1",
             ProdottoAttivo = true,
             IdCategoria = Guid.NewGuid(),
-            Prezzo = new Price
-            {
-                Amount = 10.00m,
-                Currency = "EUR"
-            },
+            Prezzo = new Price("EUR", 10.00m),
             Quantita = 10,
             QuantitaAttiva = true,
             QuantitaScorta = 5,
@@ -86,11 +78,7 @@ public class UnitTest
             Descrizione = $"Prodotto 1",
             ProdottoAttivo = true,
             IdCategoria = Guid.NewGuid(),
-            Prezzo = new Price
-            {
-                Amount = 10.00m,
-                Currency = "EUR"
-            },
+            Prezzo = new Price("EUR", 10.00m),
             Quantita = 10,
             QuantitaAttiva = true,
             QuantitaScorta = 5,
