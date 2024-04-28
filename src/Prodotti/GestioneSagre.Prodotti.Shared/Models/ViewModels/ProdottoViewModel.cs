@@ -1,6 +1,4 @@
-﻿using GestioneSagre.Prodotti.Shared.Models.ValueObjects;
-
-namespace GestioneSagre.Prodotti.Shared.Models.ViewModels;
+﻿namespace GestioneSagre.Prodotti.Shared.Models.ViewModels;
 
 public class ProdottoViewModel
 {

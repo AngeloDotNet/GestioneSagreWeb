@@ -1,6 +1,4 @@
-﻿using GestioneSagre.Prodotti.Shared.Models.ValueObjects;
-
-namespace GestioneSagre.Prodotti.Shared.Models.InputModels;
+﻿namespace GestioneSagre.Prodotti.Shared.Models.InputModels;
 
 public class ProdottoCreateInputModel
 {
