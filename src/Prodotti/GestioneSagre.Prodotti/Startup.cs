@@ -1,8 +1,4 @@
-﻿using GestioneSagre.GenericServices.Extensions;
-using GestioneSagre.Prodotti.BusinessLayer.Extensions;
-using GestioneSagre.Shared.Extensions;
-
-namespace GestioneSagre.Prodotti;
+﻿namespace GestioneSagre.Prodotti;
 
 public class Startup
 {

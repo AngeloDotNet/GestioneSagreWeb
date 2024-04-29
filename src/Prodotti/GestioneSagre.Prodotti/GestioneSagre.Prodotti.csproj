@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.15">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.18">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
@@ -19,7 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\GestioneSagre.Prodotti.BusinessLayer\GestioneSagre.Prodotti.BusinessLayer.csproj" />
+        <ProjectReference Include="..\GestioneSagre.Prodotti.BusinessLayer\GestioneSagre.Prodotti.BusinessLayer.csproj" />
     </ItemGroup>
 
 </Project>

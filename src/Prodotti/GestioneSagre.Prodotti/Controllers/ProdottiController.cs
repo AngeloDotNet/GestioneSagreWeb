@@ -1,12 +1,4 @@
-﻿using GestioneSagre.Prodotti.BusinessLayer.Services;
-using GestioneSagre.Prodotti.Controllers.Common;
-using GestioneSagre.Prodotti.Shared.Models.InputModels;
-using GestioneSagre.Prodotti.Shared.Models.ViewModels;
-using GestioneSagre.Shared.OperationResults;
-using GestioneSagre.Shared.OperationResults.WebApi;
-using Microsoft.AspNetCore.Mvc;
-
-namespace GestioneSagre.Prodotti.Controllers;
+﻿namespace GestioneSagre.Prodotti.Controllers;
 
 public class ProdottiController : BaseController
 {

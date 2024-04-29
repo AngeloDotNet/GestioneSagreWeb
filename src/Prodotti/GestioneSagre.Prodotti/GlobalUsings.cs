@@ -1,0 +1,11 @@
+﻿global using System.Net.Mime;
+global using GestioneSagre.GenericServices.Extensions;
+global using GestioneSagre.Prodotti.BusinessLayer.Extensions;
+global using GestioneSagre.Prodotti.BusinessLayer.Services;
+global using GestioneSagre.Prodotti.Controllers.Common;
+global using GestioneSagre.Prodotti.Shared.Models.InputModels;
+global using GestioneSagre.Prodotti.Shared.Models.ViewModels;
+global using GestioneSagre.Shared.Extensions;
+global using GestioneSagre.Shared.OperationResults;
+global using GestioneSagre.Shared.OperationResults.WebApi;
+global using Microsoft.AspNetCore.Mvc;
