@@ -1,9 +1,4 @@
-﻿using AutoMapper;
-using GestioneSagre.Prodotti.DataAccessLayer.Entities;
-using GestioneSagre.Prodotti.Shared.Models.InputModels;
-using GestioneSagre.Prodotti.Shared.Models.ViewModels;
-
-namespace GestioneSagre.Prodotti.BusinessLayer.Mappers;
+﻿namespace GestioneSagre.Prodotti.BusinessLayer.Mappers;
 
 public class ProdottoMapperProfile : Profile
 {

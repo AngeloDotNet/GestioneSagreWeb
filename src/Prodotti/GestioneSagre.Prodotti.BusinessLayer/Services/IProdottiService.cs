@@ -1,8 +1,4 @@
-﻿using GestioneSagre.Prodotti.Shared.Models.InputModels;
-using GestioneSagre.Prodotti.Shared.Models.ViewModels;
-using GestioneSagre.Shared.OperationResults;
-
-namespace GestioneSagre.Prodotti.BusinessLayer.Services;
+﻿namespace GestioneSagre.Prodotti.BusinessLayer.Services;
 
 public interface IProdottiService
 {

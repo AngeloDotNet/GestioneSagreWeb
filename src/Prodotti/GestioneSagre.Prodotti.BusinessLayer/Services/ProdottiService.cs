@@ -1,14 +1,4 @@
-﻿using AutoMapper;
-using GestioneSagre.EFCore.Models.Enums;
-using GestioneSagre.EFCore.Models.Options;
-using GestioneSagre.EFCore.UnitOfWork.Interfaces;
-using GestioneSagre.Prodotti.DataAccessLayer.Entities;
-using GestioneSagre.Prodotti.Shared.Models.InputModels;
-using GestioneSagre.Prodotti.Shared.Models.ViewModels;
-using GestioneSagre.Shared.OperationResults;
-using Microsoft.Extensions.Logging;
-
-namespace GestioneSagre.Prodotti.BusinessLayer.Services;
+﻿namespace GestioneSagre.Prodotti.BusinessLayer.Services;
 
 public class ProdottiService : IProdottiService
 {

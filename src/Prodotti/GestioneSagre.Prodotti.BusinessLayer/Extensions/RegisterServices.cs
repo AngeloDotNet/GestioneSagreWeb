@@ -1,28 +1,4 @@
-﻿using System.Diagnostics;
-using GestioneSagre.EFCore.Extensions;
-using GestioneSagre.EFCore.GenericRepository;
-using GestioneSagre.EFCore.GenericRepository.Interfaces;
-using GestioneSagre.EFCore.UnitOfWork;
-using GestioneSagre.EFCore.UnitOfWork.Interfaces;
-using GestioneSagre.GenericServices.Extensions;
-using GestioneSagre.Prodotti.BusinessLayer.Mappers;
-using GestioneSagre.Prodotti.BusinessLayer.Services;
-using GestioneSagre.Prodotti.DataAccessLayer;
-using GestioneSagre.Prodotti.DataAccessLayer.Entities;
-using GestioneSagre.Shared.OperationResults;
-using Hellang.Middleware.ProblemDetails;
-using Hellang.Middleware.ProblemDetails.Mvc;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
-
-namespace GestioneSagre.Prodotti.BusinessLayer.Extensions;
+﻿namespace GestioneSagre.Prodotti.BusinessLayer.Extensions;
 
 public static class RegisterServices
 {
