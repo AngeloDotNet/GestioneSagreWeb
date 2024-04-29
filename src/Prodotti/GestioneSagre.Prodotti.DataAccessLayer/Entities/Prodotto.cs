@@ -1,6 +1,4 @@
-﻿using GestioneSagre.Prodotti.Shared.Models.ValueObjects;
-
-namespace GestioneSagre.Prodotti.DataAccessLayer.Entities;
+﻿namespace GestioneSagre.Prodotti.DataAccessLayer.Entities;
 
 public class Prodotto
 {

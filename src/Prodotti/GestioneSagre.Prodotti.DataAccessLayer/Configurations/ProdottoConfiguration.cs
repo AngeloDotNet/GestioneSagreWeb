@@ -1,8 +1,4 @@
-﻿using GestioneSagre.Prodotti.DataAccessLayer.Entities;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-namespace GestioneSagre.Prodotti.DataAccessLayer.Configurations;
+﻿namespace GestioneSagre.Prodotti.DataAccessLayer.Configurations;
 
 public class ProdottoConfiguration : IEntityTypeConfiguration<Prodotto>
 {
