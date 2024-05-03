@@ -87,6 +87,14 @@ jobs:
          push: true
          tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-operazioniavvio:latest
 
+      - name: Build and push Menu
+        uses: docker/build-push-action@v5.3.0
+        with:
+         context: .
+         file: ./src/Menu/GestioneSagre.Menu/Dockerfile
+         push: true
+         tags: ${{ secrets.DOCKER_USERNAME }}/gsweb-menu:latest
+
       - name: Regenerate environments on Aruba
         uses: appleboy/ssh-action@master
         with:
