@@ -149,6 +149,30 @@ services:
     networks:
       - lan-network
 
+  api-menu:
+    image: angelo87dock/gsweb-menu
+    container_name: api-menu
+    restart: "always"
+    environment:
+      - ASPNETCORE_ENVIRONMENT="production"
+      - ASPNETCORE_URLS=http://*:5001
+    volumes:
+      - /docker/storage/storage-menu/appsettings.json:/app/appsettings.json
+    networks:
+      - lan-network
+
+  proxy-menu:
+    image: angelo87dock/gsweb-reverseproxy
+    container_name: proxy-menu
+    restart: "always"
+    environment:
+      - ASPNETCORE_ENVIRONMENT="production"
+      - ASPNETCORE_URLS=http://*:5001
+    volumes:
+      - /docker/storage/proxy-menu/appsettings.json:/app/appsettings.json
+    networks:
+      - lan-network
+
 networks:
   lan-network:
     external:
