@@ -11,6 +11,7 @@ COPY ["src/Gateway/GestioneSagre.Gateway.BusinessLayer/GestioneSagre.Gateway.Bus
 COPY ["src/Gateway/GestioneSagre.Gateway/ConfigOcelot/ocelot.categorie.json", "src/Gateway/GestioneSagre.Gateway/ConfigOcelot/"]
 COPY ["src/Gateway/GestioneSagre.Gateway/ConfigOcelot/ocelot.dataprotection.json", "src/Gateway/GestioneSagre.Gateway/ConfigOcelot/"]
 COPY ["src/Gateway/GestioneSagre.Gateway/ConfigOcelot/ocelot.gateway.json", "src/Gateway/GestioneSagre.Gateway/ConfigOcelot/"]
+COPY ["src/Gateway/GestioneSagre.Gateway/ConfigOcelot/ocelot.menu.json", "src/Gateway/GestioneSagre.Gateway/ConfigOcelot/"]
 COPY ["src/Gateway/GestioneSagre.Gateway/ConfigOcelot/ocelot.operazioniavvio.json", "src/Gateway/GestioneSagre.Gateway/ConfigOcelot/"]
 COPY ["src/Gateway/GestioneSagre.Gateway/ConfigOcelot/ocelot.prodotti.json", "src/Gateway/GestioneSagre.Gateway/ConfigOcelot/"]
 COPY ["src/Gateway/GestioneSagre.Gateway/ConfigOcelot/ocelot.utility.json", "src/Gateway/GestioneSagre.Gateway/ConfigOcelot/"]

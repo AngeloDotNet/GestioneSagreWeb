@@ -1,0 +1,66 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/health",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-menu",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/check-menu",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/menu/listamenu",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-menu",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/getportate",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/menu/portata/{idMenu}/{idFesta}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-menu",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/getportata/{idMenu}/{idFesta}",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/menu/portata",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-menu",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/portata",
+            "UpstreamHttpMethod": [ "Post", "Put" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/menu/portata/{idMenu}/{idFesta}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "proxy-menu",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/portata/{idMenu}/{idFesta}",
+            "UpstreamHttpMethod": [ "Delete" ]
+        }
+    ],
+    "GlobalConfiguration": {
+    }
+}
