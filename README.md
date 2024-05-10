@@ -2,6 +2,14 @@
 
 Open source project that was born with the idea of wanting to create free software that allows the management of festivals, events or shows where it is necessary to check orders for the kitchen and/or bar
 
+## ATTENTION:
+
+Following the migration to .NET 8 of this open source project and the projects connected to it, this repository will no longer be maintained.
+
+The new version will only be available in docker format, by clicking [here](https://github.com/GestioneSagre/GSWebCloudApp.Docker) and if you
+want more information, write to me by clicking [here](https://github.com/AngeloDotNet/ama), thank you !
+
+<!--
 ## Features
 
 - No server required
@@ -47,6 +55,7 @@ If you like this project and want to support it, you can <a href="https://www.bu
 ## Contributing
 
 Contributions and/or suggestions are always welcome.
+-->
 
 ## License
 
